@@ -1,0 +1,46 @@
+.link-list {
+  li {
+    padding: 0px;
+    font-size: 1.35rem;
+    /*border-bottom: 1px dotted #DEDEDE;*/
+
+    .search-overlay & {
+      font-size: 1.3rem;
+    }
+  }
+
+  li:last-child {
+    border-bottom: none;
+  }
+
+  a {
+    color: $green;
+  }
+
+
+  &__restaurants {
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 600px) {
+  .archive-results-mobile {
+    display: none;
+  }
+}
+@media screen and (max-width: 600px) {
+  .archive-results-desktop {
+    display: none;
+  }
+}
+.column_1 {
+	float: left;
+  width: 30%;
+  }
+.column_2 {
+  float: left;
+  width: 30%;
+ }
+.column_3 {
+	float: left;
+  width: 30%;
+  }
