@@ -20,7 +20,7 @@
         <a href="about.html" class="nav-link_pic w-nav-link">About</a>
         <a href="photography/portfolio.html" class="nav-link_pic w-nav-link">Portfolio</a>
         <a href="photography/packages.html" class="nav-link_pic w-nav-link">Packages</a>
-        <a href="#" data-ix="show-side-contact" class="nav-link_pic contact w-nav-link">Contact</a>
+        <a href="#" data-ix="show-side-contact" class="nav-link_pic w-nav-link">Contact</a>
     </nav>
     <div class="menu-button w-nav-button">
         <div class="icon-3 w-icon-nav-menu"></div>

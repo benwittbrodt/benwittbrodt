@@ -1557,7 +1557,7 @@ textarea.w-select {
 }
 .w-nav {
   position: relative;
-  background: #dddddd;
+  /* background: #dddddd; */
   z-index: 1000;
 }
 .w-nav:before,
@@ -1590,7 +1590,7 @@ textarea.w-select {
   margin-right: auto;
 }
 .w-nav-link.w--current {
-  color: #0082f3;
+  /* color: #0082f3; */
 }
 .w-nav-menu {
   position: relative;
