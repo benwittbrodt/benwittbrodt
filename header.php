@@ -18,7 +18,7 @@
     <nav role="navigation" class="nav-menu w-nav-menu">
         <a href="<?php echo site_url('/'); ?>" aria-current="page" class="nav-link_pic w-nav-link <?php if ( is_home() ) echo 'w--current'?>">Home</a>
         <a href="<?php echo site_url('/about'); ?>" class="nav-link_pic w-nav-link <?php if (is_page('about')) echo 'w--current'?>">About</a>
-        <a href="photography/portfolio.html" class="nav-link_pic w-nav-link">Portfolio</a>
+        <a href="<?php echo site_url('/portfolio'); ?>" class="nav-link_pic w-nav-link <?php if (is_page('portfolio')) echo 'w--current'?>">Portfolio</a>
         <a href="photography/packages.html" class="nav-link_pic w-nav-link">Packages</a>
         <a href="#" data-ix="show-side-contact" class="nav-link_pic w-nav-link">Contact</a>
     </nav>
