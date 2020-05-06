@@ -2883,7 +2883,6 @@ blockquote {
 .social-icons-footer {
   display: inline-block;
   height: 40px;
-  float: right;
 }
 
 .div-block-16 {
@@ -3236,8 +3235,8 @@ html.w-mod-js *[data-ix="move-right"] {
 }
 
 #w-node-ba9cc1ebc75c-0d6281e7 {
-  -ms-grid-row: 2;
-  -ms-grid-column: 2;
+  /* -ms-grid-row: 2; */
+  /* -ms-grid-column: 2; */
   grid-area: Area-6;
 }
 
@@ -3714,7 +3713,7 @@ th {
 [class*=" w-icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'webflow-icons' !important;
-  speak: none;
+  speak-as: none;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -3823,69 +3822,6 @@ input.w-button {
 
 html[data-w-dynpage] [data-w-cloak] {
   color: transparent !important;
-}
-
-.w-webflow-badge,
-.w-webflow-badge * {
-  position: static;
-  left: auto;
-  top: auto;
-  right: auto;
-  bottom: auto;
-  z-index: auto;
-  display: block;
-  visibility: visible;
-  overflow: visible;
-  overflow-x: visible;
-  overflow-y: visible;
-  box-sizing: border-box;
-  width: auto;
-  height: auto;
-  max-height: none;
-  max-width: none;
-  min-height: 0;
-  min-width: 0;
-  margin: 0;
-  padding: 0;
-  float: none;
-  clear: none;
-  border: 0 none transparent;
-  border-radius: 0;
-  background: none;
-  background-image: none;
-  background-position: 0% 0%;
-  background-size: auto auto;
-  background-repeat: repeat;
-  background-origin: padding-box;
-  background-clip: border-box;
-  background-attachment: scroll;
-  background-color: transparent;
-  box-shadow: none;
-  opacity: 1.0;
-  transform: none;
-  transition: none;
-  direction: ltr;
-  font-family: inherit;
-  font-weight: inherit;
-  color: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  font-style: inherit;
-  font-variant: inherit;
-  text-align: inherit;
-  letter-spacing: inherit;
-  text-decoration: inherit;
-  text-indent: 0;
-  text-transform: inherit;
-  list-style-type: disc;
-  text-shadow: none;
-  font-smoothing: auto;
-  vertical-align: baseline;
-  cursor: inherit;
-  white-space: inherit;
-  word-break: normal;
-  word-spacing: normal;
-  word-wrap: normal;
 }
 
 .w-webflow-badge {
@@ -4082,7 +4018,6 @@ label {
   font-size: 14px;
   line-height: 1.428571429;
   color: #333333;
-  vertical-align: middle;
   background-color: #ffffff;
   border: 1px solid #cccccc;
 }
@@ -4573,7 +4508,7 @@ textarea.w-select {
 }
 
 .w-widget-map label {
-  width: auto;
+  /* width: auto; */
   display: inline;
 }
 
@@ -4766,7 +4701,7 @@ textarea.w-select {
   background: #dddddd;
   clear: both;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  tap-highlight-color: rgba(0, 0, 0, 0);
+  /* tap-highlight-color: rgba(0, 0, 0, 0); */
 }
 
 .w-slider-mask {
@@ -4802,7 +4737,7 @@ textarea.w-select {
   height: 40px;
   text-align: center;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  tap-highlight-color: rgba(0, 0, 0, 0);
+  /* tap-highlight-color: rgba(0, 0, 0, 0); */
 }
 
 .w-slider-nav.w-round > div {
@@ -4862,7 +4797,7 @@ textarea.w-select {
   color: white;
   font-size: 40px;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  tap-highlight-color: rgba(0, 0, 0, 0);
+  /* tap-highlight-color: rgba(0, 0, 0, 0); */
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -5024,7 +4959,7 @@ textarea.w-select {
   -moz-user-select: none;
   -ms-user-select: none;
   -webkit-tap-highlight-color: transparent;
-  -webkit-transform: translate(0, 0);
+  /* -webkit-transform: translate(0, 0); */
   /* 2 */
 }
 
@@ -5209,7 +5144,7 @@ textarea.w-select {
   box-sizing: content-box;
   /* 1 */
   cursor: pointer;
-  -webkit-transform: translate3d(0, 0, 0);
+  /* -webkit-transform: translate3d(0, 0, 0); */
   /* 2 */
 }
 
@@ -5591,7 +5526,7 @@ textarea.w-select {
   display: none;
   cursor: pointer;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  tap-highlight-color: rgba(0, 0, 0, 0);
+  /* tap-highlight-color: rgba(0, 0, 0, 0); */
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
