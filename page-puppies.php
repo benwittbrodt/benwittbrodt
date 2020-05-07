@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-  <div class="div-block-12">
+  <div>
     <div class="row-2 w-row">
       <div class="column-2 w-col w-col-7"><a href="#" class="portfolio_lb people w-inline-block w-lightbox"><img src="<?php echo get_theme_file_uri('/images/20180513-80.jpg');?>" style="width: 1500px" alt="" class="image-8"><script type="application/json" class="w-json">{
   "items": [
@@ -148,4 +148,8 @@
     </div>
   </div>
 
-<?php wp_footer(); ?>
+  <div class="w-container">
+  <a href="<?php echo site_url('portfolio');?>" class="w-button button-4" data-ix="show-side-contact">Back to categories</a>
+  </div>
+  <div class="div-block-16"></div>
+<?php get_footer(); ?>

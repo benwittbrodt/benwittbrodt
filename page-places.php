@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 
-<div class="div-block-12"><a href="#" class="lightbox-link w-inline-block w-lightbox"><img src="../images/20170923-76-Pano.jpg" width="1250" srcset="<?php echo get_theme_file_uri('/images/20170923-76-Pano.jpg');?>" class="image-14"><script type="application/json" class="w-json">{
+<div>
+<a href="#" class="lightbox-link w-inline-block w-lightbox"><img src="../images/20170923-76-Pano.jpg" width="1250" srcset="<?php echo get_theme_file_uri('/images/20170923-76-Pano.jpg');?>" class="image-14"><script type="application/json" class="w-json">{
   "items": [
     {
       "type": "image",
@@ -132,4 +133,8 @@
   "group": "Places"
 }</script></a></div>
 
-<?php wp_footer(); ?>
+<div class="w-container">
+  <a href="<?php echo site_url('portfolio');?>" class="w-button button-4" data-ix="show-side-contact">Back to categories</a>
+  </div>
+  <div class="div-block-16"></div>
+<?php get_footer(); ?>
