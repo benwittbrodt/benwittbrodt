@@ -11,7 +11,7 @@
       "width": 2500,
       "height": 871,
       "fileSize": 1644705,
-      "url": "//localhost:3000/wp-content/themes/benwittbrodt-theme/images/20170923-76-Pano.jpg"
+      "url": "https://www.benwittbrodt.com/wp-content/themes/benwittbrodt-theme/images/20170923-76-Pano.jpg"
     }
   ],
   "group": "Places"
@@ -24,7 +24,7 @@
       "height": 2000,
       "fileName": "20180327-249-HDR.jpg",
       "origFileName": "20180327-249-HDR.jpg",
-      "url": "//localhost:3000/wp-content/themes/benwittbrodt-theme/images/20180327-249-HDR.jpg",
+      "url": "https://www.benwittbrodt.com/wp-content/themes/benwittbrodt-theme/images/20180327-249-HDR.jpg",
       "_id": "5af3b424d6bc36f5a21890ce",
       "type": "image",
       "fileSize": 1989070
@@ -41,7 +41,7 @@
       "width": 2400,
       "height": 1600,
       "fileSize": 1844937,
-      "url": "//localhost:3000/wp-content/themes/benwittbrodt-theme/images/NYC_wm.jpg"
+      "url": "https://www.benwittbrodt.com/wp-content/themes/benwittbrodt-theme/images/NYC_wm.jpg"
     }
   ],
   "group": "Places"
@@ -55,7 +55,7 @@
       "width": 2499,
       "height": 1223,
       "fileSize": 2597725,
-      "url": "//localhost:3000/wp-content/themes/benwittbrodt-theme/images/20170811-7-228-Pano.jpg"
+      "url": "https://www.benwittbrodt.com/wp-content/themes/benwittbrodt-theme/images/20170811-7-228-Pano.jpg"
     }
   ],
   "group": "Places"
@@ -69,7 +69,7 @@
       "width": 2500,
       "height": 1667,
       "fileSize": 3116657,
-      "url": "//localhost:3000/wp-content/themes/benwittbrodt-theme/images/20171221-33.jpg"
+      "url": "https://www.benwittbrodt.com/wp-content/themes/benwittbrodt-theme/images/20171221-33.jpg"
     }
   ],
   "group": "Places"
@@ -84,7 +84,7 @@
       "width": 2000,
       "height": 2500,
       "fileSize": 3494606,
-      "url": "//localhost:3000/wp-content/themes/benwittbrodt-theme/vimages/20171116-12.jpg"
+      "url": "https://www.benwittbrodt.com/wp-content/themes/benwittbrodt-theme/vimages/20171116-12.jpg"
     }
   ],
   "group": "Places"
@@ -98,7 +98,7 @@
       "width": 2500,
       "height": 1667,
       "fileSize": 3264643,
-      "url": "//localhost:3000/wp-content/themes/benwittbrodt-theme/images/20170921-188-HDR.jpg"
+      "url": "https://www.benwittbrodt.com/wp-content/themes/benwittbrodt-theme/images/20170921-188-HDR.jpg"
     }
   ],
   "group": "Places"
@@ -112,7 +112,7 @@
       "width": 2000,
       "height": 1500,
       "fileSize": 3467641,
-      "url": "//localhost:3000/wp-content/themes/benwittbrodt-theme/images/20170825-3-2000.jpg"
+      "url": "https://www.benwittbrodt.com/wp-content/themes/benwittbrodt-theme/images/20170825-3-2000.jpg"
     }
   ],
   "group": "Places"
@@ -124,7 +124,7 @@
       "height": 1873,
       "fileName": "20180411-23-Pano (1).jpg",
       "origFileName": "20180411-23-Pano (1).jpg",
-      "url": "//localhost:3000/wp-content/themes/benwittbrodt-theme/images/20180411-23-Pano-1.jpg",
+      "url": "https://www.benwittbrodt.com/wp-content/themes/benwittbrodt-theme/images/20180411-23-Pano-1.jpg",
       "_id": "5af3b39d2d1960061e77a8e5",
       "type": "image",
       "fileSize": 3248976

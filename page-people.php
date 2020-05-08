@@ -13,7 +13,7 @@
       "width": 3000,
       "height": 2000,
       "fileSize": 1610076,
-      "url": "//localhost:3000/wp-content/themes/benwittbrodt-theme/images/self-portrait.jpg"
+      "url": "https://www.benwittbrodt.com/wp-content/themes/benwittbrodt-theme/images/self-portrait.jpg"
     }
   ],
   "group": "People"
@@ -26,7 +26,7 @@
       "height": 1875,
       "fileName": "20181117-17-Edit.jpg",
       "origFileName": "20181117-17-Edit.jpg",
-      "url": "//localhost:3000/wp-content/themes/benwittbrodt-theme/images/20181117-17-Edit.jpg",
+      "url": "https://www.benwittbrodt.com/wp-content/themes/benwittbrodt-theme/images/20181117-17-Edit.jpg",
       "_id": "5c7873c753663969e9e7b80f",
       "type": "image",
       "fileSize": 2544205
@@ -43,7 +43,7 @@
       "width": 3000,
       "height": 2000,
       "fileSize": 3036100,
-      "url": "//localhost:3000/wp-content/themes/benwittbrodt-theme/images/20180308-5.jpg"
+      "url": "https://www.benwittbrodt.com/wp-content/themes/benwittbrodt-theme/images/20180308-5.jpg"
     }
   ],
   "group": "People"
@@ -57,7 +57,7 @@
       "width": 3000,
       "height": 2000,
       "fileSize": 3973743,
-      "url": "//localhost:3000/wp-content/themes/benwittbrodt-theme/images/20180224-597.jpg"
+      "url": "https://www.benwittbrodt.com/wp-content/themes/benwittbrodt-theme/images/20180224-597.jpg"
     }
   ],
   "group": "People"
@@ -69,7 +69,7 @@
       "height": 2000,
       "fileName": "Shahid - 2018-12-9-033.jpg",
       "origFileName": "Shahid - 2018-12-9-033.jpg",
-      "url": "//localhost:3000/wp-content/themes/benwittbrodt-theme/images/Shahid---2018-12-9-033.jpg",
+      "url": "https://www.benwittbrodt.com/wp-content/themes/benwittbrodt-theme/images/Shahid---2018-12-9-033.jpg",
       "_id": "5c78734807fa957f3ee9e68f",
       "type": "image",
       "fileSize": 2325316
@@ -86,7 +86,7 @@
       "width": 3000,
       "height": 2000,
       "fileSize": 2376290,
-      "url": "//localhost:3000/wp-content/themes/benwittbrodt-theme/images/20180303-122.jpg"
+      "url": "https://www.benwittbrodt.com/wp-content/themes/benwittbrodt-theme/images/20180303-122.jpg"
     }
   ],
   "group": "People"
@@ -99,7 +99,7 @@
       "height": 2500,
       "fileName": "20181221-94.jpg",
       "origFileName": "20181221-94.jpg",
-      "url": "//localhost:3000/wp-content/themes/benwittbrodt-theme/images/20181221-94.jpg",
+      "url": "https://www.benwittbrodt.com/wp-content/themes/benwittbrodt-theme/images/20181221-94.jpg",
       "_id": "5c787450a0ef3e0ce8875826",
       "type": "image",
       "fileSize": 2711837
@@ -113,7 +113,7 @@
       "height": 2000,
       "fileName": "5ab6e7aff866da356514a8ba_linkedin_thumb.jpg",
       "origFileName": "linkedin_thumb.jpg",
-      "url": "//localhost:3000/wp-content/themes/benwittbrodt-theme/images/linkedin_thumb.jpg",
+      "url": "https://www.benwittbrodt.com/wp-content/themes/benwittbrodt-theme/images/linkedin_thumb.jpg",
       "_id": "5ab6e7aff866da356514a8ba",
       "type": "image",
       "fileSize": 2347660
@@ -128,7 +128,7 @@
       "height": 2500,
       "fileName": "20190203-148.jpg",
       "origFileName": "20190203-148.jpg",
-      "url": "//localhost:3000/wp-content/themes/benwittbrodt-theme/images/20190203-148.jpg",
+      "url": "https://www.benwittbrodt.com/wp-content/themes/benwittbrodt-theme/images/20190203-148.jpg",
       "_id": "5c7874d85366390396e7b903",
       "type": "image",
       "fileSize": 3447415
@@ -142,7 +142,7 @@
       "height": 2500,
       "fileName": "Suhaib 5-22-2018-92.jpg",
       "origFileName": "Suhaib 5-22-2018-92.jpg",
-      "url": "//localhost:3000/wp-content/themes/benwittbrodt-theme/images/Suhaib-5-22-2018-92.jpg",
+      "url": "https://www.benwittbrodt.com/wp-content/themes/benwittbrodt-theme/images/Suhaib-5-22-2018-92.jpg",
       "_id": "5b0f427555880720405e5959",
       "type": "image",
       "fileSize": 2284603
@@ -159,7 +159,7 @@
       "width": 2400,
       "height": 3000,
       "fileSize": 3598673,
-      "url": "//localhost:3000/wp-content/themes/benwittbrodt-theme/images/20180127-43.jpg"
+      "url": "https://www.benwittbrodt.com/wp-content/themes/benwittbrodt-theme/images/20180127-43.jpg"
     }
   ],
   "group": "People"
