@@ -5,11 +5,13 @@
         <img src="<?php echo get_theme_file_uri('/images/headshot-ben.jpg');?>"" style="width: 825px">
     </div>
     <div class="column-4 w-col w-col-6 w-col-medium-6">
-      <div class="div-block-15">
+      <div class="index-div">
         <div class="text-block-3">Ben Wittbrodt</div>
         <div class="text-block-4">M.S. Materials Science and Engineering</div>
-        <a href="<?php echo site_url('background'); ?>"><button class="index-button">Resume</button></a>
-        <div class="div-block-13">
+        <div class="w-row margin">
+        <a href="<?php echo site_url('background'); ?>"><button class="index-button">Resume<br>Background</button></a>
+        </div>
+        <div class="div-40">
             <a href="https://www.instagram.com/benwittbrodt/" target="_blank" class="social_outline instagram w-inline-block"><img src="<?php echo get_theme_file_uri('/images/instagram.png'); ?>"></a>
             <a href="http://www.linkedin.com/in/benwittbrodt" target="_blank" class="social_outline linkedin w-inline-block"><img src="<?php echo get_theme_file_uri('/images/linkedin.png'); ?>"></a>
             <a href="https://www.facebook.com/benwittbrodt" target="_blank" class="social_outline facebook w-inline-block"><img src="<?php echo get_theme_file_uri('/images/facebook.png'); ?>"></a>
@@ -18,6 +20,6 @@
       </div>
     </div>
   </div>
-  <div class="div-block-16"></div>
+  <div class="whitespace"></div>
 
 <?php get_footer(); ?>
