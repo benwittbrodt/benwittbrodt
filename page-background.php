@@ -7,7 +7,7 @@
           <h1 class="background_heading">Education</h1>
           <div class="w-richtext">
             <figure style="max-width:325px" id="w-node-4eef6c49d2e0-686281e3" class="w-richtext-align-normal w-richtext-figure-type-image">
-              <div><img src="images/michigantechlogo.png" alt=""></div>
+              <div><img src="<?php echo get_theme_file_uri('images/michigantechlogo.png');?>" alt=""></div>
             </figure>
             <h4>M.S. Material Science and Engineering (Dec. 2014)</h4>
             <p>Advisor: Dr. Joshua Pearce</p>
@@ -23,7 +23,7 @@
           </div>
           <div class="w-richtext">
             <figure style="max-width:325px" id="w-node-565296c88ca6-686281e3" class="w-richtext-align-floatleft w-richtext-figure-type-image">
-              <div><img src="images/michigantechlogo.png" alt=""></div>
+              <div><img src="<?php echo get_theme_file_uri('images/michigantechlogo.png');?>" alt=""></div>
             </figure>
             <p>‍</p>
             <p>‍</p>
@@ -49,7 +49,7 @@
           <h1 class="background_heading">Experience</h1>
           <div class="rich-text-block-7 w-richtext">
             <figure style="max-width:300px" id="w-node-a809c9e85ac3-686281e3" class="w-richtext-align-floatleft w-richtext-figure-type-image">
-              <div><img src="images/Continental_Logo_gelb_sRGB.png" alt=""></div>
+              <div><img src="<?php echo get_theme_file_uri('images/continental.png');?>" alt=""></div>
             </figure>
             <p>‍</p>
             <p>‍</p>
@@ -63,7 +63,7 @@
           </div>
           <div class="w-richtext">
             <figure style="max-width:300px" id="w-node-7d0da26d564a-686281e3" class="w-richtext-align-floatleft w-richtext-figure-type-image">
-              <div><img src="images/Continental_Logo_gelb_sRGB.png" alt=""></div>
+              <div><img src="<?php echo get_theme_file_uri('images/continental.png');?>" alt=""></div>
             </figure>
             <p>‍</p>
             <p>‍</p>
@@ -77,7 +77,7 @@
           </div>
           <div class="w-richtext">
             <figure style="max-width:325px" id="w-node-e4574c3e1e40-686281e3" class="w-richtext-align-normal w-richtext-figure-type-image">
-              <div><img src="images/michigantechlogo.png" alt=""></div>
+              <div><img src="<?php echo get_theme_file_uri('images/michigantechlogo.png');?>" alt=""></div>
             </figure>
             <h4>Michigan Technological University - Houghton, MI</h4>
             <h4>Graduate Research Assistant</h4>
@@ -89,7 +89,7 @@
           </div>
           <div class="w-richtext">
             <figure style="max-width:250px" id="w-node-26547a3443bd-686281e3" class="w-richtext-align-normal w-richtext-figure-type-image">
-              <div><img src="images/logo.png" alt=""></div>
+              <div><img src="<?php echo get_theme_file_uri('images/logo.png');?>" alt=""></div>
             </figure>
             <h4>WittPrint 3D - Houghton, MI</h4>
             <h4>Owner</h4>
@@ -101,7 +101,7 @@
           </div>
           <div class="w-richtext">
             <figure style="max-width:250px" id="w-node-6d5c7dfed8f1-686281e3" class="w-richtext-align-floatleft w-richtext-figure-type-image">
-              <div><img src="images/Large_Logo_CumminsFuelSystems.jpg" alt=""></div>
+              <div><img src="<?php echo get_theme_file_uri('images/cummins.jpg');?>" alt=""></div>
             </figure>
             <h4>‍</h4>
             <h4>‍</h4>
@@ -117,7 +117,7 @@
           </div>
           <div class="w-richtext">
             <figure class="w-richtext-align-floatleft w-richtext-figure-type-image">
-              <div><img src="images/Gerdau.png" alt=""></div>
+              <div><img src="<?php echo get_theme_file_uri('images/Gerdau.png');?>" alt=""></div>
             </figure>
             <p>‍</p>
             <p>‍</p>
