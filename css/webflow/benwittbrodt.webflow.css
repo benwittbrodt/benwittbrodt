@@ -77,10 +77,10 @@ p {
 a {
   -webkit-transition: color 400ms ease;
   transition: color 400ms ease;
-  color: #25ac6a;
+  color: #c7c7c7;
   text-decoration: underline;
 }
-
+ 
 a:hover {
   color: #000;
 }

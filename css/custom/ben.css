@@ -32,3 +32,14 @@
     display: block;
     height: 40px;
 }
+
+.footer_link {
+    display: inline-block;
+    font-size: 3rem;
+    justify-content: center;
+}
+
+.social_style {
+    /* color: #c7c7c7; */
+    margin-right: 5px;
+}

@@ -8,10 +8,12 @@
       </div>
       <div class="footer-link-col w-clearfix w-col w-col-9">
         <div class="social-icons-footer">
-        <a href="https://www.instagram.com/benwittbrodt/" target="_blank" class="social_footer instagram w-inline-block"><img src="<?php echo get_theme_file_uri('/images/social_footer-instagram.png') ?>" style="width: 35px"></a>
-        <a href="https://www.facebook.com/benwittbrodt" target="_blank" class="social_footer facebook w-inline-block"><img src="<?php echo get_theme_file_uri('/images/social_footer-facebook.png') ?>" style="width: 35px"></a>
-        <a href="http://www.linkedin.com/in/benwittbrodt" target="_blank" class="social_footer linkedin w-inline-block"><img src="<?php echo get_theme_file_uri('/images/social_footer-linkedin.png') ?>" style="width: 35px"></a>
+        <a href="https://www.instagram.com/benwittbrodt/" target="_blank"><i class="fab fa-instagram footer_link"></i></a>
+        <a href="https://www.facebook.com/benwittbrodt" target="_blank"><i class="fab fa-facebook footer_link"></i></a>
+        <a href="http://www.linkedin.com/in/benwittbrodt" target="_blank"><i class="fab fa-linkedin-in footer_link"></i></a>
+        <a href="https://www.github.com/benwittbrodt" target="_blank"><i class="fab fa-github footer_link"></i></a>
         </div>
+        
       </div>
       
     </div>
