@@ -9,7 +9,8 @@
         <div class="text-block-3">Ben Wittbrodt</div>
         <div class="text-block-4">M.S. Materials Science and Engineering</div>
         <div class="w-row margin">
-        <a href="<?php echo site_url('background'); ?>"><button class="index-button">Resume<br>Background</button></a>
+          <a href="<?php echo site_url('background'); ?>"><button class="index-button">Background</button></a>
+          <a href="<?php echo site_url('projects') ?>"><button class="index-button">Web Projects</button></a>
         </div>
         <div class="div-40">
             <a href="https://www.instagram.com/benwittbrodt/" target="_blank" class="social_outline instagram w-inline-block"><img src="<?php echo get_theme_file_uri('/images/instagram.png'); ?>"></a>
