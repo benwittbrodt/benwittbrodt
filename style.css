@@ -13,10 +13,11 @@
     border-radius: 10%;
     background-color: #3c588b;
     color: #ffffff;
+    transition: background 0.5s ease;
 }
 
 .index-button:hover {
-    background-color: #666666;
+    background: #666666;
 }
 
 .index-div {

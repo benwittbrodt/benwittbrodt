@@ -3,11 +3,14 @@
     height: 60px;
     border: none;
     border-radius: 10%;
-    background-color: #3c588b;
+    background: #3c588b;
     color: #ffffff;
+    transition: all 0.5s ease;
+   
 }
+
 .index-button:hover {
-    background-color: #666666;
+    background: #666666;
 }
 
 .index-div {
@@ -34,12 +37,7 @@
 }
 
 .footer_link {
-    display: inline-block;
-    font-size: 3rem;
-    justify-content: center;
+    font-size: 2rem;
+    margin: 10px;
 }
 
-.social_style {
-    /* color: #c7c7c7; */
-    margin-right: 5px;
-}
