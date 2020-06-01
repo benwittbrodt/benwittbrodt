@@ -13,10 +13,10 @@
           <a href="<?php echo site_url('projects') ?>"><button class="index-button">Web Projects</button></a>
         </div>
         <div class="div-40">
-            <a href="https://www.instagram.com/benwittbrodt/" target="_blank" class="social_outline instagram w-inline-block"><img src="<?php echo get_theme_file_uri('/images/instagram.png'); ?>"></a>
-            <a href="http://www.linkedin.com/in/benwittbrodt" target="_blank" class="social_outline linkedin w-inline-block"><img src="<?php echo get_theme_file_uri('/images/linkedin.png'); ?>"></a>
-            <a href="https://www.facebook.com/benwittbrodt" target="_blank" class="social_outline facebook w-inline-block"><img src="<?php echo get_theme_file_uri('/images/facebook.png'); ?>"></a>
-            <a href="https://www.github.com/benwittbrodt" target="_blank" class="social_outline facebook w-inline-block"><img src="<?php echo get_theme_file_uri('/images/github.png'); ?>"></a>
+            <a href="https://www.instagram.com/benwittbrodt/" target="_blank" class="social_outline w-inline-block"><img src="<?php echo get_theme_file_uri('/images/instagram.png'); ?>"></a>
+            <a href="http://www.linkedin.com/in/benwittbrodt" target="_blank" class="social_outline w-inline-block"><img src="<?php echo get_theme_file_uri('/images/linkedin.png'); ?>"></a>
+            <a href="https://www.facebook.com/benwittbrodt" target="_blank" class="social_outline w-inline-block"><img src="<?php echo get_theme_file_uri('/images/facebook.png'); ?>"></a>
+            <a href="https://www.github.com/benwittbrodt" target="_blank" class="social_outline w-inline-block"><img src="<?php echo get_theme_file_uri('/images/github.png'); ?>"></a>
         </div>
       </div>
     </div>
