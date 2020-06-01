@@ -27,8 +27,15 @@
 
 .div-40 {
     display: inline-block;
-    height: 40px;
     float: none;
+}
+.index-icon {
+    width: 3.5rem;
+    display: inline-block;
+    transition: width 400ms ease;
+}
+.index-icon:hover {
+    width: 4rem;
 }
 .whitespace {
     display: block;

@@ -9,8 +9,8 @@
       <div class="w-col w-col-9">
         <div class="social-icons-footer">
           <a href="https://www.instagram.com/benwittbrodt/" target="_blank"><i class="fab fa-instagram footer_link"></i></a>
-          <a href="https://www.facebook.com/benwittbrodt" target="_blank"><i class="fab fa-facebook footer_link"></i></a>
-          <a href="http://www.linkedin.com/in/benwittbrodt" target="_blank"><i class="fab fa-linkedin-in footer_link"></i></a>
+          <a href="http://www.linkedin.com/in/benwittbrodt" target="_blank"><i class="fab fa-linkedin footer_link"></i></a>
+          <a href="https://www.facebook.com/benwittbrodt" target="_blank"><i class="fab fa-facebook-square footer_link"></i></a>
           <a href="https://www.github.com/benwittbrodt" target="_blank"><i class="fab fa-github footer_link"></i></a>
         </div>
         
