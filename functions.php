@@ -18,3 +18,21 @@ function benwittbrodt_features() {
 }
 
 add_action('after_setup_theme', 'benwittbrodt_features');
+
+function my_post_types() {
+  //Restaurant Post Type
+  register_post_type('background',array(
+      'supports' => array('title','editor', 'thumbnail', 'excerpt','revisions'),
+      'has_archive' => true,
+      'public' => true,
+      'menu_icon' => 'dashicons-businessperson',
+      'labels' => array(
+          'name' => 'Background',
+          'add_new_item' => 'Add New Background',
+          'edit_item' => 'Edit Background',
+          'all_items' => 'All Backgrounds',
+          'singular_name' => 'Background'
+      )
+  ));
+}
+add_action('init','my_post_types');
