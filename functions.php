@@ -20,7 +20,7 @@ function benwittbrodt_features() {
 add_action('after_setup_theme', 'benwittbrodt_features');
 
 function my_post_types() {
-  //Restaurant Post Type
+  //Background Post Type
   register_post_type('background',array(
       'supports' => array('title','editor', 'thumbnail', 'excerpt','revisions'),
       'has_archive' => true,
@@ -34,5 +34,18 @@ function my_post_types() {
           'singular_name' => 'Background'
       )
   ));
+  register_post_type('portfolio', array(
+    'supports' => array('title', 'editor','thumbnail','revisions'),
+    'show_in_rest' => true,
+    'has_archive' => true,
+    'public' => true, 
+    'menu_icon' => 'dashicons-format-gallery',
+    'labels' => array(
+      'name' => 'Portfolio',
+      'add_new_item' => 'Add New Portfolio',
+      'edit_item' => 'Edit Portfolio',
+      'all_items' => 'All Portfolios',
+    )
+    ));
 }
 add_action('init','my_post_types');
