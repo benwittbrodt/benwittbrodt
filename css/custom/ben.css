@@ -32,7 +32,7 @@
 .index-icon {
     width: 3.5rem;
     display: inline-block;
-    transition: width 400ms ease;
+    transition: width 300ms ease;
 }
 .index-icon:hover {
     width: 4rem;
