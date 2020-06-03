@@ -23,6 +23,7 @@ function my_post_types() {
   //Background Post Type
   register_post_type('background',array(
       'supports' => array('title','editor', 'thumbnail', 'excerpt','revisions'),
+      'rewrite' => array('slug'=>'bg'),
       'has_archive' => true,
       'public' => true,
       'menu_icon' => 'dashicons-businessperson',

@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="section">
+
     <div class="w-container">
       <div class="w-row">
         <div class="w-col w-col-6">
@@ -134,6 +134,6 @@
         </div>
       </div>
     </div>
-  </div>
+
 
 <?php get_footer(); ?>

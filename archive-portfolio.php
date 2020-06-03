@@ -14,6 +14,9 @@
 ?>
    
 </div>
+<div class="w-container">
+  <a href="<?php echo site_url('photography');?>" class="w-button button-4" data-ix="show-side-contact">Back to Photography</a>
+</div>
 <div class="div-block-16"></div>
 
 <?php get_footer(); ?>
