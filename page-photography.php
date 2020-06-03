@@ -3,7 +3,7 @@
 
 <div class="w-container">
     <div class="div-40"></div>
-
+       
       <div class="w-richtext">
         <figure style="max-width:30%" id="w-node-6d5927e269f7-0d6281e7" class="w-richtext-align-floatleft w-richtext-figure-type-image">
           <div class="w-richtext-align-floatleft w-richtext-figure-type-image"><img src="<?php echo get_theme_file_uri('/images/casual-headshot.jpg'); ?>" alt=""></div>
@@ -16,8 +16,8 @@
         </div>
       </div>
       <div class="w-row margin">
-          <a href="<?php echo site_url('background'); ?>"><button class="index-button">Background</button></a>
-          <a href="<?php echo site_url('projects') ?>"><button class="index-button">Web Projects</button></a>
+          <a href="<?php echo site_url('portfolio'); ?>"><button class="index-button">Portfolio</button></a>
+          <a href="<?php echo site_url('packages') ?>"><button class="index-button">Packages</button></a>
         </div>
       <h1 class="heading-8">Brands I&#x27;ve Worked With</h1> 
       <hr style="margin-bottom: 20px">
