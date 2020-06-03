@@ -1,16 +1,19 @@
 <?php get_header(); ?>
-test
+
+<div class="container-5 w-container">
 <?php 
-
-    while ( have_posts() ) {
-        the_post();
-      echo the_title();
-    }
+  while( have_posts() ) {
+    the_post(); ?>
+      <div class="w-col w-col-6" style="margin-bottom: 15px">
+        <a href="<?php echo the_permalink();?>" class="w-inline-block">
+          <img src="<?php echo get_the_post_thumbnail_url();?>"> 
+          <div class="tile-text"><?php echo the_title(); ?></div>
+        </a>
+      </div>
+  <?php }
 ?>
+   
+</div>
+<div class="div-block-16"></div>
 
-
-<div class="w-container">
-  <a href="<?php echo site_url('portfolio');?>" class="w-button button-4" data-ix="show-side-contact">Back to categories</a>
-
-  <div class="div-block-16"></div>
 <?php get_footer(); ?>
