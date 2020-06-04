@@ -48,5 +48,19 @@ function my_post_types() {
       'all_items' => 'All Portfolios',
     )
     ));
+  register_post_type('project', array(
+    'supports' => array('title', 'editor','thumbnail'),
+    'rewrite' => array('slug' => 'projects'),
+    'show_in_rest' => true,
+    'has_archive' => true,
+    'public' => true, 
+    'menu_icon' => 'dashicons-media-code',
+    'labels' => array(
+      'name' => 'Project',
+      'add_new_item' => 'Add New Project',
+      'edit_item' => 'Edit Project',
+      'all_items' => 'All Projects',
+    )
+  ));
 }
 add_action('init','my_post_types');
