@@ -80,6 +80,23 @@
     border-radius: 5px 5px 0 0;
   }
 
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.frame { width: 1050px; height: 700px; border: 1px solid black}
+
+.frame {
+    -moz-transform: scale(0.9);
+    -moz-transform-origin: 0 0;
+    -o-transform: scale(0.9);
+    -o-transform-origin: 0 0;
+    -webkit-transform: scale(0.9);
+    -webkit-transform-origin: 0 0;
+  }
+
 /* 3rd party packages */
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
