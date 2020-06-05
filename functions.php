@@ -56,7 +56,7 @@ function my_post_types() {
     'public' => true, 
     'menu_icon' => 'dashicons-media-code',
     'labels' => array(
-      'name' => 'Project',
+      'name' => 'Projects',
       'add_new_item' => 'Add New Project',
       'edit_item' => 'Edit Project',
       'all_items' => 'All Projects',

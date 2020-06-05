@@ -83,3 +83,7 @@
     -webkit-transform: scale(0.9);
     -webkit-transform-origin: 0 0;
   }
+  .archive-heading {
+      background: #d8d8d8;
+      padding: 1rem;
+  }

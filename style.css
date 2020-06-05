@@ -98,6 +98,11 @@
     -webkit-transform-origin: 0 0;
   }
 
+.archive-heading {
+      background: #d8d8d8;
+      padding: 1rem;
+  }
+
 /* 3rd party packages */
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
