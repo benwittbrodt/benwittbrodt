@@ -13,7 +13,7 @@ add_action('wp_enqueue_scripts', 'benwittbrodt_files');
 function benwittbrodt_features() {
   add_theme_support('title-tag');
   add_theme_support('post-thumbnails');
-  add_image_size('listingLogo', 100, 100);
+  add_image_size('background', 325, 0, false);
   add_image_size('homeLogo', 80,80, false);
 }
 
@@ -23,7 +23,7 @@ function my_post_types() {
   //Background Post Type
   register_post_type('background',array(
       'supports' => array('title','editor', 'thumbnail', 'excerpt','revisions'),
-      'taxonomies' => array('category'),
+      'taxonomies' => array('category', 'post_tag'),
       'rewrite' => array('slug'=>'bg'),
       'has_archive' => true,
       'public' => true,
