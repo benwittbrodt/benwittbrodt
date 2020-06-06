@@ -24,7 +24,6 @@ function my_post_types() {
   register_post_type('background',array(
       'supports' => array('title','editor', 'thumbnail', 'excerpt','revisions'),
       'taxonomies' => array('category', 'post_tag'),
-      'rewrite' => array('slug'=>'bg'),
       'has_archive' => true,
       'public' => true,
       'menu_icon' => 'dashicons-businessperson',

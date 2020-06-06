@@ -17,7 +17,7 @@
     </a>
     <nav role="navigation" class="nav-menu w-nav-menu">
       <a href="<?php echo site_url('/'); ?>" aria-current="page" class="nav-link_pic w-nav-link <?php if ( is_home() ) echo 'w--current'?>">Home</a>
-      <a href="<?php echo site_url('/background'); ?>" class="nav-link_pic w-nav-link <?php if ( is_page('background')) echo 'w--current'?>">Background</a>
+      <a href="<?php echo site_url('/background'); ?>" class="nav-link_pic w-nav-link <?php if ( get_post_type() == 'background') echo 'w--current'?>">Background</a>
       <a href="<?php echo site_url('/projects'); ?>" class="nav-link_pic w-nav-link <?php if ( is_page('project') || get_post_type() == 'project' ) echo 'w--current'?>">Projects</a>
       <a href="<?php echo site_url('/photography'); ?>" class="nav-link_pic w-nav-link <?php if ( is_page('photography') || get_post_type() == "portfolio" || is_page('packages') ) echo 'w--current'?>">Photography</a>
       <a href="<?php echo site_url('contact');?>" class="nav-link_pic w-nav-link <?php if ( is_page('contact')) echo 'w--current'?>">Contact</a>
