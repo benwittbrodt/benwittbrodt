@@ -3,7 +3,8 @@
 <div class="w-container">
     <div class="w-richtext">
       <p>Let&#x27;s get down to business. So you&#x27;ve decided that you want to take your online presence to the next level - great! Below are my standard packages for quick and easy scheduling. If you want something different let me know and we can work something out! </p>
-    </div><a href="<?php echo site_url('contact');?>" class="w-button button-4" data-ix="show-side-contact">Contact Me</a>
+    </div>
+    <a href="<?php echo site_url('contact');?>" class="w-button button-4" data-ix="show-side-contact">Contact Me</a>
     <div class="div-block-19"></div>
   </div>
   <div class="row-3 w-row">
