@@ -103,6 +103,10 @@
       padding: 1rem;
   }
 
+.research-content {
+      color: #4b4b4b;
+  }
+
 /* 3rd party packages */
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -2653,6 +2657,26 @@ textarea.w-select {
 }
 
 .w-container:after {
+  clear: both;
+}
+
+.w-big-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+}
+
+.w-big-container:before,
+.w-big-container:after {
+  content: " ";
+  display: table;
+  grid-column-start: 1;
+  grid-row-start: 1;
+  grid-column-end: 2;
+  grid-row-end: 2;
+}
+
+.w-big-container:after {
   clear: both;
 }
 

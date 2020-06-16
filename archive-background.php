@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 
-<div class="w-container">
+<div class="w-big-container">
     <div class="w-row">
-        <div class="w-col w-col-6">
+        <div class="w-col w-col-4">
         <h1 class="background_heading">Education</h1>
             <?php
             $education_query = new WP_Query( array( 
@@ -14,7 +14,7 @@
 
             while ( $education_query->have_posts() ) {
                 $education_query->the_post();?>
-                <div class="w-richtext">
+                <div class="w-richtext card">
                 <div><?php the_post_thumbnail('background');?></div>
                 <h3><?php the_title();?></h3>
                 <h4><?php echo get_field('end_date'); ?></h4>
@@ -22,7 +22,8 @@
                 the_content();  ?>
             </div>
             <?php } wp_reset_postdata();?>
-
+        </div>
+        <div class="w-col w-col-4">
         <h1 class="background_heading">Research</h1>
         <?php
             $research_query = new WP_Query( array( 
@@ -34,14 +35,14 @@
 
             while ( $research_query->have_posts() ) {
                 $research_query->the_post();?>
-                <div class="w-richtext">
+                <div class="w-richtext card">
                 <h4><?php the_title();?></h4>
-                <?php 
-                the_content();  ?>
+                <div class="research-content"><?php the_content(); ?></div>
             </div>
             <?php } wp_reset_postdata();?>
         </div>
-        <div class="w-col w-col-6">
+        
+        <div class="w-col w-col-4">
         <h1 class="background_heading">Experience</h1>
         <?php
             $experience_query = new WP_Query( array( 
@@ -53,7 +54,7 @@
 
             while ( $experience_query->have_posts() ) {
                 $experience_query->the_post();?>
-                <div class="w-richtext">
+                <div class="w-richtext card">
                 <div><?php the_post_thumbnail('background');?></div>
                 <h3><?php the_title();?></h3>
                 <?php if ( ! get_field( 'end_date' ) ) { ?>
