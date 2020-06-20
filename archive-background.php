@@ -16,10 +16,10 @@
                 $education_query->the_post();?>
                 <div class="w-richtext card">
                 <div><?php the_post_thumbnail('background');?></div>
-                <h3><?php the_title();?></h3>
-                <h4><?php echo get_field('end_date'); ?></h4>
-                <?php 
-                the_content();  ?>
+                <h3 class="extramargin"><?php the_title();?></h3>
+                <h4 class="extramargin"><?php echo get_field('end_date'); ?></h4>
+                <div class="extramargin"><?php 
+                the_content();  ?></div>
             </div>
             <?php } wp_reset_postdata();?>
         </div>
@@ -36,8 +36,9 @@
             while ( $research_query->have_posts() ) {
                 $research_query->the_post();?>
                 <div class="w-richtext card">
-                <h4><?php the_title();?></h4>
-                <div class="research-content"><?php the_content(); ?></div>
+                <h4 class="extramargin"><?php the_title();?></h4>
+                <hr class="hr2">
+                <div class="research-content extramargin"><?php the_content(); ?></div>
             </div>
             <?php } wp_reset_postdata();?>
         </div>
@@ -56,14 +57,14 @@
                 $experience_query->the_post();?>
                 <div class="w-richtext card">
                 <div><?php the_post_thumbnail('background');?></div>
-                <h3><?php the_title();?></h3>
+                <h3 class="extramargin"><?php the_title();?></h3>
                 <?php if ( ! get_field( 'end_date' ) ) { ?>
-                    <h4><?php echo get_field('start_date') . ' - Present'?></h4>
+                    <h4 class="extramargin"><?php echo get_field('start_date') . ' - Present'?></h4>
                 <?php } else { ?>
-                <h4><?php echo get_field('start_date') . ' - ' . get_field('end_date'); ?></h4>
+                <h4 class="extramargin"><?php echo get_field('start_date') . ' - ' . get_field('end_date'); ?></h4>
                 <?php } ?>
-                <?php 
-                the_content();  ?>
+                <div class="extramargin"><?php 
+                the_content();  ?></div>
             </div>
             <?php } wp_reset_postdata();?>
         </div>        
