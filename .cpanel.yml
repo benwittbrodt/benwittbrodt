@@ -2,4 +2,5 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home2/wittdata/public_html/test/benwittbrodt/
+    - /bin/rm -rf * $DEPLOYPATH  
     - /bin/cp -r * $DEPLOYPATH
