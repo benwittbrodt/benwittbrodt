@@ -15,7 +15,7 @@
             while ( $education_query->have_posts() ) {
                 $education_query->the_post();?>
                 <div class="w-richtext card">
-                <div><?php the_post_thumbnail('background');?></div>
+                <div class="card-logo-img"><?php the_post_thumbnail('background');?></div>
                 <h3 class="extramargin"><?php the_title();?></h3>
                 <h4 class="extramargin"><?php echo get_field('end_date'); ?></h4>
                 <div class="extramargin"><?php 
@@ -56,7 +56,7 @@
             while ( $experience_query->have_posts() ) {
                 $experience_query->the_post();?>
                 <div class="w-richtext card">
-                <div><?php the_post_thumbnail('background');?></div>
+                <div class="card-logo-img"><?php the_post_thumbnail('background');?></div>
                 <h3 class="extramargin"><?php the_title();?></h3>
                 <?php if ( ! get_field( 'end_date' ) ) { ?>
                     <h4 class="extramargin"><?php echo get_field('start_date') . ' - Present'?></h4>

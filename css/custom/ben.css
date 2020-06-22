@@ -68,7 +68,9 @@
   .card-img {
     border-radius: 5px 5px 0 0;
   }
-
+.card-logo-img {
+    text-align: center;
+}
 .extramargin {
     margin-left: 5px;
     margin-right: 5px;
