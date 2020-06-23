@@ -17,7 +17,7 @@
                 <div class="w-richtext card">
                 <div class="card-logo-img"><?php the_post_thumbnail('background');?></div>
                 <h3 class="extramargin"><?php the_title();?></h3>
-                <h4 class="extramargin"><?php echo get_field('end_date'); ?></h4>
+                <h4 class="extramargin"><i class="far fa-calendar-alt bg-icon"></i> <?php echo get_field('end_date'); ?></h4>
                 <div class="extramargin"><?php 
                 the_content();  ?></div>
             </div>
@@ -59,12 +59,12 @@
                 <div class="card-logo-img"><?php the_post_thumbnail('background');?></div>
                 <h3 class="extramargin"><?php the_title();?></h3>
                 <?php if ( ! get_field( 'end_date' ) ) { ?>
-                    <h4 class="extramargin"><?php echo get_field('start_date') . ' - Present'?></h4>
+                    <h4 class="extramargin"><i class="far fa-calendar-alt bg-icon"></i> <?php echo get_field('start_date') . ' - Present'?></h4>
                 <?php } else { ?>
-                <h4 class="extramargin"><?php echo get_field('start_date') . ' - ' . get_field('end_date'); ?></h4>
+                <h4 class="extramargin"><i class="far fa-calendar-alt bg-icon"></i> <?php echo get_field('start_date') . ' - ' . get_field('end_date'); ?></h4>
                 <?php } ?>
-                <div class="extramargin"><?php 
-                the_content();  ?></div>
+                <h4 class="extramargin"><i class="fas fa-map-marked-alt bg-icon-map"></i> <?php echo get_field('location'); ?></h4>
+                <div class="extramargin"><?php the_content();  ?></div>
             </div>
             <?php } wp_reset_postdata();?>
         </div>        

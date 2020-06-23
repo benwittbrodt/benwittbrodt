@@ -37,6 +37,12 @@
 .index-icon:hover {
     width: 4rem;
 }
+.bg-icon {
+    color: #4281a4;
+}
+.bg-icon-map {
+    color: #c1666b;
+}
 .whitespace {
     display: block;
     height: 40px;
