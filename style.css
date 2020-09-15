@@ -7,17 +7,23 @@
 /* My Package */
 
 .index-button {
-    width: 100px;
-    height: 60px;
-    border: none;
-    border-radius: 10%;
-    background: #3c588b;
+    width: 150px;
+    height: 3.5rem;
+    margin-top: 4px;
+    border: 0;
+    border-radius: 1.75rem;
+    background: var(--color-main-green);
+    text-align: center;
+    font-size: 1.25rem;
     color: #ffffff;
-    transition: background 400ms ease;
+    transition: all 0.4s ease-in-out;
 }
 
 .index-button:hover {
-    background: #666666;
+    background: white;
+    color: var(--color-main-green);
+    border: solid 2px var(--color-main-green);
+    border-radius: 2rem;
 }
 
 .index-div {
@@ -25,7 +31,6 @@
     left: 0px;
     top: 192px;
     bottom: 0px;
-    display: inline-block;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -41,11 +46,13 @@
 .index-icon {
     width: 3.5rem;
     display: inline-block;
-    transition: width 300ms ease;
+    margin: 0.25rem;
+    transition: all 300ms ease;
 }
 
 .index-icon:hover {
     width: 4rem;
+    margin: 0px;
 }
 
 .bg-icon {
@@ -130,6 +137,14 @@
 .research-content {
       color: #4b4b4b;
   }
+
+:root{
+    --color-main-orange: #EF8354;
+    --color-main-violet: #654F6F;
+    --color-main-purple: #4F4789;
+    --color-main-green: #5B8E7D;
+    --color-main-lime: #8CB369;
+}
 
 /* 3rd party packages */
 

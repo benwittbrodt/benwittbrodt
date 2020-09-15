@@ -12,7 +12,7 @@
 <header>
 <div data-collapse="medium" data-animation="default" data-duration="400" class="portfolio_nav w-nav">
   <div class="w-container">
-    <a href="<?php echo site_url('/'); ?>" aria-current="page" class="w-nav-brand w--current">
+    <a href="<?php echo site_url('/'); ?>" aria-current="page" class="w-nav-brand">
       <div class="logo-text portfolio">Ben<strong>Wittbrodt</strong></div>
     </a>
     <nav role="navigation" class="nav-menu w-nav-menu">

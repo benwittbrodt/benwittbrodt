@@ -6,6 +6,7 @@
 
 /* My Package */
 @import "custom/ben.css";
+@import "custom/define.css";
 
 /* 3rd party packages */
 @import "normalize.css";
