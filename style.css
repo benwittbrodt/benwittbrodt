@@ -4085,6 +4085,7 @@ textarea.w-select {
   border-radius: 30px;
   float: right;
   padding: 18px;
+  margin-right: -2px;
   font-size: 24px;
   display: none;
   cursor: pointer;
