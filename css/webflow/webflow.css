@@ -1592,12 +1592,7 @@ textarea.w-select {
 .w-nav:after {
   clear: both;
 }
-.w-nav-brand {
-  position: relative;
-  float: left;
-  text-decoration: none;
-  color: #333333;
-}
+
 .w-nav-link {
   position: relative;
   display: inline-block;
@@ -1605,9 +1600,8 @@ textarea.w-select {
   text-decoration: none;
   color: #222222;
   padding: 20px;
-  text-align: left;
-  margin-left: auto;
-  margin-right: auto;
+  text-align: center;
+ 
 }
 .w-nav-link.w--current {
   /* color: #0082f3; */
@@ -1663,6 +1657,8 @@ textarea.w-select {
 }
 .w-nav-button {
   position: relative;
+  background-color: var(--color-main-green);
+  border-radius: 30px;
   float: right;
   padding: 18px;
   font-size: 24px;
@@ -1676,8 +1672,8 @@ textarea.w-select {
   user-select: none;
 }
 .w-nav-button.w--open {
-  background-color: #C8C8C8;
-  color: white;
+  background-color: var(--color-main-green);
+  border-radius: 0px;
 }
 .w-nav[data-collapse="all"] .w-nav-menu {
   display: none;

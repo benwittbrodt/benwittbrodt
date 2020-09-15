@@ -2,8 +2,8 @@
   <div class="w-container">
     <div class="w-row">
       <div class="w-col w-col-3">
-        <a href="<?php echo site_url('/'); ?>" aria-current="page" class="logo-footer w-nav-brand">
-          <div class="logo-text footer-logo">Ben<strong class="semibold">Wittbrodt</strong></div>
+        <a href="<?php echo site_url('/'); ?>" aria-current="page" class="w-nav-brand">
+          <div class="logo-text footer">Ben<strong class="semibold">Wittbrodt</strong></div>
         </a>
       </div>
       <div class="w-col w-col-9">
