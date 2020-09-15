@@ -109,9 +109,13 @@ blockquote {
 .logo-text {
   margin-top: 11px;
   color: #fff;
+  font-family: 'Gill Sans', sans-serif;
   font-size: 30px;
   line-height: 30px;
-  font-weight: 300;
+  font-weight: 350;
+}
+.semibold {
+  font-weight: 600;
 }
 
 .logo-text.footer-logo {
@@ -188,7 +192,7 @@ blockquote {
 .footer-section {
   padding-top: 23px;
   padding-bottom: 23px;
-  background-color: #2a2a2a;
+  background-color: #272445;
 }
 
 .logo-footer.w--current {

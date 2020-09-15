@@ -13,7 +13,7 @@
 <div data-collapse="medium" data-animation="default" data-duration="400" class="portfolio_nav w-nav">
   <div class="w-container">
     <a href="<?php echo site_url('/'); ?>" aria-current="page" class="w-nav-brand">
-      <div class="logo-text portfolio">Ben<strong>Wittbrodt</strong></div>
+      <div class="logo-text portfolio">Ben<strong class="semibold">Wittbrodt</strong></div>
     </a>
     <nav role="navigation" class="nav-menu w-nav-menu">
       <a href="<?php echo site_url('/'); ?>" aria-current="page" class="nav-link_pic w-nav-link <?php if ( is_home() ) echo 'w--current'?>">Home</a>

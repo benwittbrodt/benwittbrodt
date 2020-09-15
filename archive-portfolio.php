@@ -15,7 +15,7 @@
    
 </div>
 <div class="w-container">
-  <a href="<?php echo site_url('photography');?>" class="w-button button-4" data-ix="show-side-contact">Back to Photography</a>
+  <a href="<?php echo site_url('photography');?>"><button class="index-button">Back to Photography</button></a>
 </div>
 <div class="div-block-16"></div>
 
