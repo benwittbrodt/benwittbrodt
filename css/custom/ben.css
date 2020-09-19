@@ -124,14 +124,14 @@
 }
 .flex-col {
     display: flex;
-    flex-basis: 30%;
+    flex-basis: 33%;
     flex-direction: column;
 }
 .bg-item {
   margin-bottom: 0px;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 767px) {
     .flex-bg {
         display: block;
     }
