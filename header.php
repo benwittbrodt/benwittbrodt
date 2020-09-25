@@ -13,7 +13,7 @@
   
 
 <div data-collapse="medium" data-animation="default" data-duration="400" class="main-nav w-nav">
-  <a href="<?php echo site_url('/'); ?>"><img src="<?php echo get_theme_file_uri('/images/new_logo_nav.png');?>" style="height: 60px; float: left; display: inline-block; margin-right: 10px; margin-left: -2px" alt=""></a>
+  <a href="<?php echo site_url('/'); ?>"><img src="<?php echo get_theme_file_uri('/images/new_logo_nav.png');?>" style="height: 60px; float: left; display: inline-block; margin-right: 10px;" alt=""></a>
   <!-- Small mobile menu icon -->
   <div class="menu-button w-nav-button">
     <div class="icon-3 w-icon-nav-menu"></div>
