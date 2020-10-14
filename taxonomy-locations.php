@@ -6,7 +6,8 @@
 
       <h1 class="taxonomy_heading"><?php echo $term->name; ?> Archives</h1>
 
-      <?php if (have_posts()) : 
+      <?php 
+      if (have_posts()) : 
         while (have_posts()) : 
           the_post(); ?>
           
@@ -28,4 +29,5 @@
     </div><!-- #content -->
   </div><!-- #container -->
 
+  
 <?php get_footer(); ?>
