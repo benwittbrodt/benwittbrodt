@@ -62,5 +62,59 @@ function my_post_types() {
       'all_items' => 'All Projects',
     )
   ));
+  
+  //Adding a Restaurant post type and a "location" post type. Location will be used to sort the places to eat by which state they are in (and maybe city)
+
+  register_post_type('restaurant',
+  
+    array(
+      'supports' => array('title','editor', 'thumbnail', 'excerpt'),
+      'rewrite' => array('slug' => 'restaurants'),
+      'has_archive' => true,
+      'public' => true,
+      'menu_icon' => 'dashicons-store',
+      'labels' => array(
+          'name' => 'Restaurants',
+          'add_new_item' => 'Add New Restaurant',
+          'edit_item' => 'Edit Restaurant',
+          'all_items' => 'All Restaurants',
+          'singular_name' => 'Restaurant'
+      )
+    )
+  );
+
 }
 add_action('init','my_post_types');
+ 
+
+add_action( 'init', 'create_locations_taxonomy', 0 );
+function create_locations_taxonomy() {
+ 
+// Add new taxonomy, make it hierarchical like categories
+//first do the translations part for GUI
+ 
+  $labels = array(
+    'name' => _x( 'Locations', 'taxonomy general name' ),
+    'singular_name' => _x( 'Location', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Locations' ),
+    'all_items' => __( 'All Locations' ),
+    'parent_item' => __( 'Parent Location' ),
+    'parent_item_colon' => __( 'Parent Location:' ),
+    'edit_item' => __( 'Edit Location' ), 
+    'update_item' => __( 'Update Location' ),
+    'add_new_item' => __( 'Add New Location' ),
+    'new_item_name' => __( 'New Location Name' ),
+    'menu_name' => __( 'Locations' ),
+  );    
+ 
+// Now register the taxonomy
+  register_taxonomy('locations',array('restaurant'), array(
+    'hierarchical' => true,
+    'labels' => $labels,
+    'show_ui' => true,
+    'show_in_rest' => true,
+    'show_admin_column' => true,
+    'query_var' => true,
+  ));
+ 
+}
