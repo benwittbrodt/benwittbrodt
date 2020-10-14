@@ -16,8 +16,9 @@ foreach( $terms as $term ) {
     $main_id = $term->term_id;
       
     // output the term name in a heading tag                
-    echo'<h2>' . $term->name . '</h2>';
-
+    ?>
+    <h2><a href="<?php echo get_term_link( $main_id, $taxonomy_name );?>"><?php echo $term->name; ?></a></h2>
+    <?php
     $term_id = $term->term_id;
     $taxonomy_name = 'locations';
     $termchildren = get_term_children( $term_id, $taxonomy_name );
@@ -25,8 +26,7 @@ foreach( $terms as $term ) {
     echo '<ul>';
         foreach ( $termchildren as $child ) {
             $term = get_term_by( 'id', $child, $taxonomy_name ); ?>
-        <li><a href="<?php get_term_link( $child, $taxonomy_name );?>"><?php echo $term->name; ?></a>
-        <?php echo get_term_link( $child, $taxonomy_name ); ?>
+        <li><a href="<?php echo get_term_link( $child, $taxonomy_name );?>"><?php echo $term->name; ?></a>
             <ul>
                 <?php 
                  $args = array(
