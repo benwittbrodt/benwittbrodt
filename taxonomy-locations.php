@@ -4,7 +4,7 @@
   <div id="container" class="w-container">
     <div id="content" role="main">
 
-      <h1 class="taxonomy_heading"><?php echo $term->name; ?> Archives</h1>
+      <h1 class="taxonomy_heading"><?php echo $term->name; ?> Restaurants</h1>
 
       <?php 
       if (have_posts()) : 
