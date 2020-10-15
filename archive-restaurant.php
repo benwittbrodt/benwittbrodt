@@ -1,6 +1,47 @@
 <?php 
 get_header();
 ?>
+<div class="w-container">
+
+<h1 class="taxonomy_heading">All Restaurants</h1>
+        <h2><a href="//localhost:3000/locations/mi/">Michigan</a></h2>
+            <ul>
+                        <li>
+                <h3>
+                    <a href="//localhost:3000/locations/detroit/">Detroit</a>
+                </h3>
+                <ul>
+                                        
+                        <li class="animal-listing" id="post-242">
+                            <h4>
+                                <a href="//localhost:3000/restaurants/jolly-pumpkin/">Jolly Pumpkin</a>
+                            </h4>
+                        </li>
+                        
+                                        </ul>
+            </li>
+                </ul>
+        <h2><a href="//localhost:3000/locations/nc/">North Carolina</a></h2>
+            <ul>
+                        <li>
+                <h3>
+                    <a href="//localhost:3000/locations/charlotte/">Charlotte</a>
+                </h3>
+                <ul>
+                                        
+                        <li class="animal-listing" id="post-252">
+                            <h4>
+                                <a href="//localhost:3000/restaurants/soho-bistro/">Soho Bistro</a>
+                            </h4>
+                        </li>
+                        
+                                        </ul>
+            </li>
+                </ul>
+
+</div>
+
+
 
 <div class="w-container">
 
