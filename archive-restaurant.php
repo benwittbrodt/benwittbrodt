@@ -1,94 +1,55 @@
-<?php 
+<?php
 get_header();
 ?>
-<div class="w-container">
-
-<h1 class="taxonomy_heading">All Restaurants</h1>
-        <h2><a href="//localhost:3000/locations/mi/">Michigan</a></h2>
-            <ul>
-                        <li>
-                <h3>
-                    <a href="//localhost:3000/locations/detroit/">Detroit</a>
-                </h3>
-                <ul>
-                                        
-                        <li class="animal-listing" id="post-242">
-                            <h4>
-                                <a href="//localhost:3000/restaurants/jolly-pumpkin/">Jolly Pumpkin</a>
-                            </h4>
-                        </li>
-                        
-                                        </ul>
-            </li>
-                </ul>
-        <h2><a href="//localhost:3000/locations/nc/">North Carolina</a></h2>
-            <ul>
-                        <li>
-                <h3>
-                    <a href="//localhost:3000/locations/charlotte/">Charlotte</a>
-                </h3>
-                <ul>
-                                        
-                        <li class="animal-listing" id="post-252">
-                            <h4>
-                                <a href="//localhost:3000/restaurants/soho-bistro/">Soho Bistro</a>
-                            </h4>
-                        </li>
-                        
-                                        </ul>
-            </li>
-                </ul>
-
-</div>
-
-
 
 <div class="w-container">
 
     <h1 class="taxonomy_heading">All Restaurants</h1>
     <?php
-    $terms = get_terms( 'locations', array(
+    $terms = get_terms('locations', array(
         'orderby'    => 'ASC',
         'hide_empty' => 0,
         'parent' => 0
-    ) );
+    ));
     // now run a query for each state in "locations"
-    foreach( $terms as $term ) {
+    foreach ($terms as $term) {
 
         $main_id = $term->term_id;
-        
+
         // output the term name in a heading tag                
-        ?>
-        <h2><a href="<?php echo get_term_link( $main_id, $taxonomy_name );?>"><?php echo $term->name; ?></a></h2>
+    ?>
+        <h2>
+            <a class="restaurant_state" href="<?php echo get_term_link($main_id, $taxonomy_name); ?>"><?php echo $term->name; ?></a>
+        </h2>
         <?php
         $term_id = $term->term_id;
         $taxonomy_name = 'locations';
-        $termchildren = get_term_children( $term_id, $taxonomy_name );
+        $termchildren = get_term_children($term_id, $taxonomy_name);
         ?>
-        <ul>
-            <?php foreach ( $termchildren as $child ) {
-                $term = get_term_by( 'id', $child, $taxonomy_name ); ?>
-                <li>
+        <ul class="restaurant_list">
+            <?php foreach ($termchildren as $child) {
+                $term = get_term_by('id', $child, $taxonomy_name); ?>
+                <li class="restaurant_list">
                     <h3>
-                        <a href="<?php echo get_term_link( $child, $taxonomy_name );?>"><?php echo $term->name; ?></a>
+                        <a class="restaurant_list" href="<?php echo get_term_link($child, $taxonomy_name); ?>"><?php echo $term->name; ?></a>
                     </h3>
                     <ul>
-                        <?php 
+                        <?php
                         $args = array(
                             'post_type' => 'restaurant',
                             'locations' => $term->slug
                         );
-                        
-                        $query = new WP_Query( $args );
+
+                        $query = new WP_Query($args);
                         // Start the Loop
-                        while ( $query->have_posts() ) : $query->the_post(); ?>
-                    
-                            <li class="animal-listing" id="post-<?php the_ID(); ?>">
+                        while ($query->have_posts()) : $query->the_post(); ?>
+
+                            <li class="restaurant_list" id="post-<?php the_ID(); ?>">
                                 <h4>
-                                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                    <a class="restaurant_list" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                                 </h4>
                             </li>
-                            
+
                         <?php endwhile;
                         ?>
                     </ul>
@@ -96,8 +57,8 @@ get_header();
             <?php } ?>
         </ul>
     <?php
-    // use reset postdata to restore orginal query
-    wp_reset_postdata();
+        // use reset postdata to restore orginal query
+        wp_reset_postdata();
     } ?>
 
 </div>

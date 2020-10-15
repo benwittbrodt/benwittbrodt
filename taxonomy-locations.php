@@ -11,14 +11,14 @@
         while (have_posts()) : 
           the_post(); ?>
           
-          <div class="post type-post hentry">
-            <h2 class="entry-title">
-              <a href="<?php echo get_permalink(); ?>" title="<?php the_title(); ?>" rel="bookmark">
+          <div class="">
+            <h2>
+              <a class="restaurant_state" href="<?php echo get_permalink(); ?>" title="<?php the_title(); ?>" rel="bookmark">
                 <?php the_title(); ?>
               </a>
             </h2>
            
-            <div class="entry-summary">
+            <div class="">
               <?php the_excerpt(); ?>
             </div><!-- .entry-summary -->
           </div>

@@ -18,33 +18,55 @@
     line-height: 2rem;
   }
   
-  .social-icons-list li {
-    flex: 1;
-    margin: 0 8px;
-    
-  }
+.social-icons-list li {
+  flex: 1;
+  margin: 0 8px;
   
-  .social-icons-list li a {
-    display: block;
-    text-align: center;
-    text-decoration: none;
-    color: #FFF;
-    font-size: 1.25rem;
-  }
+}
   
-  .social-icons-list li a:hover {
-    opacity: .75;
-  }
+.social-icons-list li a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: #FFF;
+  font-size: 1.25rem;
+}
 
-  .min-list {
-    padding: 0;
-    margin: 0;
-  }
-  
-  .min-list li {
-    list-style: none;
-  }
-  
-  .taxonomy_heading {
-      color: var(--color-main-lime);
-  }
+.social-icons-list li a:hover {
+  opacity: .75;
+}
+
+.min-list {
+  padding: 0;
+  margin: 0;
+}
+
+.min-list li {
+  list-style: none;
+}
+
+.taxonomy_heading {
+    color: var(--color-main-lime);
+}
+
+.restaurant_list a, 
+.restaurant_list li
+{
+  text-decoration: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: var(--color-main-lime);
+}
+
+.restaurant_state
+{
+  color: var(--color-main-violet);
+  text-decoration: none;
+  list-style: none;
+}
+.restaurant_list:hover,
+.restaurant_state:hover
+{
+  color: var(--color-main-orange);
+}
