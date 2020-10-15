@@ -3,7 +3,11 @@ get_header();
 ?>
 
 <div class="w-container">
-
+<p>
+    Over the last 5+ years I've been able to travel across the USA, Canada, and parts of Germany rather extensively. One of the biggest problems with going to new cities nearly every week is that the task of finding good food is always a challenge and, franky, pretty overwhelming. Sometimes I only have a week before the trip (or less), and frequently will be booking trips when I am already currently on one. So I decided to take on a project to organize the places that I have found over the years where not only I can look back and have options when I'm in the same city again, but you can use this to see if I've been to a city you're planning to visit, and just maybe your task of finding good food is a little easier. 
+    <br>
+    Please use the listing below to search, and let me know if it has helped you!
+</p>
     <h1 class="taxonomy_heading">All Restaurants</h1>
     <?php
     $terms = get_terms('locations', array(
@@ -13,14 +17,13 @@ get_header();
     ));
     // now run a query for each state in "locations"
     foreach ($terms as $term) {
-
         $main_id = $term->term_id;
-
-        // output the term name in a heading tag                
-    ?>
+        // output the term name in a heading tag ?>
+        
         <h2>
             <a class="restaurant_state" href="<?php echo get_term_link($main_id, $taxonomy_name); ?>"><?php echo $term->name; ?></a>
         </h2>
+        
         <?php
         $term_id = $term->term_id;
         $taxonomy_name = 'locations';

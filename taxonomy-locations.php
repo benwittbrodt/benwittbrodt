@@ -1,33 +1,80 @@
 <?php get_header(); ?>
 
-<?php $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) ); ?>
-  <div id="container" class="w-container">
-    <div id="content" role="main">
 
-      <h1 class="taxonomy_heading"><?php echo $term->name; ?> Restaurants</h1>
+<div id="container" class="w-container">
+  <div id="content" role="main">
+    
+    <?php 
+    //Set up which taxonomy is going to be searched for
+    $term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
+    //Define the ID of the taxonomy term
+    $term_id = $term->term_id; ?>
 
-      <?php 
-      if (have_posts()) : 
-        while (have_posts()) : 
-          the_post(); ?>
-          
+    <h1 class="taxonomy_heading"><?php echo $term->name; ?> Restaurants</h1>
+
+    <?php
+    if (have_posts()) :
+
+      while (have_posts()) :
+        the_post();
+
+        $taxonomy_name = 'locations';
+        //Find all child terms for the given term_id 
+        $termchildren = get_term_children($term_id, $taxonomy_name); 
+        //Check if there are no child terms - if so just display the posts associated with the term
+        if (empty($termchildren)) { ?>
           <div class="">
             <h2>
               <a class="restaurant_state" href="<?php echo get_permalink(); ?>" title="<?php the_title(); ?>" rel="bookmark">
                 <?php the_title(); ?>
               </a>
             </h2>
-           
+
             <div class="">
               <?php the_excerpt(); ?>
-            </div><!-- .entry-summary -->
+            </div>
           </div>
 
-        <?php endwhile; ?>
-      <?php endif; ?>
+        <?php }
 
-    </div><!-- #content -->
-  </div><!-- #container -->
+        //Check if there is a parent ID for the term. Any ID less than 1 (i.e. 0) means you are at the highest level of heirarchy
+        if ($term->parent < 1) {
+          //Loop through each child term associated with the parent term and display link and tree structure
+          foreach ($termchildren as $child) {
+            //Change term variable to the 1st level child of the main term on page
+            $term = get_term_by('id', $child, $taxonomy_name); ?>
 
-  
+            <h2>
+              <a class="restaurant_state" href="<?php echo get_term_link($child, $taxonomy_name); ?>"><?php echo $term->name; ?></a>
+            </h2>
+            <ul class="restaurant_list">
+              <?php
+              //New wordpress query since the bottom level of the list is a post. Set up arguments to get restaurant type posts by slug for taxonomy term
+              $args = array(
+                'post_type' => 'restaurant',
+                'locations' => $term->slug
+              );
+              $query = new WP_Query($args);
+              
+              // Start the Loop
+              while ($query->have_posts()) : $query->the_post(); ?>
+
+                <li class="restaurant_list" id="post-<?php the_ID(); ?>">
+                  <h3>
+                    <a class="restaurant_list" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                  </h3>
+                </li>
+
+              <?php endwhile;
+              ?>
+            </ul>
+          <?php }
+        } 
+
+      endwhile; 
+    endif; ?>
+
+  </div><!-- #content -->
+</div><!-- #container -->
+
 <?php get_footer(); ?>

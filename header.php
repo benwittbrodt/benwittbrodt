@@ -28,7 +28,8 @@
       <a href="<?php echo site_url('/'); ?>" class="nav-link_pic w-nav-link <?php if ( is_home() ) echo 'current-page'?>">Home</a>
       <a href="<?php echo site_url('/background'); ?>" class="nav-link_pic w-nav-link <?php if ( get_post_type() == 'background') echo 'current-page'?>">Background</a>
       <a href="<?php echo site_url('/projects'); ?>" class="nav-link_pic w-nav-link <?php if ( is_page('project') || get_post_type() == 'project' ) echo 'current-page'?>">Projects</a>
-      <a href="<?php echo site_url('/photography'); ?>" class="nav-link_pic w-nav-link <?php if ( is_page('photography') || get_post_type() == "portfolio" || is_page('packages') ) echo 'current-page'?>">Photography</a>
+      <!-- <a href="<?php echo site_url('/photography'); ?>" class="nav-link_pic w-nav-link <?php if ( is_page('photography') || get_post_type() == "portfolio" || is_page('packages') ) echo 'current-page'?>">Photography</a> -->
+      <a href="<?php echo site_url('/restaurants'); ?>" class="nav-link_pic w-nav-link <?php if ( is_page('restaurants') || get_post_type() == "restaurant" || is_page('locations') ) echo 'current-page'?>">Food Guide</a>
       <a href="<?php echo site_url('contact');?>" class="nav-link_pic w-nav-link <?php if ( is_page('contact')) echo 'current-page'?>">Contact</a>
     </nav>
     <!--  -->
