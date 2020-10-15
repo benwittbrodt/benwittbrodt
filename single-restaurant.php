@@ -1,26 +1,41 @@
 <?php
 get_header();
+?>
 
-while(have_posts()){
-    the_post(); 
+<?php
+while( have_posts() ) {
+  the_post(); 
+
+$bread = get_the_terms($post->ID,'locations');
+
+if( $bread[0]->parent ) {
     
-    ?>
+    $the_state = get_term_by('id',$bread[0]->parent,'locations');
     
+}
+?>
+
     <div class="w-container">
-    <div class="metabox metabox--position-up metabox--with-home-link">
-    <p><a class="metabox__blog-home-link" href="<?php echo get_post_type_archive_link('restaurant'); ?>"><i class="fa fa-store" aria-hidden="true"></i> All Restaurants</a> <span class="metabox__main"><?php the_title(); ?> </span></p>
-    </div> 
+        <div>
+            <p>
+                <a class="breadcrumb" href="<?php echo get_post_type_archive_link('restaurant'); ?>">
+                    <i class="fa fa-store" aria-hidden="true"></i> All Restaurants
+                </a> 
+                <a class="breadcrumb breadcrumb--state" href="<?php echo get_term_link($bread[0]->parent, 'locations'); ?>"><?php echo $the_state->name; ?></a>
+                <a class="breadcrumb breadcrumb--city" href="<?php echo get_term_link($bread[0]->term_id, 'locations'); ?>"><?php echo $bread[0]->name; ?></a>
+                <span class="breadcrumb_step"><?php the_title(); ?></span>
+            </p>
+        </div>
+
         <div class="page-links">
             <?php if (! is_post_type_archive()) the_post_thumbnail('medium'); ?>
         </div>
 
         <div class="generic-content"><?php the_content(); ?></div>
-        <?php if ( get_field('phone_number') ) {
-        ?>
-            <h3><i class="fa fa-phone" aria-hidden="true"></i> - <?php the_field('phone_number');?></h3>
-        <?php  } ?>
+        <?php if ( get_field('phone_number') ) { ?>
+          <h3><i class="fa fa-phone" aria-hidden="true"></i> - <?php the_field('phone_number');?></h3>
+        <?php } ?>
         
-                
         <br>
         <ul class="min-list social-icons-list">
 
@@ -30,24 +45,36 @@ while(have_posts()){
             ?>
                 <li>
                     <a href="<?php echo get_field('website');?>" target="_blank" class="social-color-website"style="margin-right: 5px">
-                        <i class="fa fa-external-link-alt" aria-hidden="true"></i><?php echo " " . " "?>Website
+                        <i class="fas fa-external-link-alt" aria-hidden="true"></i><?php echo " " . " "?>Website
                     </a>
                 </li>
             <?php }
 
                 if ( get_field('facebook') ) {
             ?>
-                <li><a href="<?php echo get_field('facebook');?>" target="_blank" class="social-color-facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li>
+                    <a href="<?php echo get_field('facebook');?>" target="_blank" class="social-color-facebook">
+                        <i class="fab fa-facebook-square" aria-hidden="true"></i>
+                    </a>
+                </li>
             <?php }
             
                 if ( get_field('instagram') ) {
             ?>
-                <li><a href="<?php echo get_field('instagram');?>" target="_blank" class="social-color-instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                <li>
+                    <a href="<?php echo get_field('instagram');?>" target="_blank" class="social-color-instagram">
+                        <i class="fab fa-instagram" aria-hidden="true"></i>
+                    </a>
+                </li>
             <?php }
             
                 if ( get_field('twitter') ) {
             ?>
-                <li><a href="<?php echo get_field('twitter');?>" class="social-color-twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li>
+                    <a href="<?php echo get_field('twitter');?>" class="social-color-twitter">
+                        <i class="fab fa-twitter" aria-hidden="true"></i>
+                    </a>
+                </li>
             <?php } 
             ?>
         
@@ -63,5 +90,4 @@ while(have_posts()){
 <?php }
 
 get_footer();
-
 ?>

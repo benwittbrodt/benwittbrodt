@@ -165,6 +165,33 @@
   margin-bottom: 0px;
 }
 
+.breadcrumb {
+  background-color: var(--color-main-green);  
+  border-radius: 30px;
+  padding: 8px;
+  text-decoration: none;
+  color: var(--color-main-darkpurple);
+  transition: all 0.4s ease-in-out;
+}
+
+.breadcrumb--state {
+    background-color: #76A797; 
+  }
+
+.breadcrumb--city {
+    background-color: #8FB7AA; 
+  }
+
+.breadcrumb:hover {
+    background-color: gray;
+}
+
+.breadcrumb_step {
+    background-color: var(--color-main-orange);  
+    border-radius: 30px;
+    padding: 8px;
+}
+
 @media (max-width: 767px) {
     .flex-bg {
         display: block;
@@ -321,8 +348,7 @@
 
 .social-icons-list li {
   flex: 1;
-  margin: 0 8px;
-  
+  margin: 0 8px;  
 }
 
 .social-icons-list li a {
