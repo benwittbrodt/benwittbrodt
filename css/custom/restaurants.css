@@ -14,21 +14,21 @@
 
 .social-icons-list {
     display: flex;
-    margin: 0 -8px;
-    line-height: 2rem;
+    flex-wrap: wrap;
   }
   
 .social-icons-list li {
-  flex: 1;
-  margin: 0 8px;  
+  margin: 5px 5px 5px 5px;  
 }
   
 .social-icons-list li a {
-  display: block;
+  display: inline-block;
+  padding: 1.5rem;
+  border-radius: 4rem;
   text-align: center;
   text-decoration: none;
   color: #FFF;
-  font-size: 1.25rem;
+  font-size: 2rem;
 }
 
 .social-icons-list li a:hover {
@@ -68,4 +68,37 @@
 .restaurant_state:hover
 {
   color: var(--color-main-orange);
+}
+.breadcrumb-flex {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-around;
+  margin-bottom: 10px;
+}
+.breadcrumb {
+  background-color: var(--color-main-green);
+  border-radius: 1.5rem;
+  padding: 8px;
+  margin: 2px 0 2px 0;
+  text-decoration: none;
+  font-size: 1rem;;
+  line-height: 1.5rem;
+  color: var(--color-main-darkpurple);
+  transition: all 0.4s ease-in-out;
+  &--state {
+    background-color: #76A797; 
+  }
+  &--city {
+    background-color: #8FB7AA; 
+  }
+  &--title {
+    background-color: var(--color-main-orange);  
+  }
+}
+
+.breadcrumb:hover {
+  background-color: gray;
+}
+.breadcrumb--title:hover {
+  background-color: var(--color-main-orange); 
 }
