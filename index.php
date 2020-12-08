@@ -10,7 +10,7 @@
         <div class="text-block-4">M.S. Materials Science and Engineering</div>
         <div class="w-row margin">
           <a href="<?php echo site_url('background');?>"><button class="index-button">Professional<br>Background</button></a>
-          <a href="<?php echo site_url('projects');?>"><button class="index-button">Design<br>Projects</button></a>
+          <a href="<?php echo site_url('projects');?>"><button class="index-button">Coding<br>Projects</button></a>
           <a href="<?php echo site_url('restaurants');?>"><button class="index-button">Food<br>Guide</button></a>
           <a href="http://wiki.benwittbrodt.com" target="_blank"><button class="index-button">Visit My<br>Wiki</button></a>
         </div>

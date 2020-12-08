@@ -118,3 +118,33 @@ function create_locations_taxonomy() {
   ));
  
 }
+
+//Add new taxonomy for projects so I can add in coding languages etc. 
+
+add_action( 'init', 'create_projects_taxonomy', 0);
+function create_projects_taxonomy() {
+  
+  //Define the options present within the taxonomy
+  //Currently set up to be heirarchical, but likely will remove
+  $labels = array(
+    'name' => _x('Technologies', 'taxonomy general name'),
+    'singular_name' => _x('Technology', 'taxonomy singular name'),
+    'search_items' => __('Search Technologies'),
+    'all_items' => __('All Technologies'),
+    'parent_item_colon' => __( 'Parent Technology:' ),
+    'edit_item' => __( 'Edit Technology' ), 
+    'update_item' => __( 'Update Technology' ),
+    'add_new_item' => __( 'Add New Technology' ),
+    'new_item_name' => __( 'New Technology Name' ),
+    'menu_name' => __( 'Technologies' ),
+  );
+
+  register_taxonomy('technologies',array('project'), array(
+    'hierarchical' => true,
+    'labels' => $labels,
+    'show_ui' => true,
+    'show_in_rest' => true,
+    'show_admin_column' => true,
+    'query_var' => true,
+  ));
+}
