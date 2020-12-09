@@ -16,6 +16,16 @@
                     <?php the_post_thumbnail( 'thumbnail' );?>
                 </div>
                 <h2 class="center"><?php the_title();?></h2>
+                <?php 
+                $term_obj_list = get_the_terms( $post->ID, 'technologies' );
+             
+                foreach($term_obj_list as $key) {
+                $icon = $key->slug;
+                ?>
+                <i style="color: black" class="fab fa-<?php echo $icon;?>"></i>
+                <?php
+                }
+                ?>
             </div>
             </a>
         <?php    

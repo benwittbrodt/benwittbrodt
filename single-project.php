@@ -7,6 +7,10 @@
     <?php 
         while ( have_posts() ) {
             the_post();
+            
+            //Get list of all taxonomy terms for the given post ID
+            $term_obj_list = get_the_terms( $post->ID, 'technologies' );
+            print_r($term_obj_list);
             the_content();
         }
     ?>
