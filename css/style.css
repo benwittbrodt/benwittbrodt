@@ -9,6 +9,7 @@
 @import "custom/define.css";
 @import "custom/navbar.css";
 @import "custom/restaurants.css";
+@import "custom/projects.css";
 
 /* 3rd party packages */
 @import "normalize.css";

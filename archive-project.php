@@ -17,6 +17,7 @@
                         <?php the_post_thumbnail( 'thumbnail' );?>
                     </div>
                     <h2 class="center"><?php the_title();?></h2>
+                    <hr>
                     <?php 
                         //Gettign the "technologies" terms associated with each post
                         $term_obj_list = get_the_terms( $post->ID, 'technologies' );
@@ -25,7 +26,7 @@
                             $icon = $key->slug;
                             ?>
                             <!-- sourcing icon for each technology type -->
-                            <img style="height: 90px" src="<?php echo get_theme_file_uri('images/icons/' . $icon . '_small.png');?>" alt="">
+                            <img class="technology-icon" src="<?php echo get_theme_file_uri('images/icons/' . $icon . '_small.png');?>" alt="">
                             <?php
                         }
                     ?>

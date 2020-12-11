@@ -464,6 +464,11 @@
   }
 }
 
+.technology-icon {
+    max-height: 50px;
+    padding-right: 3px;
+}
+
 /* 3rd party packages */
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
