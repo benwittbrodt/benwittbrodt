@@ -29,6 +29,7 @@
                             <img class="technology-icon" src="<?php echo get_theme_file_uri('images/icons/' . $icon . '_small.png');?>" alt="">
                             <?php
                         }
+                        
                     ?>
                 </div>
             </a>

@@ -13,13 +13,17 @@
             <!-- sourcing icon for each technology type -->
             <img class="technology-icon" src="<?php echo get_theme_file_uri('images/icons/' . $icon . '_small.png');?>" alt="">
             <?php
-        } ?>
+        } ?>     
 </div>
+
 <div class="w-container">
+<h4 style="color: #4F4789;" class="center">Updated on: <?php echo the_modified_time('F jS, Y'); ?></h4>
     <?php 
         while ( have_posts() ) {
             the_post();
+            ?>
             
+            <?php
             the_content();
         }
     ?>
