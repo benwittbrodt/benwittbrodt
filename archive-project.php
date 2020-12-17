@@ -24,9 +24,14 @@
                 
                         foreach($term_obj_list as $key) {
                             $icon = $key->slug;
+                            if ($icon=="php"){
+                            echo '<img class="technology-icon" src="https://img.icons8.com/offices/40/000000/php-logo.png"/>';    
+                            }else{
+                              echo  '<img class="technology-icon" src="https://img.icons8.com/color/48/000000/' . $icon . '.png"/>';
+                            }
                             ?>
                             <!-- sourcing icon for each technology type -->
-                            <img class="technology-icon" src="<?php echo get_theme_file_uri('images/icons/' . $icon . '_small.png');?>" alt="">
+                            
                             <?php
                         }
                         
