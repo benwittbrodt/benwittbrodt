@@ -469,6 +469,35 @@
     padding-right: 3px;
 }
 
+.project-card-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.project-card {
+    flex: 1 0 21%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25);
+    transition: 0.3s;
+    border-radius: 15px;
+    padding: 5px;
+    margin: 10px;
+}
+
+.project-card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.project-card-link {
+    color: #000000;
+    text-decoration: none;
+}
+
+.project-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* 3rd party packages */
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */

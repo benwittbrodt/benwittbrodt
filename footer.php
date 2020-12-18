@@ -1,13 +1,3 @@
-<?php 
-//Seetting attribution link to show on pages where icons are called
-if ( is_page('project') || get_post_type() == 'project' ){
-?>
-<div class="w-container">
-  <img src="https://img.icons8.com/material/24/000000/icons8-new-logo.png"/>
-  <a style="color: #888888" href="https://icons8.com/icon/118522/icons8">Icons by Icons8</a>
-</div>
-<?php } ?>
-
 <div class="footer-section">
   <div class="w-container">
     <div class="w-row">
@@ -22,6 +12,11 @@ if ( is_page('project') || get_post_type() == 'project' ){
           <a href="http://www.linkedin.com/in/benwittbrodt" target="_blank"><i class="fab fa-linkedin footer_link"></i></a>
           <a href="https://www.facebook.com/benwittbrodt" target="_blank"><i class="fab fa-facebook-square footer_link"></i></a>
           <a href="https://www.github.com/benwittbrodt" target="_blank"><i class="fab fa-github footer_link"></i></a>
+          <br>
+          <a style="color: #ffffff" href="https://icons8.com/icon/118522/icons8">
+            <img src="https://img.icons8.com/material/24/ffffff/icons8-new-logo.png"/>
+            Icons by Icons8
+          </a>
         </div>
       </div>
     </div>
