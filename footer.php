@@ -13,10 +13,6 @@
           <a href="https://www.facebook.com/benwittbrodt" target="_blank"><i class="fab fa-facebook-square footer_link"></i></a>
           <a href="https://www.github.com/benwittbrodt" target="_blank"><i class="fab fa-github footer_link"></i></a>
           <br>
-          <a style="color: #ffffff" href="https://icons8.com/icon/118522/icons8">
-            <img src="https://img.icons8.com/material/24/ffffff/icons8-new-logo.png"/>
-            Icons by Icons8
-          </a>
         </div>
       </div>
     </div>

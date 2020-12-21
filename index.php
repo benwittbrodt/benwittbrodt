@@ -16,10 +16,10 @@
         </div>
         
         <div class="div-40">
-            <a href="https://www.instagram.com/benwittbrodt/" target="_blank" class="index-icon w-inline-block"><img src="<?php echo get_theme_file_uri('/images/instagram.png'); ?>"></a>
-            <a href="http://www.linkedin.com/in/benwittbrodt" target="_blank" class="index-icon w-inline-block"><img src="<?php echo get_theme_file_uri('/images/linkedin.png'); ?>"></a>
-            <a href="https://www.facebook.com/benwittbrodt" target="_blank" class="index-icon w-inline-block"><img src="<?php echo get_theme_file_uri('/images/facebook.png'); ?>"></a>
-            <a href="https://www.github.com/benwittbrodt" target="_blank" class="index-icon w-inline-block"><img src="<?php echo get_theme_file_uri('/images/github.png'); ?>"></a>
+            <a href="https://www.instagram.com/benwittbrodt/" target="_blank" class="index-icon"><img src="<?php echo get_theme_file_uri('/images/icons/icons8-instagram.svg'); ?>"></a>
+            <a href="http://www.linkedin.com/in/benwittbrodt" target="_blank" class="index-icon"><img src="<?php echo get_theme_file_uri('/images/icons/icons8-linkedin.svg'); ?>"></a>
+            <a href="https://www.facebook.com/benwittbrodt" target="_blank" class="index-icon"><img src="<?php echo get_theme_file_uri('/images/icons/icons8-facebook.svg'); ?>"></a>
+            <a href="https://www.github.com/benwittbrodt" target="_blank" class="index-icon"><img src="<?php echo get_theme_file_uri('/images/icons/icons8-github.svg'); ?>"></a>
         </div>
       </div>
     </div>

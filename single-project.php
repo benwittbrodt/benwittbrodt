@@ -9,16 +9,11 @@
                 
     foreach($term_obj_list as $key) {
         $icon = $key->slug;
-        if ($icon=="php"){
-        echo '<img class="technology-icon" src="https://img.icons8.com/offices/40/000000/php-logo.png"/>';    
-        }else{
-          echo  '<img class="technology-icon" src="https://img.icons8.com/color/48/000000/' . $icon . '.png"/>';
-        }
+        //grab svg images for all icons based on the taxonomy list
         ?>
-        <!-- sourcing icon for each technology type -->
-        
+          <img class="technology-icon" src="<?php icon_src('icons8-' . $icon);?>"/>    
         <?php
-    }?>     
+      }?>   
 </div>
 
 <div class="w-container">

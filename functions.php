@@ -148,3 +148,7 @@ function create_projects_taxonomy() {
     'query_var' => true,
   ));
 }
+
+function icon_src($name) {
+  echo get_theme_file_uri('/images/icons/' . $name . '.svg');  
+}

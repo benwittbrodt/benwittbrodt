@@ -1,4 +1,7 @@
-<?php get_header(); ?>
+<?php get_header(); 
+
+
+?>
 
 <div class="w-big-container">
     <div class="flex-bg">
@@ -17,7 +20,7 @@
                 <div class="bg-item card">
                     <div class="card-logo-img"><?php the_post_thumbnail('background');?></div>
                     <h3 class="extramargin"><?php the_title();?></h3>
-                    <h4 class="extramargin"><img src="https://img.icons8.com/color/30/000000/calendar.png"/> <?php echo get_field('end_date'); ?></h4>
+                    <h4 class="extramargin"><img class="background-icon" src="<?php icon_src('icons8-calendar'); ?>"/> <?php echo get_field('end_date'); ?></h4>
                     <div class="extramargin">
                     <?php the_content(); ?>
                     </div>
@@ -60,11 +63,11 @@
                     <div class="card-logo-img"><?php the_post_thumbnail('background');?></div>
                     <h3 class="extramargin"><?php the_title();?></h3>
                     <?php if ( ! get_field( 'end_date' ) ) { ?>
-                    <h4 class="extramargin"><img src="https://img.icons8.com/color/30/000000/calendar.png"/> <?php echo get_field('start_date') . ' - Present'?></h4>
+                    <h4 class="extramargin"><img class="background-icon" src="<?php icon_src('icons8-calendar'); ?>"/> <?php echo get_field('start_date') . ' - Present'?></h4>
                     <?php } else { ?>
-                    <h4 class="extramargin"><img src="https://img.icons8.com/color/30/000000/calendar.png"/> <?php echo get_field('start_date') . ' - ' . get_field('end_date'); ?></h4>
+                    <h4 class="extramargin"><img class="background-icon" src="<?php icon_src('icons8-calendar'); ?>"/> <?php echo get_field('start_date') . ' - ' . get_field('end_date'); ?></h4>
                     <?php } ?>
-                    <h4 class="extramargin"><img src="https://img.icons8.com/fluent/30/000000/map-pin.png"/> <?php echo get_field('location'); ?></h4>
+                    <h4 class="extramargin"><img class="background-icon" src="<?php icon_src('icons8-map_pin'); ?>"/> <?php echo get_field('location'); ?></h4>
                     <div class="extramargin"><?php the_content();  ?></div>
                 </div>
             <?php } wp_reset_postdata();?>
