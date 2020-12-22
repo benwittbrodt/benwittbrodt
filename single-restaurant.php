@@ -4,25 +4,25 @@ get_header();
 
 <?php
 while( have_posts() ) {
-  the_post(); 
+    the_post(); 
 
-$bread = get_the_terms($post->ID,'locations');
 
-if( $bread[0]->parent ) {
+    $breadcrumbs = get_the_terms($post->ID,'locations');
+
+    if( $breadcrumbs[0]->parent ) {
     
-    $the_state = get_term_by('id',$bread[0]->parent,'locations');
+        $the_state = get_term_by('id',$breadcrumbs[0]->parent,'locations');
     
-}
-?>
+    }   ?>
 
     <div class="w-container">
         <div class="breadcrumb-flex">
-                <a class="breadcrumb" href="<?php echo get_post_type_archive_link('restaurant'); ?>">
-                    <i class="fa fa-store" aria-hidden="true"></i> All Restaurants
-                </a> 
-                <a class="breadcrumb breadcrumb--state" href="<?php echo get_term_link($bread[0]->parent, 'locations'); ?>"><?php echo $the_state->name; ?></a>
-                <a class="breadcrumb breadcrumb--city" href="<?php echo get_term_link($bread[0]->term_id, 'locations'); ?>"><?php echo $bread[0]->name; ?></a>
-                <span class="breadcrumb breadcrumb--title"><?php the_title(); ?></span>
+            <a class="breadcrumb" href="<?php echo get_post_type_archive_link('restaurant'); ?>">
+                <i class="fa fa-store" aria-hidden="true"></i> All Restaurants
+            </a> 
+            <a class="breadcrumb breadcrumb--state" href="<?php echo get_term_link($breadcrumbs[0]->parent, 'locations'); ?>"><?php echo $the_state->name; ?></a>
+            <a class="breadcrumb breadcrumb--city" href="<?php echo get_term_link($breadcrumbs[0]->term_id, 'locations'); ?>"><?php echo $breadcrumbs[0]->name; ?></a>
+            <span class="breadcrumb breadcrumb--title"><?php the_title(); ?></span>
         </div>
 
         <div class="page-links">
@@ -35,50 +35,35 @@ if( $bread[0]->parent ) {
         <?php } ?>
         
         <br>
+
         <ul class="min-list social-icons-list">
 
             <?php 
-            //Creates social media links only if they exist for the entry  
-            if ( get_field('website') ) {
-            ?>
-            <li>
-                <a href="<?php echo get_field('website');?>" target="_blank" class="social-color-website">
-                    <i class="fas fa-external-link-alt" aria-hidden="true"></i>
-                </a>
-            </li>
-            <?php }
+            //Calls the social links function to place all social media links in each restaurant listing depending on which fields are present
+            $social_links_fields = get_social_links();
+                   
+            foreach ( $social_links_fields as $name => $field ):
+                //returns the value of each field -> the link in this case
+                $value = $field['value'];
+            ?>     
 
-            if ( get_field('facebook') ) {
-            ?>
-            <li>
-                <a href="<?php echo get_field('facebook');?>" target="_blank" class="social-color-facebook">
-                    <i class="fab fa-facebook-square" aria-hidden="true"></i>
-                </a>
-            </li>
-            <?php }
-        
-            if ( get_field('instagram') ) {
-            ?>
-            <li>
-                <a href="<?php echo get_field('instagram');?>" target="_blank" class="social-color-instagram">
-                    <i class="fab fa-instagram" aria-hidden="true"></i>
-                </a>
-            </li>
-            <?php }
-        
-            if ( get_field('twitter') ) {
-            ?>
-            <li>
-                <a href="<?php echo get_field('twitter');?>" class="social-color-twitter">
-                    <i class="fab fa-twitter" aria-hidden="true"></i>
-                </a>
-            </li>
-            <?php } ?>
-        
+                <li>
+                    <a href="<?php echo $value;?>" target="_blank" class="social-color-<?php echo $name;?>">
+                    <?php 
+                        //adapting name to fit format for icon source function
+                        $name = "icons8-" . $name . "_outline";
+                    ?>
+                        <img src="<?php icon_src($name);?>" alt="">
+                    </a>
+                </li>
+                     
+            <?php endforeach; ?>
+           
         </ul>
+
         <?php $api = 'AIzaSyDrNsup_wGpCdCSScc_ICkcrp1_hjJSp7M'; ?>
         <div id="gmap" style="margin-top:20px"></div>
-        <iframe width="500px" height="400px" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=<?php echo get_field('address'); ?>&key=<?php echo $api; ?>" allowfullscreen></iframe>
+        <iframe width="100%" height="400px" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=<?php echo get_field('address'); ?>&key=<?php echo $api; ?>" allowfullscreen></iframe>
 
         <!-- <hr class="section-break"> -->
 

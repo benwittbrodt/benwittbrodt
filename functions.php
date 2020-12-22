@@ -1,4 +1,5 @@
 <?php
+require("dry_functions.php");
 
 function benwittbrodt_files() {
   wp_enqueue_script('main-university-js', get_theme_file_uri('/js/scripts-bundled.js'), NULL, '1.0', true);
@@ -149,6 +150,3 @@ function create_projects_taxonomy() {
   ));
 }
 
-function icon_src($name) {
-  echo get_theme_file_uri('/images/icons/' . $name . '.svg');  
-}

@@ -327,12 +327,15 @@
 
 .social-icons-list li a {
   display: inline-block;
-  padding: 1.5rem;
+  padding: 1.25rem;
   border-radius: 4rem;
   text-align: center;
   text-decoration: none;
-  color: #FFF;
-  font-size: 2rem;
+  font-size: 1.5rem;
+}
+
+.social-icons-list img {
+  height: 2rem;
 }
 
 .social-icons-list li a:hover {
