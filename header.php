@@ -17,7 +17,7 @@
   <a href="<?php echo site_url('/'); ?>"><img src="<?php echo get_theme_file_uri('/images/new_logo_nav.png');?>" style="height: 60px; float: left; display: inline-block; margin-right: 10px;" alt=""></a>
   <!-- Small mobile menu icon -->
   <div class="menu-button w-nav-button">
-    <div class="icon-3 w-icon-nav-menu"></div>
+    <img style="height: 1.5rem" src="<?php echo get_theme_file_uri('images/nav/mobile-menu.svg');?>" alt="">
   </div>
   
   <div class="w-container">
@@ -33,7 +33,6 @@
       <a href="<?php echo site_url('/restaurants'); ?>" class="nav-link_pic w-nav-link <?php if ( is_page('restaurants') || get_post_type() == "restaurant" || is_page('locations') ) echo 'current-page'?>">Food Guide</a>
       <a href="<?php echo site_url('contact');?>" class="nav-link_pic w-nav-link <?php if ( is_page('contact')) echo 'current-page'?>">Contact</a>
     </nav>
-    <!--  -->
   </div>
   
 </div>  
