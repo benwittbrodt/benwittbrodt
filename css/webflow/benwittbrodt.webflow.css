@@ -80,7 +80,7 @@ a {
   color: #1b44cc;
   text-decoration: underline;
 }
- 
+
 a:hover {
   color: #000;
 }
@@ -178,8 +178,6 @@ blockquote {
   padding-bottom: 23px;
   background-color: #272445;
 }
-
-
 
 .footer-link-col {
   position: relative;
@@ -331,7 +329,7 @@ blockquote {
   position: relative;
   height: 100%;
   margin-bottom: 10px;
-  background-image: url('https://d3e54v103j8qbb.cloudfront.net/img/example-bg.png');
+  background-image: url("https://d3e54v103j8qbb.cloudfront.net/img/example-bg.png");
   background-position: 50% 50%;
   background-size: cover;
 }
@@ -493,7 +491,7 @@ blockquote {
   padding-top: 15px;
   padding-bottom: 15px;
   opacity: 0.6;
-  max-width: 100% !important; 
+  max-width: 100% !important;
   -webkit-transition: opacity 350ms ease-in-out;
   transition: all 350ms ease;
   color: #222;
@@ -531,7 +529,7 @@ blockquote {
   align-items: center;
   border-radius: 2px;
   background-color: hsla(0, 0%, 100%, 0.3);
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 12px;
   line-height: 18px;
 }
@@ -560,7 +558,7 @@ blockquote {
 .social_outline {
   width: 40px;
   height: 40px;
-  background-image: url('../images/facebook.png');
+  background-image: url("../images/facebook.png");
   background-position: 0px 0px;
   background-size: contain;
 }
@@ -579,7 +577,7 @@ blockquote {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  background-image: url('../images/instagram.png');
+  background-image: url("../images/instagram.png");
   background-position: 50% 50%;
   background-size: contain;
 }
@@ -599,7 +597,7 @@ blockquote {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  background-image: url('../images/linkedin.png');
+  background-image: url("../images/linkedin.png");
   background-position: 50% 50%;
   background-size: contain;
 }
@@ -619,12 +617,12 @@ blockquote {
 }
 
 .rich-text-block-2 {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 300;
 }
 
 .text-block-3 {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #000;
   font-size: 36px;
   line-height: 40px;
@@ -633,7 +631,7 @@ blockquote {
 }
 
 .text-block-4 {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #636262;
   font-size: 24px;
   line-height: 40px;
@@ -647,7 +645,7 @@ blockquote {
   top: 192px;
   bottom: 0px;
   display: inline-block;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 .column-4 {
@@ -696,7 +694,7 @@ blockquote {
 .social_footer {
   width: 40px;
   height: 40px;
-  background-image: url('../images/facebook.png');
+  background-image: url("../images/facebook.png");
   background-position: 0px 0px;
   background-size: contain;
 }
@@ -715,7 +713,7 @@ blockquote {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  background-image: url('../images/social_footer-instagram.png');
+  background-image: url("../images/social_footer-instagram.png");
   background-position: 50% 50%;
   background-size: contain;
 }
@@ -728,7 +726,7 @@ blockquote {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  background-image: url('../images/social_footer-facebook.png');
+  background-image: url("../images/social_footer-facebook.png");
   background-position: 50% 50%;
   background-size: contain;
 }
@@ -742,7 +740,7 @@ blockquote {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  background-image: url('../images/social_footer-linkedin.png');
+  background-image: url("../images/social_footer-linkedin.png");
   background-position: 50% 50%;
   background-size: contain;
 }
@@ -779,13 +777,6 @@ blockquote {
 
 .div-block-25 {
   margin-top: 25px;
-}
-
-.background_heading {
-  padding-bottom: 10px;
-  color: #000;
-  letter-spacing: 3px;
-  text-transform: capitalize;
 }
 
 .rich-text-block-7 {
@@ -1080,4 +1071,3 @@ html.w-mod-js *[data-ix="move-right"] {
   -ms-grid-column-align: center;
   justify-self: center;
 }
-
