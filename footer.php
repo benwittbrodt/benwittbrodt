@@ -1,16 +1,16 @@
 <div class="footer-section">
   <div class="w-container">
-    <div class="w-row">
-      <div class="w-col w-col-3">
+    <div class="bw-row">
+      <div class="bw-col bw-col-4">
         <a href="<?php echo site_url('/'); ?>" aria-current="page" class="w-nav-brand">
           <div class="logo-text footer">Ben<strong class="semibold">Wittbrodt</strong></div>
         </a>
       </div>
-      <div class="w-col w-col-9">
-        <div class="social-icons-footer">
+      <div class="bw-col bw-col-8">
+        <div class="social-icons-footer bw-row justify-right">
           <a href="https://www.instagram.com/benwittbrodt/" target="_blank"><i class="fab fa-instagram footer_link"></i></a>
           <a href="http://www.linkedin.com/in/benwittbrodt" target="_blank"><i class="fab fa-linkedin footer_link"></i></a>
-          <a href="https://www.facebook.com/benwittbrodt" target="_blank"><i class="fab fa-facebook-square footer_link"></i></a>
+          <a href="https://www.facebook.com/benwittbrodt" target="_blank"><i class="fab fa-facebook footer_link"></i></a>
           <a href="https://www.github.com/benwittbrodt" target="_blank"><i class="fab fa-github footer_link"></i></a>
           <br>
         </div>

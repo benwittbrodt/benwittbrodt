@@ -55,11 +55,11 @@
     <div class="flex-bg">
         <div class="section-btns">
             <button class="background-button selected">
-                <h3>Education</h3>
+                <h3 class="bg-selector-btn">Education</h3>
             </button><button class="background-button">
-                <h3>Research</h3>
+                <h3 class="bg-selector-btn">Research</h3>
             </button><button class="background-button selected">
-                <h3>Experience</h3>
+                <h3 class="bg-selector-btn">Experience</h3>
             </button>
         </div>
     </div>
