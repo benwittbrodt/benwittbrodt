@@ -1,0 +1,19 @@
+{
+  "name": "akiko",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev:css": "postcss ./assets/css/tailwind.css -o ./assets/css/main.css",
+    "build:css": "cross-env NODE_ENV=production postcss ./assets/css/tailwind.css -o ./assets/css/main.css"
+  },
+  "author": "VIARAMI",
+  "license": "ISC",
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^2.3.0",
+    "autoprefixer": "^9.8.8",
+    "cross-env": "^7.0.3",
+    "postcss-cli": "^7.1.2",
+    "tailwindcss": "^1.9.6"
+  }
+}
