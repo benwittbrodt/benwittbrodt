@@ -8,7 +8,7 @@ function benwittbrodt_files()
   wp_enqueue_style('custom-google-fonts', '//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,300,400,400i,700,700i');
   wp_enqueue_style('font-awesome', 'https://use.fontawesome.com/releases/v5.13.0/css/all.css');
   wp_enqueue_style('benwittbrodt_main_styles', get_stylesheet_uri());
-  wp_enqueue_style('tailwind', get_template_directory_uri() . '/assets/css/main.css', array() );
+  wp_enqueue_style('tailwind', get_template_directory_uri() . '/assets/css/main.css', array());
   wp_enqueue_script('script', get_theme_file_uri('/js/script.js'), NULL, '1.0', true);
 }
 
