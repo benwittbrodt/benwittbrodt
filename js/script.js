@@ -21,3 +21,10 @@ for (let i = 0; i < backgroundButtons.length; i++) {
     backgroundButtons[i].classList.toggle("selected");
   });
 }
+
+const button = document.querySelector("#menu-button");
+const menu = document.querySelector("#menu");
+const border = document.querySelector("#menu-border");
+button.addEventListener("click", () => {
+  menu.classList.toggle("hidden");
+});

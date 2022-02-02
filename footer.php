@@ -1,10 +1,10 @@
 <div class="flex flex-row pt-10 pb-10 bg-violet-900 justify-center sm:justify-between">
-  <div class="mx-3">
+  <div class="sm:mx-6 mx-2">
     <a href="<?php echo site_url('/'); ?>" class="">
       <div class="text-white text-3xl">Ben<strong class="font-semibold">Wittbrodt</strong></div>
     </a>
   </div>
-  <div class="mx-3">
+  <div class="sm:mx-6 mx-2">
     <a href="https://www.instagram.com/benwittbrodt/" target="_blank"><i class="fab fa-instagram text-white text-4xl m-1 hover:text-slate-400 ease-in-out duration-200"></i></a>
     <a href="http://www.linkedin.com/in/benwittbrodt" target="_blank"><i class="fab fa-linkedin text-white text-4xl m-1 hover:text-slate-400 ease-in-out duration-200"></i></a>
     <a href="https://www.facebook.com/benwittbrodt" target="_blank"><i class="fab fa-facebook text-white text-4xl m-1 hover:text-slate-400 ease-in-out duration-200"></i></a>
