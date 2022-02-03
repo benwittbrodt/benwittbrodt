@@ -4,7 +4,7 @@
 </div>
 
 
-<div class="max-w-screen-lg mx-auto">
+<div class="max-w-screen-lg mx-auto mb-10">
   <div>
     <p>A brief highlight of web based projects and some design related projects that I have been working on. If you are looking to revamp your online presence and need something from a single landing page to a whole website redesign and software asset package to match, reach out via my contact page and we can discuss your project further!</p>
     <a href="<?php echo site_url('contact'); ?>"><button class="w-36 text-lg bg-emerald-800 rounded-full m-2 px-4 py-2 text-white hover:bg-emerald-600 ease-in-out duration-200">Contact Me</button></a>
