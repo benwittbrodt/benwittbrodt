@@ -670,6 +670,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .basis-full {
   flex-basis: 100%;
 }
+.basis-1\/2 {
+  flex-basis: 50%;
+}
 .origin-top-right {
   transform-origin: top right;
 }
