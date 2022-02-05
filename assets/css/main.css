@@ -521,6 +521,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: 0.25rem;
   margin-right: 0.25rem;
 }
+.my-1 {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
 .mt-2 {
   margin-top: 0.5rem;
 }
@@ -556,6 +560,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .mb-2 {
   margin-bottom: 0.5rem;
+}
+.ml-3 {
+  margin-left: 0.75rem;
 }
 .block {
   display: block;
@@ -661,6 +668,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .max-w-screen-lg {
   max-width: 1024px;
 }
+.max-w-screen-md {
+  max-width: 768px;
+}
 .flex-grow {
   flex-grow: 1;
 }
@@ -721,6 +731,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .flex-wrap {
   flex-wrap: wrap;
+}
+.content-center {
+  align-content: center;
 }
 .items-center {
   align-items: center;
@@ -832,6 +845,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-slate-400 {
   --tw-border-opacity: 1;
   border-color: rgb(148 163 184 / var(--tw-border-opacity));
+}
+.border-violet-600 {
+  --tw-border-opacity: 1;
+  border-color: rgb(124 58 237 / var(--tw-border-opacity));
 }
 .border-b-violet-900 {
   --tw-border-opacity: 1;
@@ -1058,6 +1075,46 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(229 231 235 / var(--tw-text-opacity));
 }
+.text-emerald-600 {
+  --tw-text-opacity: 1;
+  color: rgb(5 150 105 / var(--tw-text-opacity));
+}
+.text-violet-800 {
+  --tw-text-opacity: 1;
+  color: rgb(91 33 182 / var(--tw-text-opacity));
+}
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+.text-emerald-900 {
+  --tw-text-opacity: 1;
+  color: rgb(6 78 59 / var(--tw-text-opacity));
+}
+.text-emerald-700 {
+  --tw-text-opacity: 1;
+  color: rgb(4 120 87 / var(--tw-text-opacity));
+}
+.text-slate-700 {
+  --tw-text-opacity: 1;
+  color: rgb(51 65 85 / var(--tw-text-opacity));
+}
+.text-emerald-500 {
+  --tw-text-opacity: 1;
+  color: rgb(16 185 129 / var(--tw-text-opacity));
+}
+.text-emerald-300 {
+  --tw-text-opacity: 1;
+  color: rgb(110 231 183 / var(--tw-text-opacity));
+}
+.text-emerald-800 {
+  --tw-text-opacity: 1;
+  color: rgb(6 95 70 / var(--tw-text-opacity));
+}
+.text-slate-800 {
+  --tw-text-opacity: 1;
+  color: rgb(30 41 59 / var(--tw-text-opacity));
+}
 .opacity-0 {
   opacity: 0;
 }
@@ -1190,6 +1247,18 @@ Ensure the default browser behavior of the `hidden` attribute.
 .hover\:text-slate-900:hover {
   --tw-text-opacity: 1;
   color: rgb(15 23 42 / var(--tw-text-opacity));
+}
+.hover\:text-violet-200:hover {
+  --tw-text-opacity: 1;
+  color: rgb(221 214 254 / var(--tw-text-opacity));
+}
+.hover\:text-violet-400:hover {
+  --tw-text-opacity: 1;
+  color: rgb(167 139 250 / var(--tw-text-opacity));
+}
+.hover\:text-emerald-400:hover {
+  --tw-text-opacity: 1;
+  color: rgb(52 211 153 / var(--tw-text-opacity));
 }
 .hover\:shadow-lg:hover {
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
@@ -1372,6 +1441,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     flex-basis: 25%;
   }
 
+  .md\:basis-1\/2 {
+    flex-basis: 50%;
+  }
+
   .md\:flex-row {
     flex-direction: row;
   }
@@ -1415,6 +1488,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .md\:pt-0 {
     padding-top: 0px;
+  }
+
+  .md\:text-left {
+    text-align: left;
   }
 }
 @media (min-width: 1024px) {
