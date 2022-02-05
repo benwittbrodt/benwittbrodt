@@ -3,62 +3,64 @@ get_header();
 ?>
 
 <?php
-while( have_posts() ) {
-    the_post(); 
+while (have_posts()) {
+    the_post();
 
 
-    $breadcrumbs = get_the_terms($post->ID,'locations');
+    $breadcrumbs = get_the_terms($post->ID, 'locations');
 
-    if( $breadcrumbs[0]->parent ) {
-    
-        $the_state = get_term_by('id',$breadcrumbs[0]->parent,'locations');
-    
+    if ($breadcrumbs[0]->parent) {
+
+        $the_state = get_term_by('id', $breadcrumbs[0]->parent, 'locations');
     }   ?>
 
-    <div class="w-container">
-        <div class="breadcrumb-flex">
-            <a class="breadcrumb" href="<?php echo get_post_type_archive_link('restaurant'); ?>">
-                <i class="fa fa-store" aria-hidden="true"></i> All Restaurants
-            </a> 
-            <a class="breadcrumb breadcrumb--state" href="<?php echo get_term_link($breadcrumbs[0]->parent, 'locations'); ?>"><?php echo $the_state->name; ?></a>
-            <a class="breadcrumb breadcrumb--city" href="<?php echo get_term_link($breadcrumbs[0]->term_id, 'locations'); ?>"><?php echo $breadcrumbs[0]->name; ?></a>
-            <span class="breadcrumb breadcrumb--title"><?php the_title(); ?></span>
+    <div class="max-w-screen-lg mx-auto">
+        <div class="flex flex-row my-2">
+            <div class="flex flex-row">
+                <a class="text-md text-white my-auto px-5 py-2 border-y-2 rounded-l-full border-emerald-800 bg-emerald-800 hover:bg-emerald-500 hover:border-emerald-500 ease-in-out transition duration-200" href="<?php echo get_post_type_archive_link('restaurant'); ?>">
+                    <i class="fa fa-store" aria-hidden="true"></i> All Restaurants
+                </a>
+                <a class="text-md text-white my-auto px-5 py-2 border-y-2 border-emerald-800 bg-emerald-800 hover:bg-emerald-500 hover:border-emerald-500 ease-in-out transition duration-200" href="<?php echo get_term_link($breadcrumbs[0]->parent, 'locations'); ?>"><?php echo $the_state->name; ?></a>
+                <a class="text-md text-white my-auto px-5 py-2 border-y-2 border-emerald-800 bg-emerald-800 hover:bg-emerald-500 hover:border-emerald-500 ease-in-out transition duration-200" href="<?php echo get_term_link($breadcrumbs[0]->term_id, 'locations'); ?>"><?php echo $breadcrumbs[0]->name; ?></a>
+                <span class="text-md text-emerald-800 my-auto border-2 border-emerald-800 rounded-r-full px-5 py-2"><?php the_title(); ?></span>
+            </div>
+
         </div>
 
         <div class="page-links">
-            <?php if (! is_post_type_archive()) the_post_thumbnail('medium'); ?>
+            <?php if (!is_post_type_archive()) the_post_thumbnail('medium'); ?>
         </div>
 
         <div class="generic-content"><?php the_content(); ?></div>
-        <?php if ( get_field('phone_number') ) { ?>
-          <h3><i class="fa fa-phone" aria-hidden="true"></i> - <?php the_field('phone_number');?></h3>
+        <?php if (get_field('phone_number')) { ?>
+            <h3><i class="fa fa-phone" aria-hidden="true"></i> - <?php the_field('phone_number'); ?></h3>
         <?php } ?>
-        
+
         <br>
 
         <ul class="min-list social-icons-list">
 
-            <?php 
+            <?php
             //Calls the social links function to place all social media links in each restaurant listing depending on which fields are present
             $social_links_fields = get_social_links();
-                   
-            foreach ( $social_links_fields as $name => $field ):
+
+            foreach ($social_links_fields as $name => $field) :
                 //returns the value of each field -> the link in this case
                 $value = $field['value'];
-            ?>     
+            ?>
 
                 <li>
-                    <a href="<?php echo $value;?>" target="_blank" class="social-color-<?php echo $name;?>">
-                    <?php 
+                    <a href="<?php echo $value; ?>" target="_blank" class="social-color-<?php echo $name; ?>">
+                        <?php
                         //adapting name to fit format for icon source function
                         $name = "icons8-" . $name . "_outline";
-                    ?>
-                        <img src="<?php icon_src($name);?>" alt="">
+                        ?>
+                        <img src="<?php icon_src($name); ?>" alt="">
                     </a>
                 </li>
-                     
+
             <?php endforeach; ?>
-           
+
         </ul>
 
         <?php $api = 'AIzaSyDrNsup_wGpCdCSScc_ICkcrp1_hjJSp7M'; ?>
@@ -67,7 +69,7 @@ while( have_posts() ) {
 
         <!-- <hr class="section-break"> -->
 
-</div>
+    </div>
 
 <?php }
 
