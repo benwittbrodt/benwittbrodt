@@ -27,7 +27,7 @@
   <header>
     <!-- New navbar -->
 
-    <div id="menu-border" data-collapse="medium" data-animation="default" data-duration="400" class="mt-2 z-50 md:border-2 border-violet-900 md:rounded-full border-0">
+    <div id="menu-border" data-collapse="medium" data-animation="default" data-duration="400" class="max-w-screen-xl mx-auto mt-2 z-50 md:border-2 border-violet-900 md:rounded-full border-0">
 
       <nav class="
           flex flex-wrap
@@ -45,7 +45,7 @@
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
 
-        <div class="hidden w-full md:flex md:items-center md:w-auto" id="menu">
+        <div class="hidden w-full md:flex md:items-center md:w-auto md:bg-transparent bg-slate-200" id="menu">
           <ul class="
               pt-4
               text-base text-gray-700

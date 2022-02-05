@@ -27,18 +27,18 @@ while (have_posts()) {
 
         </div>
 
-        <div class="page-links">
+        <div class="">
             <?php if (!is_post_type_archive()) the_post_thumbnail('medium'); ?>
         </div>
 
-        <div class="generic-content"><?php the_content(); ?></div>
+        <div class=""><?php the_content(); ?></div>
         <?php if (get_field('phone_number')) { ?>
-            <h3><i class="fa fa-phone" aria-hidden="true"></i> - <?php the_field('phone_number'); ?></h3>
+            <p class="my-2 text-lg"><i class="fa fa-phone" aria-hidden="true"></i> - <?php the_field('phone_number'); ?></p>
         <?php } ?>
 
         <br>
 
-        <ul class="min-list social-icons-list">
+        <div class="flex flex-row justify-center">
 
             <?php
             //Calls the social links function to place all social media links in each restaurant listing depending on which fields are present
@@ -48,20 +48,16 @@ while (have_posts()) {
                 //returns the value of each field -> the link in this case
                 $value = $field['value'];
             ?>
-
-                <li>
-                    <a href="<?php echo $value; ?>" target="_blank" class="social-color-<?php echo $name; ?>">
-                        <?php
-                        //adapting name to fit format for icon source function
-                        $name = "icons8-" . $name . "_outline";
-                        ?>
-                        <img src="<?php icon_src($name); ?>" alt="">
-                    </a>
-                </li>
-
+                <a href="<?php echo $value; ?>" target="_blank" class="bg-violet-800 rounded-full p-3 mx-2 hover:bg-slate-800 duration-200 transition ease-in-out">
+                    <?php
+                    //adapting name to fit format for icon source function
+                    $name = "icons8-" . $name . "_outline";
+                    ?>
+                    <img src="<?php icon_src($name); ?>" class="h-8">
+                </a>
             <?php endforeach; ?>
 
-        </ul>
+        </div>
 
         <?php $api = 'AIzaSyDrNsup_wGpCdCSScc_ICkcrp1_hjJSp7M'; ?>
         <div id="gmap" style="margin-top:20px"></div>
