@@ -1,4 +1,4 @@
-<div class="bg-violet-900">
+<div class="bg-main-purple">
   <div class="max-w-screen-xl mx-auto">
     <div class="flex flex-row pt-10 pb-10 justify-center sm:justify-between">
       <div class="sm:mx-6 mx-2">

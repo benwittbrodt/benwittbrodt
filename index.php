@@ -10,10 +10,10 @@
       <div class="flex justify-center md:justify-start text-5xl tracking-widest">Ben Wittbrodt</div>
       <div class="flex justify-center md:justify-start text-2xl text-slate-500 tracking-widest">Data Analytics | Web Development</div>
       <div class="flex flex-row flex-wrap justify-around">
-        <a href="<?php echo site_url('background'); ?>"><button class="w-36 text-lg bg-emerald-800 rounded-full m-2 px-4 py-2 text-white hover:bg-emerald-600 ease-in-out duration-200">Professional Background</button></a>
-        <a href="<?php echo site_url('projects'); ?>"><button class="w-36 text-lg bg-emerald-800 rounded-full m-2 px-4 py-2 text-white hover:bg-emerald-600 ease-in-out duration-200">Coding<br>Projects</button></a>
-        <a href="<?php echo site_url('restaurants'); ?>"><button class="w-36 text-lg bg-emerald-800 rounded-full m-2 px-4 py-2 text-white hover:bg-emerald-600 ease-in-out duration-200">Food<br>Guide</button></a>
-        <a href="http://wiki.benwittbrodt.com" target="_blank"><button class="w-36 text-lg bg-emerald-800 rounded-full m-2 px-4 py-2 text-white hover:bg-emerald-600 ease-in-out duration-200">Visit My<br>Wiki</button></a>
+        <a href="<?php echo site_url('background'); ?>"><button class="w-36 text-lg bg-icon-main rounded-full m-2 px-4 py-2 text-white hover:bg-cyan-800 ease-in-out duration-200">Professional Background</button></a>
+        <a href="<?php echo site_url('projects'); ?>"><button class="w-36 text-lg bg-icon-main rounded-full m-2 px-4 py-2 text-white hover:bg-cyan-800 ease-in-out duration-200">Coding<br>Projects</button></a>
+        <a href="<?php echo site_url('restaurants'); ?>"><button class="w-36 text-lg bg-icon-main rounded-full m-2 px-4 py-2 text-white hover:bg-cyan-800 ease-in-out duration-200">Food<br>Guide</button></a>
+        <a href="http://wiki.benwittbrodt.com" target="_blank"><button class="w-36 text-lg bg-icon-main rounded-full m-2 px-4 py-2 text-white hover:bg-cyan-800 ease-in-out duration-200">Visit My<br>Wiki</button></a>
       </div>
 
       <div class="flex flex-row justify-center">
