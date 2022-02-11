@@ -9,7 +9,7 @@ get_header();
         Please use the listing below to search, and let me know if it has helped you!
     </p>
 
-    <p class="text-2xl text-emerald-600 text-center my-4">All Restaurants</p>
+    <p class="text-2xl text-icon-main text-center my-4">All Restaurants</p>
 
     <div class="flex flex-col md:flex-row flex-wrap">
         <?php
@@ -56,7 +56,7 @@ get_header();
                                 while ($query->have_posts()) : $query->the_post(); ?>
 
                                     <li class="ml-3 my-1" id="post-<?php the_ID(); ?>">
-                                        <a class="text-lg text-emerald-600 hover:text-emerald-400" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                        <a class="text-lg text-icon-main hover:text-cyan-500" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                                     </li>
 
                                 <?php endwhile;

@@ -13,12 +13,12 @@ for (let i = 0; i < backgroundButtons.length; i++) {
   //   document.getElementById(dict[i]).style.display = "none";
 
   backgroundButtons[i].addEventListener("click", function () {
-    btnSelected = !backgroundButtons[i].classList.contains("bg-emerald-800");
+    btnSelected = !backgroundButtons[i].classList.contains("bg-icon-main");
     sectionContent = document.getElementById(dict[i]);
 
     sectionContent.classList.toggle("hidden");
 
-    backgroundButtons[i].classList.toggle("bg-emerald-800");
+    backgroundButtons[i].classList.toggle("bg-icon-main");
     backgroundButtons[i].classList.toggle("text-white");
   });
 }

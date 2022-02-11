@@ -49,9 +49,9 @@
         </div>
     </div>
     <div class="flex flex-row justify-center">
-        <button id="bg-button" class="text-md text-white px-5 py-2 bg-emerald-800 rounded-l-full hover:bg-emerald-500 ease-in-out transition duration-200">Education</button>
-        <button id="bg-button" class="text-md p-4 hover:bg-emerald-500 ease-in-out transition duration-200">Research</button>
-        <button id="bg-button" class="text-md text-white px-5 py-2 bg-emerald-800 rounded-r-full hover:bg-emerald-500 ease-in-out transition duration-200">Experience</button>
+        <button id="bg-button" class="text-md text-white bg-icon-main hover:bg-cyan-700 px-5 py-2 rounded-l-full ease-in-out transition duration-200">Education</button>
+        <button id="bg-button" class="text-md p-4 hover:bg-cyan-700 ease-in-out transition duration-200">Research</button>
+        <button id="bg-button" class="text-md text-white bg-icon-main hover:bg-cyan-700 px-5 py-2 rounded-r-full ease-in-out transition duration-200">Experience</button>
     </div>
 
     <div class="flex md:flex-row flex-col">

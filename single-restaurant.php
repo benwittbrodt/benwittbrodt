@@ -17,12 +17,12 @@ while (have_posts()) {
     <div class="max-w-screen-lg mx-auto">
         <div class="flex flex-row my-2">
             <div class="flex flex-row">
-                <a class="text-md text-white my-auto px-5 py-2 border-y-2 rounded-l-full border-emerald-800 bg-emerald-800 hover:bg-emerald-500 hover:border-emerald-500 ease-in-out transition duration-200" href="<?php echo get_post_type_archive_link('restaurant'); ?>">
+                <a class="text-md text-white my-auto px-5 py-2 border-y-2 rounded-l-full border-icon-main bg-icon-main hover:bg-cyan-600 hover:border-cyan-600 ease-in-out transition duration-200" href="<?php echo get_post_type_archive_link('restaurant'); ?>">
                     <i class="fa fa-store" aria-hidden="true"></i> All Restaurants
                 </a>
-                <a class="text-md text-white my-auto px-5 py-2 border-y-2 border-emerald-800 bg-emerald-800 hover:bg-emerald-500 hover:border-emerald-500 ease-in-out transition duration-200" href="<?php echo get_term_link($breadcrumbs[0]->parent, 'locations'); ?>"><?php echo $the_state->name; ?></a>
-                <a class="text-md text-white my-auto px-5 py-2 border-y-2 border-emerald-800 bg-emerald-800 hover:bg-emerald-500 hover:border-emerald-500 ease-in-out transition duration-200" href="<?php echo get_term_link($breadcrumbs[0]->term_id, 'locations'); ?>"><?php echo $breadcrumbs[0]->name; ?></a>
-                <span class="text-md text-emerald-800 my-auto border-2 border-emerald-800 rounded-r-full px-5 py-2"><?php the_title(); ?></span>
+                <a class="text-md text-white my-auto px-5 py-2 border-y-2 border-icon-main bg-icon-main hover:bg-cyan-600 hover:border-cyan-600 ease-in-out transition duration-200" href="<?php echo get_term_link($breadcrumbs[0]->parent, 'locations'); ?>"><?php echo $the_state->name; ?></a>
+                <a class="text-md text-white my-auto px-5 py-2 border-y-2 border-icon-main bg-icon-main hover:bg-cyan-600 hover:border-cyan-600 ease-in-out transition duration-200" href="<?php echo get_term_link($breadcrumbs[0]->term_id, 'locations'); ?>"><?php echo $breadcrumbs[0]->name; ?></a>
+                <span class="text-md text-icon-main my-auto border-2 border-icon-main rounded-r-full px-5 py-2"><?php the_title(); ?></span>
             </div>
 
         </div>
