@@ -24,32 +24,35 @@ add_action('after_setup_theme', 'benwittbrodt_features');
 function my_post_types()
 {
   //Background Post Type
-  register_post_type('background', array(
-    'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'revisions'),
-    'taxonomies' => array('category', 'post_tag'),
-    'has_archive' => true,
-    'public' => true,
-    'menu_icon' => 'dashicons-businessperson',
-    'labels' => array(
-      'name' => 'Background',
-      'add_new_item' => 'Add New Background',
-      'edit_item' => 'Edit Background',
-      'all_items' => 'All Backgrounds',
-      'singular_name' => 'Background'
-    )
+  register_post_type('background', 
+    array(
+      'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ),
+      'rewrite' => array('slug'=>'background'),
+      'taxonomies' => array('category', 'post_tag'),
+      'show_in_rest' => true,
+      'has_archive' => true,
+      'public' => true,
+      'menu_icon' => 'dashicons-businessperson',
+      'labels' => array(
+        'name' => __('Background'),
+        'add_new_item' => __('Add New Background'),
+        'edit_item' => __('Edit Background'),
+        'all_items' => __('All Backgrounds'),
+        'singular_name' => __('Background')
+      )
   ));
   register_post_type('project', array(
-    'supports' => array('title', 'editor', 'thumbnail'),
+    'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ),
     'rewrite' => array('slug' => 'projects'),
     'show_in_rest' => true,
     'has_archive' => true,
     'public' => true,
-    'menu_icon' => 'dashicons-media-code',
+    'menu_icon' => 'dashicons-clipboard',
     'labels' => array(
-      'name' => 'Projects',
-      'add_new_item' => 'Add New Project',
-      'edit_item' => 'Edit Project',
-      'all_items' => 'All Projects',
+      'name' => __('Projects'),
+      'add_new_item' => __('Add New Project'),
+      'edit_item' => __('Edit Project'),
+      'all_items' => __('All Projects'),
     )
   ));
 }

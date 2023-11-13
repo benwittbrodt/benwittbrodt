@@ -1,11 +1,11 @@
 
     <!-- Footer -->
-    <div class="container p-2" style="background-color: #f0f0f0;">
+    <div class="mt-3 p-3" style="background-color: #f0f0f0;">
         <div class="footer text-center">
-            <p>&copy; 2023 Ben Wittbrodt |
-                <a href="#"><i class="fab fa-linkedin fa-lg ms-2"></i></a> |
-                <a href="#"><i class="fab fa-github fa-lg ms-2"></i></a>
-            </p>
+            <h6 class="m-0">&copy; 2023 Ben Wittbrodt |
+                <a href="https://www.linkedin.com/in/benwittbrodt/"><i class="fab fa-linkedin fa-lg ms-2"></i></a> |
+                <a href="https://github.com/benwittbrodt"><i class="fab fa-github fa-lg ms-2"></i></a>
+</h6>
         </div>
     </div>
 

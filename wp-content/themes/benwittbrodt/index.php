@@ -16,8 +16,8 @@
 
                 <!-- Placeholder Buttons for LinkedIn and GitHub -->
                 <div class="mt-4">
-                    <a href="#" class="btn btn-primary me-2"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                    <a href="#" class="btn btn-dark"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="https://www.linkedin.com/in/benwittbrodt/" class="btn btn-primary me-2"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://github.com/benwittbrodt" class="btn btn-dark"><i class="fab fa-github"></i> GitHub</a>
                 </div>
             </div>
         </div>
