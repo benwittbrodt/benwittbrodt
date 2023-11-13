@@ -26,9 +26,28 @@
     <!-- Placeholder for Projects -->
     <div class="container mt-5">
         <h2>Projects</h2>
+
+        <?php 
+        // Query for the projects post types and placeing into the row/columns 
+        // TODO: Add pages?, only have 1 row at the moment
+         $args = array(
+            'post_type' => 'project'
+        );
+
+        $query = new WP_Query($args);
+        $i = 0;
+        while ($query->have_posts()){ 
+            $query->the_post();
+            the_title(); 
+            
+        the_post_thumbnail('thumbnail');
+      
+        }
+        ?>
+
         <div class="row">
             <div class="col-md-4 project">
-                <img src="project1.jpg" alt="Project 1" class="img-fluid rounded">
+                <img src="" alt="Project 1" class="img-fluid rounded">
                 <div class="project-title mt-2">Project 1</div>
                 <div class="project-icons">
                     <i class="fab fa-python"></i>
