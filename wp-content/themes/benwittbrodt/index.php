@@ -12,7 +12,7 @@
                 <p class="lead">Data Analytics Leader</p>
                 <p>Welcome to my personal website. I am passionate about data analytics and strive to make
                     data-driven decisions that impact business outcomes positively.</p>
-                <!-- Add more content here as needed -->
+                
 
                 <!-- Placeholder Buttons for LinkedIn and GitHub -->
                 <div class="mt-4">
@@ -25,55 +25,48 @@
 
     <!-- Placeholder for Projects -->
     <div class="container mt-5">
-        <h2>Projects</h2>
-
-        <?php 
-        // Query for the projects post types and placeing into the row/columns 
-        // TODO: Add pages?, only have 1 row at the moment
-         $args = array(
-            'post_type' => 'project'
-        );
-
-        $query = new WP_Query($args);
-        $i = 0;
-        while ($query->have_posts()){ 
-            $query->the_post();
-            the_title(); 
-            
-        the_post_thumbnail('thumbnail');
-      
-        }
-        ?>
-
+        <h2>Recently Updated Projects</h2>
+        
         <div class="row">
-            <div class="col-md-4 project">
-                <img src="" alt="Project 1" class="img-fluid rounded">
-                <div class="project-title mt-2">Project 1</div>
-                <div class="project-icons">
-                    <i class="fab fa-python"></i>
-                    <i class="fas fa-database"></i>
-                    <i class="fab fa-js"></i>
+            <?php 
+            // Query for the projects post types and placeing into the row/columns 
+            // TODO: Add pages?, only have 1 row at the moment
+            $args = array(
+                'post_type' => 'project',
+                'posts_per_page' => 3
+            );
+            $query = new WP_Query($args);
+            
+            while ($query->have_posts()) :  $query->the_post();
+            // getting the image URL to use below in the card 
+            $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
+    
+            <div class="col-md-4 mb-3">
+
+                <div class="card h-100">
+
+                    <a href="<?php the_permalink(); ?>" class="card-link">    
+                    <img src="<?echo $image[0]; ?>" class="card-img-top">
+                    
+                    <div class="card-body">
+                        <h5 class="card-title"><?php the_title(); ?></h5>
+                    </a>
+                    <div class="project-icons">
+                        <i class="fab fa-python"></i>
+                        <i class="fas fa-database"></i>
+                        <i class="fab fa-js"></i>
+                    </div>    
+                    </div>
                 </div>
             </div>
-            <div class="col-md-4 project">
-                <img src="project2.jpg" alt="Project 2" class="img-fluid rounded">
-                <div class="project-title mt-2">Project 2</div>
-                <div class="project-icons">
-                    <i class="fab fa-python"></i>
-                    <i class="fas fa-database"></i>
-                    <i class="fab fa-js"></i>
-                </div>
-            </div>
-            <div class="col-md-4 project">
-                <img src="project3.jpg" alt="Project 3" class="img-fluid rounded">
-                <div class="project-title mt-2">Project 3</div>
-                <div class="project-icons">
-                    <i class="fab fa-python"></i>
-                    <i class="fas fa-database"></i>
-                    <i class="fab fa-js"></i>
-                </div>
-            </div>
-            <!-- Add more project entries as needed -->
+            <?php    
+            endwhile;
+            wp_reset_postdata();
+            ?>
+            
         </div>
+        
     </div>
+    <!-- END placeholder for Projects -->
 <?php get_footer();  ?>
+
