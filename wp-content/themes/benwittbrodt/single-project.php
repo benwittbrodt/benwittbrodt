@@ -4,21 +4,21 @@
     
     <h2 class=""><?php the_title(); ?></h2>
 
-    <?php
-    //Get list of all taxonomy terms for the given post ID
-    $term_obj_list = get_the_terms($post->ID, 'technologies');
-
-    foreach ($term_obj_list as $key) {
-        $icon = $key->slug;
-        //grab svg images for all icons based on the taxonomy list
-    ?>
-        <img class="h-10 ml-2" src="<?php icon_src('icons8-' . $icon); ?>" />
-    <?php
-    } ?>
+    <div style="height: 2.5rem;">
+                        <?php
+                        //Getting the "technologies" terms associated with each post
+                        $term_obj_list = get_the_terms($post->ID, 'technologies');
+                        foreach ($term_obj_list as $key) {
+                        $icon = $key->slug;
+                        ?>
+                        <img class="h-100 d-inline-block" src="<?php echo get_theme_file_uri("assets/icons/icon_" . $icon . ".svg");?>"></img>
+                       
+                        <?php } ?>
+                    </div>    
 </div>
 
 <div class="container">
-    <h4 class="text-center text-lg text-violet-700 my-2">Updated on: <?php echo the_modified_time('F jS, Y'); ?></h4>
+    <h4 class="">Updated on: <?php echo the_modified_time('F jS, Y'); ?></h4>
     <?php
     while (have_posts()) {
         the_post();
