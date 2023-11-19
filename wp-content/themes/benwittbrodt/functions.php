@@ -88,3 +88,21 @@ function create_projects_taxonomy()
     'query_var' => true,
   ));
 }
+
+
+add_action( 'pre_get_posts', 'background_custom_wp_query', 10 );
+
+/**
+ * Sorts portfolio project posts by most recent start date.
+ *
+ * @param \WP_Query $query The WP_Query instance (passed by reference).
+ */
+function background_custom_wp_query( $query ) {
+	if ( $query->is_post_type_archive( 'background' ) ) {
+		// Sort portfolio posts by project start date.
+		$query->set( 'order', 'DESC' );
+		$query->set( 'orderby', 'meta_value_num' );
+		// ACF date field value is stored like 20220328 (YYYYMMDD).
+		// $query->set( 'meta_key', 'end_date' );
+	}
+}
