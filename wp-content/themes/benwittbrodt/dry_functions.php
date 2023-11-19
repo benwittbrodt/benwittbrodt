@@ -1,4 +1,12 @@
 <?php 
+
+function background_archive($post){
+	// Create templte for background archive HTML/PHP to group items
+	echo 'test';
+}
+
+
+
 function icon_src($name) {
   echo get_theme_file_uri('/images/icons/' . $name . '.svg');  
 }
