@@ -15,7 +15,7 @@ function background_archive($tag, $category, $sortby){
         
             ?>
             <div class="text-center">
-            <img style="max-height: 175px;" class="img-fluid mx-auto d-block p-4" src="<?php echo get_theme_file_uri("/assets/bg_logos/logo_".$tag .".png"); ?>" alt="">
+            <img style="max-height: 150px;" class="img-fluid mx-auto d-block p-4" src="<?php echo get_theme_file_uri("/assets/bg_logos/logo_".$tag .".png"); ?>" alt="">
             </div>
             
             <?php
@@ -66,3 +66,17 @@ function background_archive($tag, $category, $sortby){
 		}
 
 
+function technology_icons($post){
+    ?>
+    <div style="height: 2.5rem;">
+        <?php
+        //Getting the "technologies" terms associated with each post
+        $term_obj_list = get_the_terms($post->ID, 'technologies');
+        foreach ($term_obj_list as $key) {
+        $icon = $key->slug;
+        ?>
+        <img class="h-100 d-inline-block" src="<?php echo get_theme_file_uri("assets/icons/icon_" . $icon . ".svg");?>"></img>
+        
+        <?php } ?>
+    </div>    
+<?php } ?>

@@ -20,7 +20,7 @@
 
 
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
             <a class="navbar-brand" href="<?php echo site_url(); ?>">Ben Wittbrodt</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
@@ -46,4 +46,4 @@
         </div>
     </nav>
 
-<body class="pt-5">
+<body>

@@ -46,16 +46,12 @@
                 <div class="card h-100">
 
                     <a href="<?php the_permalink(); ?>" class="card-link">    
-                    <img src="<?echo $image[0]; ?>" class="card-img-top">
+                    <img src="<?echo get_the_post_thumbnail_url(); ?>" class="card-img-top">
                     
                     <div class="card-body">
                         <h5 class="card-title"><?php the_title(); ?></h5>
                     </a>
-                    <div class="project-icons">
-                        <i class="fab fa-python"></i>
-                        <i class="fas fa-database"></i>
-                        <i class="fab fa-js"></i>
-                    </div>    
+                    <?php technology_icons($post);     ?>
                     </div>
                 </div>
             </div>

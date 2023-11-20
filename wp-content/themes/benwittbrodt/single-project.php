@@ -1,32 +1,31 @@
-<?php get_header(); ?>
+<?php get_header(); 
+$term_obj_list = get_the_terms($post->ID, 'technologies');
+?>
 <div class="container">
-
-    
-    <h2 class=""><?php the_title(); ?></h2>
-
-    <div class="row mb-4">
-        <div  class="col d-flex align-items-center">
-            <p class="text-muted my-auto">Updated on: <?php echo the_modified_time('F jS, Y'); ?></p>
+    <h2 class="mt-5"><?php the_title(); ?></h2>
+    <div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+        <div class="col-sm-4">
+        <img src="<?php echo get_the_post_thumbnail_url();?>" class="img-fluid rounded-start" >
         </div>
-        <div style="height: 2rem;"  class="col d-flex align-items-center">
-
-        <p class="my-auto me-2 text-muted">Using: 
-
-        </p>
-        <?php
+        <div class="col-sm-8">
+        <div class="card-body">
+            <h5 class="card-title">Using: </h5>
+            
+            <?php
         //Getting the "technologies" terms associated with each post
-        $term_obj_list = get_the_terms($post->ID, 'technologies');
+        
         foreach ($term_obj_list as $key) {
         $icon = $key->slug;
         ?>
-        <img class="h-100 d-inline-block me-2" src="<?php echo get_theme_file_uri("assets/icons/icon_" . $icon . ".svg");?>"></img>
+        <img class="d-inline-block me-2" style="height: 2.5rem;" src="<?php echo get_theme_file_uri("assets/icons/icon_" . $icon . ".svg");?>"></img>
         
         <?php } ?>
-        
+            <p class="text-muted mb-0 pt-2">Updated on: <?php echo the_modified_time('F jS, Y'); ?></p>
         </div>
-    </div>    
-
-    
+        </div>
+    </div>
+    </div>  
 
     <?php
     while (have_posts()) {
