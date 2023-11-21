@@ -38,15 +38,14 @@
             $query = new WP_Query($args);
             
             while ($query->have_posts()) :  $query->the_post();
-            // getting the image URL to use below in the card 
-            $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
+            ?>
     
             <div class="col-md-4 mb-3">
 
                 <div class="card h-100">
 
                     <a href="<?php the_permalink(); ?>" class="card-link">    
-                    <img src="<?echo get_the_post_thumbnail_url(); ?>" class="card-img-top">
+                    <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="card-img-top">
                     
                     <div class="card-body">
                         <h5 class="card-title"><?php the_title(); ?></h5>
