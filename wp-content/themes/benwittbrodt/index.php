@@ -33,14 +33,14 @@
             // TODO: Add pages?, only have 1 row at the moment
             $args = array(
                 'post_type' => 'project',
-                'posts_per_page' => 3
+                'posts_per_page' => 4
             );
             $query = new WP_Query($args);
             
             while ($query->have_posts()) :  $query->the_post();
             ?>
     
-            <div class="col-md-4 mb-3">
+            <div class="col-md-3 mb-3">
 
                 <div class="card h-100">
 
