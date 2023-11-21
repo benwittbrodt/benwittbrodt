@@ -15,7 +15,7 @@ function background_archive($tag, $category, $sortby){
         
             ?>
             <div class="text-center">
-            <img style="max-height: 150px;" class="img-fluid mx-auto d-block p-4" src="<?php echo get_theme_file_uri("/assets/bg_logos/logo_".$tag .".png"); ?>" alt="">
+            <img style="max-height: 150px; max-width: 500px;" class="img-fluid mx-auto d-block p-4" src="<?php echo get_theme_file_uri("/assets/bg_logos/logo_".$tag .".png"); ?>" alt="">
             </div>
             
             <?php
