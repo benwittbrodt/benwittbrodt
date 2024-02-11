@@ -1,5 +1,0 @@
----
-deployment:
-  tasks:
-    - export DEPLOYPATH=/home2/wittdata/public_html/benwittbrodt/wp-content/themes/benwittbrodt-theme  
-    - /bin/cp -r * $DEPLOYPATH
