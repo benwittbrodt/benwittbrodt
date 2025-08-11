@@ -1,4 +1,5 @@
 name: Deploy theme to Linode (master)
+
 on:
   push:
     branches: ["master"]
@@ -6,6 +7,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -33,13 +35,18 @@ jobs:
           SSH_PORT: ${{ secrets.SSH_PORT }}
           DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
 
-      - name: Rsync theme (repo root -> theme dir)
+      # OPTIONAL: If you adopt Tailwind later, build before rsync.
+      # - name: Build CSS/JS
+      #   run: |
+      #     npm ci
+      #     npm run build
+
+      - name: Rsync theme (repo root -> theme dir) with excludes
         run: |
+          # Fail gracefully if exclude file is missing
+          touch ./.deploy-exclude
           rsync -az --delete -e "ssh -p $SSH_PORT" \
-            --exclude '.git' \
-            --exclude '.github' \
-            --exclude 'node_modules' \
-            --exclude '.env' \
+            --exclude-from='.deploy-exclude' \
             ./ "${SSH_USER}@${SSH_HOST}:${DEPLOY_PATH}/wp-content/themes/benwittbrodt/"
         env:
           SSH_HOST: ${{ secrets.SSH_HOST }}

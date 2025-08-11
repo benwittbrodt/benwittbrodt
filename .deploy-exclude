@@ -1,0 +1,25 @@
+# VCS / CI
+.git
+.github
+
+# Docker / local env
+docker-compose.yml
+docker-compose.*.yml
+.env
+dev/
+db_data/
+wp_core/
+
+# Node / build configs (if you add Tailwind later)
+node_modules/
+package.json
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+tailwind.config.js
+postcss.config.js
+
+# Misc local stuff
+*.log
+*.DS_Store
+README.md
