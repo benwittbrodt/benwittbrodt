@@ -1,0 +1,35 @@
+# dependencies
+node_modules/
+
+# next.js
+.next/
+out/
+next-env.d.ts
+
+# production / build
+build/
+
+# typescript
+*.tsbuildinfo
+
+# env
+.env
+.env*.local
+
+# editor / OS
+.DS_Store
+.idea/
+
+# debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Payload media uploads (served from disk, not source-controlled)
+/media
+
+# SQLite database files
+/payload.db
+/payload.db-journal
+/payload.db-wal
+/payload.db-shm
