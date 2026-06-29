@@ -6,18 +6,25 @@ import { toCardPost } from '../../lib/posts'
 
 export const metadata = { title: 'Home' }
 
+// Flip to true to surface the "What I write about" category grid below the hero.
+const SHOW_TOPICS_SECTION = false
+
 export default async function HomePage() {
   const payload = await getPayload()
-  const { docs } = await payload.find({
+  const postsRes = await payload.find({
     collection: 'posts',
     sort: '-publishedAt',
     limit: 3,
     depth: 2,
   })
-  const recentPosts = docs.map((p) => toCardPost(p, 'medium'))
+  const recentPosts = postsRes.docs.map((p) => toCardPost(p, 'medium'))
+  const categories = SHOW_TOPICS_SECTION
+    ? (await payload.find({ collection: 'categories', sort: 'title', limit: 20 })).docs
+    : []
 
   return (
     <main>
+      {/* Hero */}
       <section className="mx-auto max-w-3xl px-4 xl:px-0 pt-36 pb-20 flex flex-col sm:flex-row items-center gap-10">
         <Image
           src="/headshot.jpg"
@@ -32,8 +39,7 @@ export default async function HomePage() {
             Hey, I&apos;m <span className="text-blue-700">Ben Wittbrodt</span>
           </h1>
           <p className="mt-3 text-gray-600 text-lg leading-relaxed">
-            I write about personal finance, watches, and home automation — the things I spend too much
-            time thinking about.
+            I write about personal finance, watches, and home automation. Stuff I think about way too much.
           </p>
           <div className="flex gap-3 mt-6">
             <Link
@@ -52,6 +58,32 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* What I write about — gated by SHOW_TOPICS_SECTION above */}
+      {SHOW_TOPICS_SECTION && categories.length > 0 && (
+        <section className="bg-gray-50 py-16 px-4 xl:px-0">
+          <div className="mx-auto max-w-3xl">
+            <h2 className="text-2xl font-bold mb-8">What I write about</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {categories.map((cat) => (
+                <Link
+                  key={cat.id}
+                  href={`/categories/${cat.slug}`}
+                  className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow border border-transparent hover:border-blue-200 group"
+                >
+                  <h3 className="font-semibold mb-1 group-hover:text-blue-700 transition-colors">
+                    {cat.title}
+                  </h3>
+                  {cat.description && (
+                    <p className="text-sm text-gray-500 leading-relaxed">{cat.description}</p>
+                  )}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Recent articles */}
       <section className="mx-auto max-w-3xl px-4 xl:px-0 py-16">
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-2xl font-bold">Recent articles</h2>
@@ -61,9 +93,20 @@ export default async function HomePage() {
         </div>
 
         {recentPosts.length === 0 ? (
-          <p className="text-gray-500">No articles yet — check back soon.</p>
+          <div className="text-center py-12 border border-dashed border-gray-200 rounded-xl">
+            <p className="text-gray-500 mb-4">No articles yet, but more coming soon.</p>
+            <div className="flex justify-center gap-3 text-sm">
+              <Link href="/background" className="text-blue-700 hover:underline">
+                Read my background
+              </Link>
+              <span className="text-gray-300">·</span>
+              <Link href="/contact" className="text-blue-700 hover:underline">
+                Say hi
+              </Link>
+            </div>
+          </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {recentPosts.map((post) => (
               <Link
                 key={post.id}
@@ -81,9 +124,16 @@ export default async function HomePage() {
                   <div className="w-full h-40 bg-gray-100" />
                 )}
                 <div className="p-4 flex flex-col flex-1">
-                  <p className="text-xs text-gray-400 mb-1">
-                    <DatePresenter date={post.date} />
-                  </p>
+                  <div className="flex items-center gap-2 mb-1 flex-wrap">
+                    {post.category && (
+                      <span className="text-[10px] font-semibold uppercase tracking-wide bg-blue-700 text-white rounded-md px-2 py-0.5">
+                        {post.category.title}
+                      </span>
+                    )}
+                    <p className="text-xs text-gray-400">
+                      <DatePresenter date={post.date} />
+                    </p>
+                  </div>
                   <h3 className="font-semibold group-hover:text-blue-700 transition-colors leading-snug">
                     {post.title}
                   </h3>
