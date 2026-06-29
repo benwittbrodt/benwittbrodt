@@ -1,0 +1,25 @@
+[Unit]
+Description=benwittbrodt.com (Payload + Next.js)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=bwsite
+Group=bwsite
+WorkingDirectory=/home/bwsite/app
+EnvironmentFile=/home/bwsite/app/.env
+Environment=NODE_ENV=production
+Environment=PORT=3000
+ExecStart=/usr/bin/npm start
+Restart=always
+RestartSec=3
+# tighten a little
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=read-only
+ReadWritePaths=/home/bwsite/app/.next /var/lib/payload
+
+[Install]
+WantedBy=multi-user.target
