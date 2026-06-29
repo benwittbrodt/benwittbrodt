@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import PostsList from '../../../../components/PostsList'
 import { getPayload } from '../../../../lib/payload'
-import { toCardPost } from '../../../../lib/posts'
+import { toCardPost, publishedFilter } from '../../../../lib/posts'
 
 const PAGE_SIZE = 10
 
@@ -49,7 +49,7 @@ export default async function CategoryPage({
   const res = await payload.find({
     collection: 'posts',
     sort: '-publishedAt',
-    where: { category: { equals: cat.id } },
+    where: { ...publishedFilter, category: { equals: cat.id } },
     page,
     limit: PAGE_SIZE,
     depth: 2,

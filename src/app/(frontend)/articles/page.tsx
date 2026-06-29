@@ -1,6 +1,6 @@
 import PostsList from '../../../components/PostsList'
 import { getPayload } from '../../../lib/payload'
-import { toCardPost } from '../../../lib/posts'
+import { toCardPost, publishedFilter } from '../../../lib/posts'
 
 export const metadata = { title: 'Articles' }
 
@@ -17,6 +17,7 @@ export default async function ArticlesPage({
   const payload = await getPayload()
   const res = await payload.find({
     collection: 'posts',
+    where: publishedFilter,
     sort: '-publishedAt',
     page,
     limit: PAGE_SIZE,

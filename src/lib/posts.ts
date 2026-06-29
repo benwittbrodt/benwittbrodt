@@ -1,6 +1,10 @@
 import type { Post, Category, Tag, Media } from '../payload-types'
 import { mediaUrl, mediaAlt, type ImageSize } from './media'
 
+// `versions: { drafts: true }` on Posts means find() returns drafts too by
+// default (admin needs them). Every public-facing query must include this.
+export const publishedFilter = { _status: { equals: 'published' } } as const
+
 export type CardPost = {
   id: number | string
   slug: string

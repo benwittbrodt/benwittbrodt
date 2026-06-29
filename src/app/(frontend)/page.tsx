@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import DatePresenter from '../../components/DatePresenter'
 import { getPayload } from '../../lib/payload'
-import { toCardPost } from '../../lib/posts'
+import { toCardPost, publishedFilter } from '../../lib/posts'
 
 export const metadata = { title: 'Home' }
 
@@ -13,6 +13,7 @@ export default async function HomePage() {
   const payload = await getPayload()
   const postsRes = await payload.find({
     collection: 'posts',
+    where: publishedFilter,
     sort: '-publishedAt',
     limit: 3,
     depth: 2,

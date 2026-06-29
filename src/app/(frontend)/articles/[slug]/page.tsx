@@ -5,7 +5,7 @@ import type { Metadata } from 'next'
 import DatePresenter from '../../../../components/DatePresenter'
 import TagsPresenter from '../../../../components/TagsPresenter'
 import { getPayload } from '../../../../lib/payload'
-import { toCardPost } from '../../../../lib/posts'
+import { toCardPost, publishedFilter } from '../../../../lib/posts'
 import { mediaUrl } from '../../../../lib/media'
 import type { Media } from '../../../../payload-types'
 
@@ -15,7 +15,7 @@ async function getPost(slug: string) {
   const payload = await getPayload()
   const { docs } = await payload.find({
     collection: 'posts',
-    where: { slug: { equals: slug } },
+    where: { ...publishedFilter, slug: { equals: slug } },
     depth: 2,
     limit: 1,
   })
@@ -26,6 +26,7 @@ export async function generateStaticParams() {
   const payload = await getPayload()
   const { docs } = await payload.find({
     collection: 'posts',
+    where: publishedFilter,
     limit: 1000,
     select: { slug: true },
   })

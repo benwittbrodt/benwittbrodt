@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { getPayload } from '../../../lib/payload'
+import { publishedFilter } from '../../../lib/posts'
 
 export const metadata = { title: 'Tags' }
 
@@ -10,6 +11,7 @@ export default async function TagsPage() {
   // queries while the site is small.
   const { docs: posts } = await payload.find({
     collection: 'posts',
+    where: publishedFilter,
     limit: 1000,
     depth: 1,
     select: { tags: true },
