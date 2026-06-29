@@ -29,6 +29,10 @@ export default buildConfig({
   },
   db: sqliteAdapter({
     client: { url: process.env.DATABASE_URL || 'file:./payload.db' },
+    // Always push schema on connect (no separate migrations dir). Fine for a
+    // one-author site; revisit if/when destructive schema changes start to
+    // matter or multiple writers are involved.
+    push: true,
   }),
   sharp,
 })

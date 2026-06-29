@@ -6,6 +6,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "prebuild": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" tsx scripts/init-db.ts",
     "build": "cross-env NODE_OPTIONS=\"--no-deprecation --max-old-space-size=8000\" next build",
     "dev": "cross-env NODE_OPTIONS=--no-deprecation next dev",
     "devsafe": "rm -rf .next && cross-env NODE_OPTIONS=--no-deprecation next dev",
