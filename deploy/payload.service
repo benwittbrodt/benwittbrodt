@@ -14,12 +14,11 @@ Environment=PORT=3000
 ExecStart=/usr/bin/npm start
 Restart=always
 RestartSec=3
-# tighten a little
+# NB: systemd sandboxing directives (PrivateTmp, ProtectSystem, ProtectHome,
+# ReadWritePaths) are intentionally omitted — they require mount namespaces
+# that unprivileged LXCs don't grant (manifests as status=226/NAMESPACE).
+# The LXC itself is the isolation boundary.
 NoNewPrivileges=true
-PrivateTmp=true
-ProtectSystem=full
-ProtectHome=read-only
-ReadWritePaths=/home/bwsite/app/.next /var/lib/payload
 
 [Install]
 WantedBy=multi-user.target
