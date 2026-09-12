@@ -19,7 +19,7 @@ export default async function ArticlesPage({
   const res = await payload.find({
     collection: 'posts',
     where: publishedFilter,
-    sort: '-publishedAt',
+    sort: '-updatedAt',
     page,
     limit: PAGE_SIZE,
     depth: 2,

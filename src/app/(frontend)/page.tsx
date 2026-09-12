@@ -15,7 +15,7 @@ export default async function HomePage() {
   const postsRes = await payload.find({
     collection: 'posts',
     where: publishedFilter,
-    sort: '-publishedAt',
+    sort: '-updatedAt',
     limit: 3,
     depth: 2,
   })

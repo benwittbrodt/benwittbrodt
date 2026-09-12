@@ -50,7 +50,7 @@ export default async function CategoryPage({
   const payload = await getPayload()
   const res = await payload.find({
     collection: 'posts',
-    sort: '-publishedAt',
+    sort: '-updatedAt',
     where: { ...publishedFilter, category: { equals: cat.id } },
     page,
     limit: PAGE_SIZE,

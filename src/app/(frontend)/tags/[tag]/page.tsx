@@ -50,7 +50,7 @@ export default async function TagPage({
   const payload = await getPayload()
   const res = await payload.find({
     collection: 'posts',
-    sort: '-publishedAt',
+    sort: '-updatedAt',
     where: { ...publishedFilter, tags: { contains: tag.id } },
     page,
     limit: PAGE_SIZE,
