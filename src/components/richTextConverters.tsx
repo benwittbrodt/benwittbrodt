@@ -19,7 +19,7 @@ const calloutStyles: Record<string, string> = {
 export const converters: JSXConvertersFunction = ({ defaultConverters }) => ({
   ...defaultConverters,
 
-  upload: ({ node }) => {
+  upload: ({ node }: { node: any }) => {
     const value = node.value as Media | number | null | undefined
     const media = typeof value === 'object' ? value : null
     if (!media) return null
@@ -39,7 +39,7 @@ export const converters: JSXConvertersFunction = ({ defaultConverters }) => ({
   },
 
   blocks: {
-    callout: ({ node }) => {
+    callout: ({ node }: { node: any }) => {
       const { variant = 'info', title, body } = node.fields as {
         variant?: string
         title?: string
@@ -54,7 +54,7 @@ export const converters: JSXConvertersFunction = ({ defaultConverters }) => ({
       )
     },
 
-    code: ({ node }) => {
+    code: ({ node }: { node: any }) => {
       const { language = 'plaintext', filename, code } = node.fields as {
         language?: string
         filename?: string
