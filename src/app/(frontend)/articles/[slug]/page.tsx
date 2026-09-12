@@ -4,6 +4,7 @@ import { RichText } from '@payloadcms/richtext-lexical/react'
 import type { Metadata } from 'next'
 import DatePresenter from '../../../../components/DatePresenter'
 import TagsPresenter from '../../../../components/TagsPresenter'
+import { converters } from '../../../../components/richTextConverters'
 import { getPayload } from '../../../../lib/payload'
 import { toCardPost, publishedFilter } from '../../../../lib/posts'
 import { mediaUrl } from '../../../../lib/media'
@@ -77,7 +78,7 @@ export default async function ArticlePage({ params }: { params: Promise<Params> 
         <TagsPresenter tags={card.tags} />
         {post.content && (
           <div className="prose prose-lg max-w-none text-gray-600 mt-8">
-            <RichText data={post.content as any} />
+            <RichText data={post.content as any} converters={converters} />
           </div>
         )}
         <div className="pt-8 mt-8 border-t border-gray-300">

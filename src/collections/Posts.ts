@@ -1,5 +1,11 @@
 import type { CollectionConfig } from 'payload'
+import {
+  BlocksFeature,
+  UploadFeature,
+  lexicalEditor,
+} from '@payloadcms/richtext-lexical'
 import { slugFrom } from '../hooks/slugify'
+import { inlineBlocks } from '../blocks'
 
 export const Posts: CollectionConfig = {
   slug: 'posts',
@@ -32,6 +38,35 @@ export const Posts: CollectionConfig = {
     { name: 'featuredImage', type: 'upload', relationTo: 'media' },
     { name: 'category', type: 'relationship', relationTo: 'categories' },
     { name: 'tags', type: 'relationship', relationTo: 'tags', hasMany: true },
-    { name: 'content', type: 'richText' },
+    {
+      name: 'content',
+      type: 'richText',
+      editor: lexicalEditor({
+        features: ({ defaultFeatures }) => [
+          ...defaultFeatures,
+          UploadFeature({
+            collections: {
+              media: {
+                fields: [
+                  { name: 'caption', type: 'text' },
+                  {
+                    name: 'alignment',
+                    type: 'select',
+                    defaultValue: 'center',
+                    options: [
+                      { label: 'Left', value: 'left' },
+                      { label: 'Center', value: 'center' },
+                      { label: 'Right', value: 'right' },
+                      { label: 'Full width', value: 'full' },
+                    ],
+                  },
+                ],
+              },
+            },
+          }),
+          BlocksFeature({ blocks: inlineBlocks }),
+        ],
+      }),
+    },
   ],
 }
