@@ -4,6 +4,8 @@ import PostsList from '../../../../components/PostsList'
 import { getPayload } from '../../../../lib/payload'
 import { toCardPost, publishedFilter } from '../../../../lib/posts'
 
+export const revalidate = 60
+
 const PAGE_SIZE = 10
 
 type Params = { tag: string }

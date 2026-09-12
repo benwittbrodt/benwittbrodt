@@ -10,6 +10,8 @@ import { toCardPost, publishedFilter } from '../../../../lib/posts'
 import { mediaUrl } from '../../../../lib/media'
 import type { Media } from '../../../../payload-types'
 
+export const revalidate = 60
+
 type Params = { slug: string }
 
 async function getPost(slug: string) {

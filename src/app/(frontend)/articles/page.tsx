@@ -3,6 +3,7 @@ import { getPayload } from '../../../lib/payload'
 import { toCardPost, publishedFilter } from '../../../lib/posts'
 
 export const metadata = { title: 'Articles' }
+export const revalidate = 60
 
 const PAGE_SIZE = 3
 

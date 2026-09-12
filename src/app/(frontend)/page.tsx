@@ -5,6 +5,7 @@ import { getPayload } from '../../lib/payload'
 import { toCardPost, publishedFilter } from '../../lib/posts'
 
 export const metadata = { title: 'Home' }
+export const revalidate = 60
 
 // Flip to true to surface the "What I write about" category grid below the hero.
 const SHOW_TOPICS_SECTION = false

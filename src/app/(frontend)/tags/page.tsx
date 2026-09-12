@@ -3,6 +3,7 @@ import { getPayload } from '../../../lib/payload'
 import { publishedFilter } from '../../../lib/posts'
 
 export const metadata = { title: 'Tags' }
+export const revalidate = 60
 
 export default async function TagsPage() {
   const payload = await getPayload()
