@@ -29,6 +29,7 @@
     "graphql": "^16.8.1",
     "next": "16.2.9",
     "payload": "3.85.1",
+    "plotly.js-basic-dist-min": "^4.1.2",
     "react": "19.2.6",
     "react-dom": "19.2.6",
     "sharp": "0.34.2",

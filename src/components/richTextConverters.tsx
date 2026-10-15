@@ -1,5 +1,6 @@
 import type { JSXConvertersFunction } from '@payloadcms/richtext-lexical/react'
 import { mediaUrl } from '../lib/media'
+import PlotlyChart from './PlotlyChart'
 import type { Media } from '../payload-types'
 
 const alignmentClass: Record<string, string> = {
@@ -51,6 +52,43 @@ export const converters: JSXConvertersFunction = ({ defaultConverters }) => ({
           {title && <div className="font-semibold mb-1">{title}</div>}
           {body && <p className="whitespace-pre-wrap m-0">{body}</p>}
         </aside>
+      )
+    },
+
+    chart: ({ node }: { node: any }) => {
+      const { figure, caption } = node.fields as { figure?: string; caption?: string }
+      let fig: { data: unknown[]; layout?: Record<string, any> } | null = null
+      try {
+        fig = figure ? JSON.parse(figure) : null
+      } catch {
+        fig = null
+      }
+      if (!fig || !Array.isArray(fig.data)) return null
+      const title = String(fig.layout?.title?.text ?? caption ?? 'Chart')
+        .replace(/<[^>]*>/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim()
+      return (
+        <figure className="not-prose my-8" role="img" aria-label={title}>
+          <PlotlyChart figure={fig} />
+          {caption && (
+            <figcaption className="text-sm text-gray-500 mt-2 text-center">{caption}</figcaption>
+          )}
+        </figure>
+      )
+    },
+
+    dataTable: ({ node }: { node: any }) => {
+      const { html, caption } = node.fields as { html?: string; caption?: string }
+      if (!html) return null
+      return (
+        <figure className="not-prose my-8">
+          {/* Authored in the admin by the site owner; the exporter escapes all cell text. */}
+          <div className="overflow-x-auto" dangerouslySetInnerHTML={{ __html: html }} />
+          {caption && (
+            <figcaption className="text-sm text-gray-500 mt-2 text-center">{caption}</figcaption>
+          )}
+        </figure>
       )
     },
 
