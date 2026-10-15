@@ -12,6 +12,8 @@ export const Posts: CollectionConfig = {
   admin: {
     useAsTitle: 'title',
     defaultColumns: ['title', 'category', 'publishedAt', 'updatedAt'],
+    // "Preview" button in the editor: renders the latest saved draft (login required).
+    preview: (doc) => (doc?.slug ? `/preview/${doc.slug}` : null),
   },
   access: { read: () => true },
   versions: { drafts: true },
