@@ -15,6 +15,7 @@
     "lint": "cross-env NODE_OPTIONS=--no-deprecation eslint .",
     "payload": "cross-env NODE_OPTIONS=--no-deprecation payload",
     "start": "cross-env NODE_OPTIONS=--no-deprecation next start",
+    "rebake:media": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" tsx scripts/rebake-media.ts",
     "migrate:strapi": "cross-env NODE_OPTIONS=\"--no-deprecation --import=tsx/esm\" tsx scripts/migrate-from-strapi.ts"
   },
   "dependencies": {

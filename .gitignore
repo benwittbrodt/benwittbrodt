@@ -33,3 +33,6 @@ yarn-error.log*
 /payload.db-journal
 /payload.db-wal
 /payload.db-shm
+
+# Originals saved by scripts/rebake-media.ts
+/media-backup
