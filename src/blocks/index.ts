@@ -92,4 +92,53 @@ export const TableBlock: Block = {
   ],
 }
 
-export const inlineBlocks = [CalloutBlock, CodeBlock, ChartBlock, TableBlock]
+// A responsive grid of images (1 column on mobile).
+export const ImageGridBlock: Block = {
+  slug: 'imageGrid',
+  labels: { singular: 'Image Grid', plural: 'Image Grids' },
+  fields: [
+    {
+      name: 'columns',
+      type: 'select',
+      required: true,
+      defaultValue: '2',
+      options: [
+        { label: '2 columns', value: '2' },
+        { label: '3 columns', value: '3' },
+        { label: '4 columns', value: '4' },
+      ],
+    },
+    {
+      name: 'images',
+      type: 'array',
+      required: true,
+      minRows: 2,
+      fields: [
+        { name: 'image', type: 'upload', relationTo: 'media', required: true },
+        { name: 'caption', type: 'text' },
+      ],
+    },
+  ],
+}
+
+// An image next to a block of text, stacked on mobile.
+export const SideBySideBlock: Block = {
+  slug: 'sideBySide',
+  labels: { singular: 'Side by Side', plural: 'Side by Side' },
+  fields: [
+    { name: 'image', type: 'upload', relationTo: 'media', required: true },
+    { name: 'caption', type: 'text' },
+    {
+      name: 'imageSide',
+      type: 'select',
+      defaultValue: 'left',
+      options: [
+        { label: 'Image on left', value: 'left' },
+        { label: 'Image on right', value: 'right' },
+      ],
+    },
+    { name: 'text', type: 'richText', required: true },
+  ],
+}
+
+export const inlineBlocks = [CalloutBlock, CodeBlock, ChartBlock, TableBlock, ImageGridBlock, SideBySideBlock]

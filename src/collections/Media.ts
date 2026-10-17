@@ -9,6 +9,8 @@ export const Media: CollectionConfig = {
   upload: {
     staticDir: 'media',
     mimeTypes: ['image/*'],
+    crop: true,
+    focalPoint: true,
     imageSizes: [
       { name: 'thumbnail', width: 400, height: undefined, position: 'centre' },
       { name: 'small', width: 800, height: undefined, position: 'centre' },

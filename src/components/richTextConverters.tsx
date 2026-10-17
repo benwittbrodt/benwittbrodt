@@ -1,4 +1,4 @@
-import type { JSXConvertersFunction } from '@payloadcms/richtext-lexical/react'
+import { RichText, type JSXConvertersFunction } from '@payloadcms/richtext-lexical/react'
 import { mediaUrl } from '../lib/media'
 import PlotlyChart from './PlotlyChart'
 import type { Media } from '../payload-types'
@@ -15,6 +15,12 @@ const calloutStyles: Record<string, string> = {
   tip: 'border-emerald-500 bg-emerald-50 text-emerald-900',
   warning: 'border-amber-500 bg-amber-50 text-amber-900',
   success: 'border-green-500 bg-green-50 text-green-900',
+}
+
+const gridCols: Record<string, string> = {
+  '2': 'sm:grid-cols-2',
+  '3': 'sm:grid-cols-2 lg:grid-cols-3',
+  '4': 'sm:grid-cols-2 lg:grid-cols-4',
 }
 
 export const converters: JSXConvertersFunction = ({ defaultConverters }) => ({
@@ -40,6 +46,57 @@ export const converters: JSXConvertersFunction = ({ defaultConverters }) => ({
   },
 
   blocks: {
+    imageGrid: ({ node }: { node: any }) => {
+      const { columns = '2', images = [] } = node.fields as {
+        columns?: string
+        images?: { image: Media | number | null; caption?: string }[]
+      }
+      const items = images.flatMap((item) => {
+        const media = typeof item.image === 'object' ? item.image : null
+        const url = media ? mediaUrl(media, 'large') : null
+        return media && url ? [{ media, url, caption: item.caption }] : []
+      })
+      if (!items.length) return null
+      return (
+        <div className={`not-prose grid grid-cols-1 gap-4 my-8 ${gridCols[columns] ?? gridCols['2']}`}>
+          {items.map(({ media, url, caption }, i) => (
+            <figure key={i}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={url}
+                alt={media.alt ?? caption ?? ''}
+                className="rounded-lg w-full aspect-[4/3] object-cover"
+                style={{ objectPosition: `${media.focalX ?? 50}% ${media.focalY ?? 50}%` }}
+              />
+              {caption && <figcaption className="text-sm text-gray-500 mt-2 text-center">{caption}</figcaption>}
+            </figure>
+          ))}
+        </div>
+      )
+    },
+
+    sideBySide: ({ node }: { node: any }) => {
+      const { image, caption, imageSide = 'left', text } = node.fields as {
+        image?: Media | number | null
+        caption?: string
+        imageSide?: string
+        text?: any
+      }
+      const media = typeof image === 'object' ? image : null
+      const url = media ? mediaUrl(media, 'large') : null
+      if (!media || !url) return null
+      return (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center my-8">
+          <figure className={`not-prose ${imageSide === 'right' ? 'md:order-2' : ''}`}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={url} alt={media.alt ?? caption ?? ''} className="rounded-lg w-full h-auto" />
+            {caption && <figcaption className="text-sm text-gray-500 mt-2 text-center">{caption}</figcaption>}
+          </figure>
+          <div>{text && <RichText data={text} />}</div>
+        </div>
+      )
+    },
+
     callout: ({ node }: { node: any }) => {
       const { variant = 'info', title, body } = node.fields as {
         variant?: string
