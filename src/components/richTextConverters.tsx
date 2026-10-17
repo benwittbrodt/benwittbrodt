@@ -1,6 +1,7 @@
 import { RichText, type JSXConvertersFunction } from '@payloadcms/richtext-lexical/react'
 import { mediaUrl } from '../lib/media'
 import PlotlyChart from './PlotlyChart'
+import ImageGrid, { type GridImage } from './ImageGrid'
 import type { Media } from '../payload-types'
 
 const alignmentClass: Record<string, string> = {
@@ -15,12 +16,6 @@ const calloutStyles: Record<string, string> = {
   tip: 'border-emerald-500 bg-emerald-50 text-emerald-900',
   warning: 'border-amber-500 bg-amber-50 text-amber-900',
   success: 'border-green-500 bg-green-50 text-green-900',
-}
-
-const gridCols: Record<string, string> = {
-  '2': 'sm:grid-cols-2',
-  '3': 'sm:grid-cols-2 lg:grid-cols-3',
-  '4': 'sm:grid-cols-2 lg:grid-cols-4',
 }
 
 export const converters: JSXConvertersFunction = ({ defaultConverters }) => ({
@@ -51,26 +46,26 @@ export const converters: JSXConvertersFunction = ({ defaultConverters }) => ({
         columns?: string
         images?: { image: Media | number | null; caption?: string }[]
       }
-      const items = images.flatMap((item) => {
+      const items = images.flatMap((item): GridImage[] => {
         const media = typeof item.image === 'object' ? item.image : null
-        const url = media ? mediaUrl(media, 'large') : null
-        return media && url ? [{ media, url, caption: item.caption }] : []
+        const src = media ? mediaUrl(media, 'medium') : null
+        const full = media ? mediaUrl(media, 'large') : null
+        if (!media || !src || !full) return []
+        return [
+          {
+            src,
+            full,
+            alt: media.alt ?? item.caption ?? '',
+            caption: item.caption,
+            focalX: media.focalX ?? 50,
+            focalY: media.focalY ?? 50,
+          },
+        ]
       })
       if (!items.length) return null
       return (
-        <div className={`not-prose grid grid-cols-1 gap-4 my-8 ${gridCols[columns] ?? gridCols['2']}`}>
-          {items.map(({ media, url, caption }, i) => (
-            <figure key={i}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={url}
-                alt={media.alt ?? caption ?? ''}
-                className="rounded-lg w-full aspect-[4/3] object-cover"
-                style={{ objectPosition: `${media.focalX ?? 50}% ${media.focalY ?? 50}%` }}
-              />
-              {caption && <figcaption className="text-sm text-gray-500 mt-2 text-center">{caption}</figcaption>}
-            </figure>
-          ))}
+        <div className="not-prose">
+          <ImageGrid images={items} columns={columns} />
         </div>
       )
     },
