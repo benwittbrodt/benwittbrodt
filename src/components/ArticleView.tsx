@@ -15,7 +15,7 @@ export default function ArticleView({ post, banner }: { post: Post; banner?: Rea
   const heroUrl = fi && typeof fi === 'object' ? mediaUrl(fi, 'large') : null
 
   return (
-    <section className="mx-auto max-w-3xl mt-40 px-4 xl:px-0 mb-20">
+    <section className="mx-auto max-w-4xl mt-40 px-4 xl:px-0 mb-20">
       <div className="post py-8">
         {banner}
         {heroUrl && (
