@@ -59,6 +59,18 @@ export const Posts: CollectionConfig = {
                 fields: [
                   { name: 'caption', type: 'text' },
                   {
+                    name: 'size',
+                    type: 'select',
+                    defaultValue: 'medium',
+                    admin: { description: 'How wide the image appears in the post.' },
+                    options: [
+                      { label: 'Small', value: 'small' },
+                      { label: 'Medium', value: 'medium' },
+                      { label: 'Large', value: 'large' },
+                      { label: 'Full width', value: 'full' },
+                    ],
+                  },
+                  {
                     name: 'alignment',
                     type: 'select',
                     defaultValue: 'center',

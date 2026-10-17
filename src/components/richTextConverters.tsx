@@ -4,11 +4,23 @@ import PlotlyChart from './PlotlyChart'
 import ImageGrid, { type GridImage } from './ImageGrid'
 import type { Media } from '../payload-types'
 
-const alignmentClass: Record<string, string> = {
-  left: 'float-left mr-6 mb-4 max-w-sm',
-  right: 'float-right ml-6 mb-4 max-w-sm',
-  center: 'mx-auto my-6',
-  full: 'w-full my-6',
+const floatClass: Record<string, string> = {
+  left: 'float-left mr-6 mb-4',
+  right: 'float-right ml-6 mb-4',
+}
+
+// Width caps per size. Floated images are narrower so text can wrap beside them.
+const widthClass: Record<string, string> = {
+  small: 'w-full max-w-xs',
+  medium: 'w-full max-w-lg',
+  large: 'w-full max-w-2xl',
+  full: 'w-full',
+}
+const floatWidthClass: Record<string, string> = {
+  small: 'w-full max-w-[15rem]',
+  medium: 'w-full max-w-sm',
+  large: 'w-full max-w-md',
+  full: 'w-full max-w-md',
 }
 
 const calloutStyles: Record<string, string> = {
@@ -27,8 +39,13 @@ export const converters: JSXConvertersFunction = ({ defaultConverters }) => ({
     if (!media) return null
     const url = mediaUrl(media, 'large')
     if (!url) return null
-    const fields = (node.fields ?? {}) as { caption?: string; alignment?: string }
-    const wrapClass = alignmentClass[fields.alignment ?? 'center'] ?? alignmentClass.center
+    const fields = (node.fields ?? {}) as { caption?: string; alignment?: string; size?: string }
+    const alignment = fields.alignment ?? 'center'
+    // Images saved before the size option existed pick up the field's default (medium) when read.
+    const size = alignment === 'full' ? 'full' : (fields.size ?? 'full')
+    const wrapClass = floatClass[alignment]
+      ? `${floatClass[alignment]} ${floatWidthClass[size] ?? floatWidthClass.medium}`
+      : `mx-auto my-6 ${widthClass[size] ?? widthClass.full}`
     return (
       <figure className={`not-prose ${wrapClass}`}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
