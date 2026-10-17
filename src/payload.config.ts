@@ -29,10 +29,12 @@ export default buildConfig({
   },
   db: sqliteAdapter({
     client: { url: process.env.DATABASE_URL || 'file:./payload.db' },
-    // Always push schema on connect (no separate migrations dir). Fine for a
+    // Push schema on connect (no separate migrations dir). Fine for a
     // one-author site; revisit if/when destructive schema changes start to
-    // matter or multiple writers are involved.
-    push: true,
+    // matter or multiple writers are involved. Set DB_PUSH=false to skip the
+    // push, e.g. on a server whose schema is already in sync but where
+    // drizzle-kit's diff keeps trying to recreate indexes that exist.
+    push: process.env.DB_PUSH !== 'false',
   }),
   sharp,
 })
