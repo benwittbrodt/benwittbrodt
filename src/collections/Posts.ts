@@ -31,6 +31,13 @@ export const Posts: CollectionConfig = {
       name: 'publishedAt',
       type: 'date',
       admin: { position: 'sidebar', date: { pickerAppearance: 'dayAndTime' } },
+      hooks: {
+        // Stamp the publish time the first time a post is published, unless one was set by hand.
+        beforeChange: [
+          ({ value, siblingData }) =>
+            !value && siblingData?._status === 'published' ? new Date().toISOString() : value,
+        ],
+      },
     },
     {
       name: 'previewText',
