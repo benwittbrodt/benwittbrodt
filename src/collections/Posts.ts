@@ -14,6 +14,8 @@ export const Posts: CollectionConfig = {
     defaultColumns: ['title', 'category', 'publishedAt', 'updatedAt'],
     // "Preview" button in the editor: renders the latest saved draft (login required).
     preview: (doc) => (doc?.slug ? `/preview/${doc.slug}` : null),
+    // Side-by-side "Live Preview" toggle in the editor; the preview page refreshes each time a draft is saved.
+    livePreview: { url: ({ data }) => (data?.slug ? `/preview/${data.slug}` : '') },
   },
   access: { read: () => true },
   versions: { drafts: true },

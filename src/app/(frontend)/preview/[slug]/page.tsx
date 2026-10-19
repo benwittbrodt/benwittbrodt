@@ -2,6 +2,7 @@ import { headers } from 'next/headers'
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import ArticleView from '../../../../components/ArticleView'
+import PreviewRefresh from '../../../../components/PreviewRefresh'
 import { getPayload } from '../../../../lib/payload'
 
 // Draft preview for the admin "Preview" button. Not cached, not indexed, and only visible while logged in
@@ -28,13 +29,16 @@ export default async function PreviewPage({ params }: { params: Promise<Params> 
   if (!post) notFound()
 
   return (
-    <ArticleView
-      post={post}
-      banner={
-        <div className="mb-6 rounded-md border border-amber-300 bg-amber-50 px-4 py-2 text-sm text-amber-900">
-          Draft preview{post._status ? ` (${post._status})` : ''}. Only you can see this page.
-        </div>
-      }
-    />
+    <>
+      <PreviewRefresh />
+      <ArticleView
+        post={post}
+        banner={
+          <div className="mb-6 rounded-md border border-amber-300 bg-amber-50 px-4 py-2 text-sm text-amber-900">
+            Draft preview{post._status ? ` (${post._status})` : ''}. Only you can see this page.
+          </div>
+        }
+      />
+    </>
   )
 }
