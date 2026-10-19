@@ -1,4 +1,5 @@
 import type { Block } from 'payload'
+import { parseActivityEmbed } from '../lib/activityEmbed'
 
 export const CalloutBlock: Block = {
   slug: 'callout',
@@ -141,4 +142,25 @@ export const SideBySideBlock: Block = {
   ],
 }
 
-export const inlineBlocks = [CalloutBlock, CodeBlock, ChartBlock, TableBlock, ImageGridBlock, SideBySideBlock]
+// A Garmin Connect or Strava activity (route map and stats), pasted from the activity's embed/share dialog.
+export const ActivityEmbedBlock: Block = {
+  slug: 'activityEmbed',
+  labels: { singular: 'Activity Embed', plural: 'Activity Embeds' },
+  fields: [
+    {
+      name: 'embed',
+      type: 'textarea',
+      required: true,
+      label: 'Embed code or link',
+      admin: {
+        description:
+          'Garmin Connect: Share, then Embed, then paste the iframe. Strava: Share, then Embed on your site, then paste the snippet. The activity must be public.',
+      },
+      validate: (value: unknown) =>
+        parseActivityEmbed(value) ? true : 'Paste a Garmin Connect or Strava activity embed code or link.',
+    },
+    { name: 'caption', type: 'text' },
+  ],
+}
+
+export const inlineBlocks = [CalloutBlock, CodeBlock, ChartBlock, TableBlock, ImageGridBlock, SideBySideBlock, ActivityEmbedBlock]

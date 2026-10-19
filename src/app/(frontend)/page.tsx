@@ -1,17 +1,41 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import DatePresenter from '../../components/DatePresenter'
+import SocialLinks from '../../components/SocialLinks'
 import { getPayload } from '../../lib/payload'
 import { toCardPost, publishedFilter } from '../../lib/posts'
+import { mediaUrl } from '../../lib/media'
+import type { Media } from '../../payload-types'
 
 export const metadata = { title: 'Home' }
 export const revalidate = 60
+
+const DEFAULT_INTRO =
+  "This site is an effort to document and write more of what's going on in my life. Topics could span from technology projects, running, home improvement, or anything that has a rabbit hole you can dive down."
+
+// Photo and intro come from the "Home" global in the admin. Any failure (empty global, table not created yet)
+// falls back to the built-in defaults so the home page never breaks.
+async function getHero() {
+  try {
+    const payload = await getPayload()
+    const home = await payload.findGlobal({ slug: 'home', depth: 1 })
+    const media = home.headshot && typeof home.headshot === 'object' ? (home.headshot as Media) : null
+    const url = media ? mediaUrl(media, 'small') : null
+    return {
+      intro: home.intro?.trim() || DEFAULT_INTRO,
+      photo: media && url ? { url, alt: media.alt || 'Ben Wittbrodt', x: media.focalX ?? 50, y: media.focalY ?? 50 } : null,
+    }
+  } catch {
+    return { intro: DEFAULT_INTRO, photo: null }
+  }
+}
 
 // Flip to true to surface the "What I write about" category grid below the hero.
 const SHOW_TOPICS_SECTION = false
 
 export default async function HomePage() {
   const payload = await getPayload()
+  const hero = await getHero()
   const postsRes = await payload.find({
     collection: 'posts',
     where: publishedFilter,
@@ -27,21 +51,33 @@ export default async function HomePage() {
   return (
     <main>
       {/* Hero */}
-      <section className="mx-auto max-w-3xl px-4 xl:px-0 pt-36 pb-20 flex flex-col sm:flex-row items-center gap-10">
-        <Image
-          src="/headshot.jpg"
-          alt="Ben Wittbrodt"
-          width={224}
-          height={224}
-          priority
-          className="w-56 h-56 rounded-2xl object-cover shadow-md shrink-0"
-        />
+      <section className="mx-auto max-w-5xl px-4 xl:px-0 pt-36 pb-20 flex flex-col sm:flex-row items-center gap-10">
+        {hero.photo ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={hero.photo.url}
+            alt={hero.photo.alt}
+            width={224}
+            height={224}
+            className="w-56 h-56 rounded-2xl object-cover shadow-md shrink-0"
+            style={{ objectPosition: `${hero.photo.x}% ${hero.photo.y}%` }}
+          />
+        ) : (
+          <Image
+            src="/headshot.jpg"
+            alt="Ben Wittbrodt"
+            width={224}
+            height={224}
+            priority
+            className="w-56 h-56 rounded-2xl object-cover shadow-md shrink-0"
+          />
+        )}
         <div>
           <h1 className="text-4xl font-bold">
-            Hey, I&apos;m <span className="text-blue-700">Ben Wittbrodt</span>
+            Hi, I&apos;m <span className="text-blue-700">Ben Wittbrodt</span>
           </h1>
           <p className="mt-3 text-gray-600 text-lg leading-relaxed">
-            I write about personal finance, watches, and home automation. Stuff I think about way too much.
+            {hero.intro}
           </p>
           <div className="flex gap-3 mt-6">
             <Link
@@ -57,13 +93,14 @@ export default async function HomePage() {
               Get in touch
             </Link>
           </div>
+          <SocialLinks className="mt-6" />
         </div>
       </section>
 
       {/* What I write about — gated by SHOW_TOPICS_SECTION above */}
       {SHOW_TOPICS_SECTION && categories.length > 0 && (
         <section className="bg-gray-50 py-16 px-4 xl:px-0">
-          <div className="mx-auto max-w-3xl">
+          <div className="mx-auto max-w-5xl">
             <h2 className="text-2xl font-bold mb-8">What I write about</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {categories.map((cat) => (
@@ -86,7 +123,7 @@ export default async function HomePage() {
       )}
 
       {/* Recent posts */}
-      <section className="mx-auto max-w-3xl px-4 xl:px-0 py-16">
+      <section className="mx-auto max-w-5xl px-4 xl:px-0 py-16">
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-2xl font-bold">Recent posts</h2>
           <Link href="/posts" className="text-sm text-blue-700 hover:underline font-medium">

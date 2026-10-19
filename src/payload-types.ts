@@ -101,9 +101,11 @@ export interface Config {
   fallbackLocale: null;
   globals: {
     background: Background;
+    home: Home;
   };
   globalsSelect: {
     background: BackgroundSelect<false> | BackgroundSelect<true>;
+    home: HomeSelect<false> | HomeSelect<true>;
   };
   locale: null;
   widgets: {
@@ -626,6 +628,23 @@ export interface Background {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "home".
+ */
+export interface Home {
+  id: number;
+  /**
+   * Square photos look best. Set the focal point on the image to control the crop.
+   */
+  headshot?: (number | null) | Media;
+  /**
+   * The line under "Hey, I'm Ben Wittbrodt".
+   */
+  intro?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "background_select".
  */
 export interface BackgroundSelect<T extends boolean = true> {
@@ -646,6 +665,17 @@ export interface BackgroundSelect<T extends boolean = true> {
             };
         id?: T;
       };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "home_select".
+ */
+export interface HomeSelect<T extends boolean = true> {
+  headshot?: T;
+  intro?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;

@@ -3,6 +3,8 @@ import { mediaUrl } from '../lib/media'
 import PlotlyChart from './PlotlyChart'
 import ImageGrid, { type GridImage } from './ImageGrid'
 import ZoomableImage from './ZoomableImage'
+import StravaEmbed from './StravaEmbed'
+import { parseActivityEmbed } from '../lib/activityEmbed'
 import type { Media } from '../payload-types'
 
 const floatClass: Record<string, string> = {
@@ -61,6 +63,27 @@ export const converters: JSXConvertersFunction = ({ defaultConverters }) => ({
   },
 
   blocks: {
+    activityEmbed: ({ node }: { node: any }) => {
+      const { embed, caption } = node.fields as { embed?: string; caption?: string }
+      const activity = parseActivityEmbed(embed)
+      if (!activity) return null
+      return (
+        <figure className="not-prose my-8">
+          {activity.provider === 'garmin' ? (
+            <iframe
+              src={`https://connect.garmin.com/embed/activity/${activity.id}`}
+              title="Garmin Connect activity"
+              loading="lazy"
+              className="w-full h-[520px] rounded-lg border border-gray-200"
+            />
+          ) : (
+            <StravaEmbed id={activity.id} />
+          )}
+          {caption && <figcaption className="text-sm text-gray-500 mt-2 text-center">{caption}</figcaption>}
+        </figure>
+      )
+    },
+
     imageGrid: ({ node }: { node: any }) => {
       const { columns = '2', images = [] } = node.fields as {
         columns?: string
