@@ -7,6 +7,9 @@ import './styles.css'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' })
 
+// Light-only site: also tells browsers (and forced-dark modes) not to restyle it.
+export const viewport = { colorScheme: 'light' as const }
+
 export const metadata = {
   title: { default: 'Ben Wittbrodt', template: '%s | Ben Wittbrodt' },
   description: 'Personal site of Ben Wittbrodt — posts, background, and contact.',

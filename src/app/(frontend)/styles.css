@@ -7,3 +7,24 @@
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+@layer base {
+  /* The site is light-only: stop browsers from applying a dark canvas or forced dark mode. */
+  html {
+    color-scheme: light;
+  }
+  body {
+    background-color: #fff;
+  }
+
+  /* Anchor targets land below the fixed navbar instead of hidden behind it. */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  [id] {
+    scroll-margin-top: 6rem;
+  }
+}

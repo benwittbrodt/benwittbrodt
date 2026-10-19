@@ -15,10 +15,22 @@ const navigation = [
 export default function Nav() {
   const pathname = usePathname()
   const [open, setOpen] = useState(false)
+  const [compact, setCompact] = useState(false)
   const navRef = useRef<HTMLUListElement>(null)
   const buttonRef = useRef<HTMLButtonElement>(null)
 
   useEffect(() => setOpen(false), [pathname])
+
+  // Shrink the bar once the page scrolls. The gap between the two thresholds stops it flickering at the boundary.
+  useEffect(() => {
+    function onScroll() {
+      const y = window.scrollY
+      setCompact((was) => (was ? y > 12 : y > 48))
+    }
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   useEffect(() => {
     function onClickOutside(e: MouseEvent) {
@@ -49,11 +61,19 @@ export default function Nav() {
   }
 
   return (
-    <header className="fixed bg-white top-0 left-0 w-full z-40 border-t-[14px] border-blue-600">
-      <nav className="container mx-auto flex flex-wrap items-center justify-between py-6 px-4 xl:px-0">
-        <div className="h-12">
-          <Link href="/">
-            <Image src="/website_logo.svg" alt="logo" width={120} height={48} priority className="w-auto h-12" />
+    <header
+      className={`fixed bg-white top-0 left-0 w-full z-40 border-blue-600 transition-[border-width,box-shadow] duration-200 motion-reduce:transition-none ${
+        compact ? 'border-t-[6px] shadow-md' : 'border-t-[14px]'
+      }`}
+    >
+      <nav
+        className={`container mx-auto flex flex-wrap items-center justify-between px-4 xl:px-0 transition-[padding] duration-200 motion-reduce:transition-none ${
+          compact ? 'py-2' : 'py-6'
+        }`}
+      >
+        <div className={`transition-[height] duration-200 motion-reduce:transition-none ${compact ? 'h-8' : 'h-12'}`}>
+          <Link href="/" className="block h-full">
+            <Image src="/website_logo.svg" alt="logo" width={120} height={48} priority className="w-auto h-full" />
           </Link>
         </div>
 
