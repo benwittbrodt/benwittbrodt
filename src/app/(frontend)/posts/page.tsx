@@ -2,12 +2,12 @@ import PostsList from '../../../components/PostsList'
 import { getPayload } from '../../../lib/payload'
 import { toCardPost, publishedFilter } from '../../../lib/posts'
 
-export const metadata = { title: 'Articles' }
+export const metadata = { title: 'Posts' }
 export const revalidate = 60
 
 const PAGE_SIZE = 3
 
-export default async function ArticlesPage({
+export default async function PostsPage({
   searchParams,
 }: {
   searchParams: Promise<{ page?: string }>
@@ -32,7 +32,7 @@ export default async function ArticlesPage({
       page={page}
       totalPages={res.totalPages}
       totalCount={res.totalDocs}
-      basePath="/articles"
+      basePath="/posts"
     />
   )
 }

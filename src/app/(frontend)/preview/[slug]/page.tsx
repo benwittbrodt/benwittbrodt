@@ -6,7 +6,7 @@ import PreviewRefresh from '../../../../components/PreviewRefresh'
 import { getPayload } from '../../../../lib/payload'
 
 // Draft preview for the admin "Preview" button. Not cached, not indexed, and only visible while logged in
-// to the admin (the public /articles/[slug] page shows published posts only).
+// to the admin (the public /posts/[slug] page shows published posts only).
 export const dynamic = 'force-dynamic'
 export const metadata: Metadata = { title: 'Preview', robots: { index: false, follow: false } }
 

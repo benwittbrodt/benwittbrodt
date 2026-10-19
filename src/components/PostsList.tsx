@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import DatePresenter from './DatePresenter'
 import TagsPresenter from './TagsPresenter'
+import FilterChips from './FilterChips'
+import { getFilterOptions } from '../lib/filters'
 import type { CardPost } from '../lib/posts'
 
 type Props = {
@@ -8,16 +10,17 @@ type Props = {
   page: number
   totalPages: number
   totalCount: number
-  basePath: string // e.g. "/articles", "/tags/python", "/categories/lifestyle"
-  heading?: { kind: 'tag' | 'category'; label: string } | null
+  basePath: string // e.g. "/posts", "/tags/python", "/categories/lifestyle"
+  heading?: { kind: 'tag' | 'category'; label: string; slug: string } | null
 }
 
-export default function PostsList({ posts, page, totalPages, totalCount, basePath, heading }: Props) {
+export default async function PostsList({ posts, page, totalPages, totalCount, basePath, heading }: Props) {
+  const { categories, tags } = await getFilterOptions()
   const prevHref = page > 1 ? hrefFor(basePath, page - 1) : null
   const nextHref = page < totalPages ? hrefFor(basePath, page + 1) : null
 
   return (
-    <section className="mx-auto max-w-3xl w-full mt-40 px-4 xl:px-0 mb-20">
+    <section className="mx-auto max-w-5xl w-full mt-40 px-4 xl:px-0 mb-20">
       {heading?.kind === 'tag' && (
         <h2 className="text-4xl font-bold mb-6">
           Tag: {heading.label} ({totalCount})
@@ -29,14 +32,21 @@ export default function PostsList({ posts, page, totalPages, totalCount, basePat
         </h2>
       )}
 
+      <FilterChips
+        categories={categories}
+        tags={tags}
+        activeCategory={heading?.kind === 'category' ? heading.slug : undefined}
+        activeTag={heading?.kind === 'tag' ? heading.slug : undefined}
+      />
+
       <div className="posts divide-y divide-gray-200">
         {posts.length === 0 && (
-          <p className="text-gray-500 py-8">No articles yet — check back soon.</p>
+          <p className="text-gray-500 py-8">No posts yet — check back soon.</p>
         )}
         {posts.map((post) => (
           <div key={post.id} className="post py-8">
             {post.featuredImage && (
-              <Link href={`/articles/${post.slug}`}>
+              <Link href={`/posts/${post.slug}`}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={post.featuredImage.url}
@@ -57,7 +67,7 @@ export default function PostsList({ posts, page, totalPages, totalCount, basePat
               )}
             </div>
             <h2 className="text-3xl font-bold mt-1">
-              <Link href={`/articles/${post.slug}`} className="hover:text-gray-500">
+              <Link href={`/posts/${post.slug}`} className="hover:text-gray-500">
                 {post.title}
               </Link>
             </h2>
@@ -67,7 +77,7 @@ export default function PostsList({ posts, page, totalPages, totalCount, basePat
             {post.summary && <p className="line-clamp-3 text-gray-600 mt-4">{post.summary}</p>}
 
             <div className="mt-4">
-              <Link href={`/articles/${post.slug}`} className="font-bold uppercase hover:text-gray-500">
+              <Link href={`/posts/${post.slug}`} className="font-bold uppercase hover:text-gray-500">
                 Read More
               </Link>
             </div>

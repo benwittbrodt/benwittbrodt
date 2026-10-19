@@ -64,7 +64,7 @@ export default async function CategoryPage({
       totalPages={res.totalPages}
       totalCount={res.totalDocs}
       basePath={`/categories/${slug}`}
-      heading={{ kind: 'category', label: cat.title }}
+      heading={{ kind: 'category', label: cat.title, slug }}
     />
   )
 }

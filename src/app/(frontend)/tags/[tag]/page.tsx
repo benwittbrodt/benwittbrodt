@@ -64,7 +64,7 @@ export default async function TagPage({
       totalPages={res.totalPages}
       totalCount={res.totalDocs}
       basePath={`/tags/${slug}`}
-      heading={{ kind: 'tag', label: tag.title }}
+      heading={{ kind: 'tag', label: tag.title, slug: tag.slug }}
     />
   )
 }

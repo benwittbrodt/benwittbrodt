@@ -15,7 +15,7 @@ export default function ArticleView({ post, banner }: { post: Post; banner?: Rea
   const heroUrl = fi && typeof fi === 'object' ? mediaUrl(fi, 'large') : null
 
   return (
-    <section className="mx-auto max-w-4xl mt-40 px-4 xl:px-0 mb-20">
+    <section className="mx-auto max-w-5xl mt-40 px-4 xl:px-0 mb-20">
       <div className="post py-8">
         {banner}
         {heroUrl && (
@@ -45,8 +45,8 @@ export default function ArticleView({ post, banner }: { post: Post; banner?: Rea
           </div>
         )}
         <div className="pt-8 mt-8 border-t border-gray-300">
-          <Link href="/articles" className="font-bold uppercase hover:text-gray-500">
-            Back to Articles
+          <Link href="/posts" className="font-bold uppercase hover:text-gray-500">
+            Back to Posts
           </Link>
         </div>
       </div>

@@ -45,10 +45,10 @@ export default async function HomePage() {
           </p>
           <div className="flex gap-3 mt-6">
             <Link
-              href="/articles"
+              href="/posts"
               className="rounded-lg bg-blue-700 hover:bg-blue-600 text-white text-sm font-medium px-5 py-2.5 transition-colors"
             >
-              Read articles
+              Read posts
             </Link>
             <Link
               href="/contact"
@@ -85,18 +85,18 @@ export default async function HomePage() {
         </section>
       )}
 
-      {/* Recent articles */}
+      {/* Recent posts */}
       <section className="mx-auto max-w-3xl px-4 xl:px-0 py-16">
         <div className="flex items-center justify-between mb-8">
-          <h2 className="text-2xl font-bold">Recent articles</h2>
-          <Link href="/articles" className="text-sm text-blue-700 hover:underline font-medium">
+          <h2 className="text-2xl font-bold">Recent posts</h2>
+          <Link href="/posts" className="text-sm text-blue-700 hover:underline font-medium">
             View all →
           </Link>
         </div>
 
         {recentPosts.length === 0 ? (
           <div className="text-center py-12 border border-dashed border-gray-200 rounded-xl">
-            <p className="text-gray-500 mb-4">No articles yet, but more coming soon.</p>
+            <p className="text-gray-500 mb-4">No posts yet, but more coming soon.</p>
             <div className="flex justify-center gap-3 text-sm">
               <Link href="/background" className="text-blue-700 hover:underline">
                 Read my background
@@ -112,7 +112,7 @@ export default async function HomePage() {
             {recentPosts.map((post) => (
               <Link
                 key={post.id}
-                href={`/articles/${post.slug}`}
+                href={`/posts/${post.slug}`}
                 className="group flex flex-col rounded-xl border border-gray-200 overflow-hidden hover:border-blue-700 transition-colors"
               >
                 {post.featuredImage ? (

@@ -13,6 +13,13 @@ const nextConfig: NextConfig = {
       { pathname: '/**' },
     ],
   },
+  // The posts section used to live under /articles.
+  async redirects() {
+    return [
+      { source: '/articles', destination: '/posts', permanent: true },
+      { source: '/articles/:slug', destination: '/posts/:slug', permanent: true },
+    ]
+  },
   webpack: (webpackConfig) => {
     webpackConfig.resolve.extensionAlias = {
       '.cjs': ['.cts', '.cjs'],

@@ -7,7 +7,7 @@ import { useEffect, useRef, useState } from 'react'
 
 const navigation = [
   { href: '/', title: 'Home' },
-  { href: '/articles', title: 'Articles' },
+  { href: '/posts', title: 'Posts' },
   { href: '/background', title: 'Background' },
   { href: '/contact', title: 'Contact' },
 ]
@@ -41,9 +41,11 @@ export default function Nav() {
 
   const firstSeg = pathname.split('/')[1] ?? ''
 
+  // Tag, category and draft-preview pages belong to the Posts section.
+  const section = ['tags', 'categories', 'preview'].includes(firstSeg) ? 'posts' : firstSeg
+
   function isActive(href: string) {
-    if (href === '/') return firstSeg === ''
-    return href.includes(firstSeg) || (firstSeg === 'posts' && href === '/articles')
+    return section === href.split('/')[1]
   }
 
   return (

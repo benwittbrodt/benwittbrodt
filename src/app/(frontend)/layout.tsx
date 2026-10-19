@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'sw
 
 export const metadata = {
   title: { default: 'Ben Wittbrodt', template: '%s | Ben Wittbrodt' },
-  description: 'Personal site of Ben Wittbrodt — articles, background, and contact.',
+  description: 'Personal site of Ben Wittbrodt — posts, background, and contact.',
   icons: { icon: '/favicon.svg' },
 }
 
