@@ -2,6 +2,7 @@ import { RichText, type JSXConvertersFunction } from '@payloadcms/richtext-lexic
 import { mediaUrl } from '../lib/media'
 import PlotlyChart from './PlotlyChart'
 import ImageGrid, { type GridImage } from './ImageGrid'
+import ZoomableImage from './ZoomableImage'
 import type { Media } from '../payload-types'
 
 const floatClass: Record<string, string> = {
@@ -41,19 +42,21 @@ export const converters: JSXConvertersFunction = ({ defaultConverters }) => ({
     if (!url) return null
     const fields = (node.fields ?? {}) as { caption?: string; alignment?: string; size?: string }
     const alignment = fields.alignment ?? 'center'
-    // Images saved before the size option existed pick up the field's default (medium) when read.
-    const size = alignment === 'full' ? 'full' : (fields.size ?? 'full')
+    // Images with no saved size (never opened in the options drawer) render at medium, matching the field default.
+    const size = alignment === 'full' ? 'full' : (fields.size ?? 'medium')
     const wrapClass = floatClass[alignment]
       ? `${floatClass[alignment]} ${floatWidthClass[size] ?? floatWidthClass.medium}`
       : `mx-auto my-6 ${widthClass[size] ?? widthClass.full}`
+    // Small/medium images don't need the biggest file for display; the lightbox always uses the large one.
+    const src = (size === 'small' || size === 'medium' ? mediaUrl(media, 'medium') : null) ?? url
     return (
-      <figure className={`not-prose ${wrapClass}`}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={url} alt={media.alt ?? fields.caption ?? ''} className="rounded-lg w-full h-auto" />
-        {fields.caption && (
-          <figcaption className="text-sm text-gray-500 mt-2 text-center">{fields.caption}</figcaption>
-        )}
-      </figure>
+      <ZoomableImage
+        src={src}
+        full={url}
+        alt={media.alt ?? fields.caption ?? ''}
+        caption={fields.caption}
+        className={wrapClass}
+      />
     )
   },
 
@@ -99,11 +102,13 @@ export const converters: JSXConvertersFunction = ({ defaultConverters }) => ({
       if (!media || !url) return null
       return (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center my-8">
-          <figure className={`not-prose ${imageSide === 'right' ? 'md:order-2' : ''}`}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={url} alt={media.alt ?? caption ?? ''} className="rounded-lg w-full h-auto" />
-            {caption && <figcaption className="text-sm text-gray-500 mt-2 text-center">{caption}</figcaption>}
-          </figure>
+          <ZoomableImage
+            src={url}
+            full={url}
+            alt={media.alt ?? caption ?? ''}
+            caption={caption}
+            className={imageSide === 'right' ? 'md:order-2' : ''}
+          />
           <div>{text && <RichText data={text} />}</div>
         </div>
       )
